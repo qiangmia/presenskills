@@ -183,6 +183,8 @@ function renderQR(url) {
   }
 
   box.title = url;
+  const image = box.querySelector("img");
+  if (image) image.alt = "QR code for the audience rating page, room " + state.code;
 }
 
 /* ---------- stats ---------- */
