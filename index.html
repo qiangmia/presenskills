@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delivery &amp; Deck-Sync — Weeks 11–12 Diagnostic Checklist</title>
+<meta name="description" content="A responsive, dual-purpose rehearsal checklist and live audience audit for presentation delivery: audibility, pacing, eye contact, slide sync, posture, narrative, and Q&amp;A.">
+<link rel="canonical" href="https://qiangmia.github.io/presenskills/">
+<meta name="theme-color" content="#15171a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Delivery &amp; Deck-Sync — Diagnostic Checklist">
+<meta property="og:description" content="Eighteen observable criteria for presentation delivery. Rehearse it, audit it, then choose one target for the next take.">
+<meta property="og:url" content="https://qiangmia.github.io/presenskills/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315171a'/%3E%3Crect x='7' y='8' width='18' height='3' fill='%23d9a22e'/%3E%3Crect x='7' y='15' width='12' height='2' fill='%23f3efe5'/%3E%3Crect x='7' y='21' width='18' height='2' fill='%23b23a2c'/%3E%3C/svg%3E">
+<style>
+/* ==========================================================================
+   DELIVERY & DECK-SYNC — Weeks 11–12
+   A responsive reconstruction of the 18-criterion diagnostic checklist.
+   ========================================================================== */
+
+:root{
+  --paper:#f3efe5;
+  --paper-2:#e9e2d4;
+  --white:#fffdf7;
+  --ink:#15171a;
+  --ink-2:#36342f;
+  --muted:#645f55;
+  --faint:#675f54;
+  --rule:#d5cebf;
+  --rule-2:#e4ded1;
+  --red:#b23a2c;
+  --red-deep:#8e2b21;
+  --amber:#d9a22e;
+  --amber-soft:#f3dfb8;
+  --green:#3f7a4f;
+  --green-soft:#e6efe4;
+  --blue:#2f5f8f;
+  --blue-soft:#e7eef5;
+  --rose:#a54537;
+  --rose-soft:#f3e6e2;
+  --stage:#15171a;
+  --stage-2:#1e2126;
+  --display:"Arial Black","Helvetica Neue",Impact,"Segoe UI",sans-serif;
+  --sans:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --mono:"Consolas","SF Mono","Cascadia Mono",monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  margin:0;padding-top:64px;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:17.5px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+::selection{background:var(--amber);color:var(--ink)}
+h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;z-index:3000;background:var(--amber);color:var(--ink);padding:10px 14px;font:700 12px var(--mono)}
+.skip:focus{left:12px;top:12px}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;
+  display:flex;align-items:center;gap:16px;padding:0 clamp(14px,2.6vw,28px);
+  background:var(--ink);color:var(--paper);border-bottom:1px solid #34373d;
+}
+.brand{
+  display:flex;align-items:center;gap:8px;flex:none;text-decoration:none;
+  font:700 10.5px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;
+}
+.brand i{width:9px;height:9px;background:var(--red);display:block;flex:none}
+.brand span{color:#a8a294;font-weight:400}
+.mode-switch{display:flex;gap:2px;padding:3px;border:1px solid #45484f;flex:none}
+.mode-btn{
+  border:0;background:transparent;color:#c9c3b6;padding:8px 11px;
+  font:700 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+}
+.mode-btn:hover{color:#fff}
+.mode-btn.is-active{background:var(--amber);color:var(--ink)}
+.progress{display:flex;align-items:center;gap:9px;margin-left:auto;min-width:0}
+.progress-label{
+  font:700 9px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;
+  color:#d8d1c3;white-space:nowrap;
+}
+.progress-track{display:block;width:110px;height:4px;background:#3b3e44;overflow:hidden}
+.progress-track i{display:block;height:100%;width:0;background:var(--amber);transition:width .25s ease}
+.print-btn{
+  border:1px solid #666;background:transparent;color:var(--paper);
+  padding:9px 10px;font:700 9px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;
+  white-space:nowrap;flex:none;
+}
+.print-btn:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+/* ---------- shared ---------- */
+.wrap{width:min(calc(100% - 40px),1180px);margin:0 auto}
+.kicker{font:700 10px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+.lead{font-size:18px;line-height:1.55;color:var(--ink-2);max-width:66ch}
+.small{font-size:13.5px;line-height:1.55;color:var(--muted);max-width:66ch}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:1px solid var(--ink);background:transparent;color:var(--ink);
+  padding:11px 14px;font:700 10px/1 var(--mono);letter-spacing:.08em;
+  text-transform:uppercase;text-decoration:none;
+}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn.amber{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.btn.amber:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.btn:disabled{opacity:.55;cursor:wait}
+
+/* ---------- hero ---------- */
+.hero{
+  padding:clamp(38px,5.5vw,70px) 0 clamp(30px,4vw,50px);
+  display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);
+  gap:clamp(30px,4vw,52px);align-items:center;
+}
+.hero h1{
+  margin-top:14px;font-family:var(--display);font-size:clamp(44px,5.6vw,74px);
+  line-height:.9;letter-spacing:-.055em;text-transform:uppercase;max-width:12ch;
+}
+.hero h1 .amp{color:var(--red)}
+.hero h1 .line2{white-space:nowrap}
+.hero h1 em{font-style:normal}
+.hero .dek{margin-top:20px;font-size:clamp(18px,1.8vw,21px);line-height:1.45;color:var(--ink-2);max-width:34ch;font-weight:600}
+.hero .intro{margin-top:14px;font-size:15.5px;line-height:1.62;color:var(--muted);max-width:55ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:22px;padding-top:12px;border-top:1px solid var(--rule);font:600 9px/1.5 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
+
+/* ---------- stage panel ---------- */
+.stage-panel{background:var(--stage);color:var(--paper);padding:20px 22px 16px;border:1px solid #34373d;display:flex;flex-direction:column;min-height:410px}
+.stage-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font:700 8.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9f998c}
+.stage-head b{color:var(--amber)}
+.stage-screen{margin-top:14px;border:1px solid #4b4f57;padding:9px;text-align:center;font:700 8.5px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#aaa397}
+.stage-floor{position:relative;flex:1;min-height:185px;margin-top:8px}
+.stage-speaker{position:absolute;left:50%;top:18px;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);font:700 8px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;z-index:2}
+.stage-speaker::after{content:"";position:absolute;top:100%;left:50%;width:1px;height:32px;background:#5b5f67;transform:translateX(-50%)}
+.stage-zones{position:absolute;left:0;right:0;bottom:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.zone{border:1px solid #555a62;background:#1d2025;color:#c6c0b3;padding:14px 7px 12px;font:700 8.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;text-align:center}
+.zone small{display:block;margin-top:4px;font:400 7.5px/1.35 var(--mono);letter-spacing:.03em;color:#8f897c;text-transform:none}
+.zone:hover{border-color:var(--amber);color:#fff}
+.zone.is-active{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.zone.is-active small{color:#3d3217}
+.stage-back{display:flex;align-items:center;gap:9px;border-top:1px dashed #4b4f57;padding-top:7px;font:700 7.5px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:#8d877a}
+.stage-back::before,.stage-back::after{content:"";height:1px;background:#4b4f57;flex:1}
+.stage-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding-top:8px;border-top:1px solid #34373d}
+.stage-caption{font:400 9.5px/1.45 var(--mono);color:#a8a294;max-width:25ch}
+.zone-drill{border:1px solid #666;background:transparent;color:var(--paper);padding:7px 9px;font:700 8px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+.zone-drill:hover{background:var(--paper);color:var(--ink)}
+.zone-drill[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+
+/* ---------- session ---------- */
+.session{padding:0 0 clamp(30px,4vw,48px)}
+.session-panel{background:var(--white);border:1px solid var(--rule);padding:24px 24px 20px;box-shadow:0 12px 32px rgba(21,23,26,.06)}
+.session-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start;border-bottom:1px solid var(--rule-2);padding-bottom:18px}
+.session-top h2{margin-top:4px;font-family:var(--display);font-size:clamp(28px,3.2vw,38px);line-height:.96;letter-spacing:-.04em;text-transform:uppercase;max-width:18ch}
+.session-top p{margin-top:7px;font-size:14px;line-height:1.5;color:var(--muted);max-width:58ch}
+.dashboard{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.metric{min-width:112px;padding:10px 12px;border:1px solid var(--rule);background:var(--paper)}
+.metric-label{display:block;font:700 8px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.metric-value{display:block;margin-top:3px;font:800 20px/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
+.metric-value.red{color:var(--red)}
+.metric-small{display:block;margin-top:2px;font:600 8px/1.4 var(--mono);color:var(--muted)}
+.metric-bar{width:100%;height:3px;background:var(--rule);margin-top:7px;overflow:hidden}
+.metric-bar i{display:block;width:0;height:100%;background:var(--green);transition:width .25s}
+.metric .timer-row{display:flex;align-items:center;gap:5px;margin-top:5px}
+.metric .timer-row button{border:1px solid var(--ink);background:transparent;padding:4px 6px;font:700 8px/1 var(--mono);text-transform:uppercase}
+.metric .timer-row button:hover{background:var(--ink);color:var(--paper)}
+.session-fields{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.field label{display:block;font:700 8px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.field input,.field select{width:100%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:8px 9px;font:13.5px/1.4 var(--sans)}
+.field input::placeholder{color:#9a9284}
+.field input:focus,.field select:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+
+/* ---------- how strip ---------- */
+.how-strip{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0}
+.how-strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.how-item{border-top:2px solid var(--red);padding-top:9px}
+.how-item b{display:block;font:800 10px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.how-item span{display:block;margin-top:4px;font-size:13px;line-height:1.5;color:var(--muted);max-width:40ch}
+
+/* ---------- checklist ---------- */
+.checklist{padding:clamp(42px,5vw,64px) 0 30px}
+.sec-head{display:grid;grid-template-columns:62px minmax(0,1fr);gap:16px;align-items:start;border-bottom:1px solid var(--rule);padding-bottom:20px}
+.sec-no{font-family:var(--display);font-size:46px;line-height:.8;letter-spacing:-.04em;color:var(--red)}
+.sec-head h2{margin-top:5px;font-family:var(--display);font-size:clamp(34px,4.2vw,46px);line-height:.96;letter-spacing:-.045em;text-transform:uppercase;max-width:16ch}
+.sec-head .lead{margin-top:12px;max-width:64ch}
+.level-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.level-switch{display:flex;gap:2px;padding:2px;border:1px solid var(--rule);background:var(--paper-2)}
+.level-btn{border:0;background:transparent;color:var(--muted);padding:7px 9px;font:700 8.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.level-btn.is-active{background:var(--ink);color:var(--paper)}
+.level-hint{font:600 8.5px/1.4 var(--mono);letter-spacing:.05em;color:var(--muted)}
+.mode-note{display:flex;align-items:center;gap:8px;margin-top:9px;font:600 10px/1.4 var(--mono);color:var(--muted)}
+.mode-note i{display:block;width:7px;height:7px;background:var(--amber);flex:none}
+.mode-note b{color:var(--ink)}
+
+.filterbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:18px}
+.filterbar .flabel{font:700 8.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:3px}
+.filter-btn{border:1px solid var(--rule);background:var(--white);color:var(--ink-2);padding:7px 9px;font:700 8.5px/1.4 var(--mono);letter-spacing:.03em;text-transform:uppercase}
+.filter-btn:hover{border-color:var(--ink)}
+.filter-btn.is-active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.clips{margin-top:12px;border:1px solid var(--rule);background:var(--white)}
+.clips summary{cursor:pointer;padding:10px 12px;font:700 9px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.clips summary::marker{color:var(--red)}
+.clips-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 14px 16px}
+.clip{border-left:2px solid var(--amber);padding-left:9px}
+.clip b{display:block;font-size:12px;line-height:1.4}
+.clip span{display:block;margin-top:2px;font:600 9px/1.4 var(--mono);color:var(--muted)}
+.clip a{display:inline-block;margin-top:4px;font:700 9px/1.4 var(--mono);text-decoration:none;border-bottom:1px solid var(--ink)}
+
+.domain{margin-top:24px;border:1px solid var(--ink);background:var(--paper);break-inside:avoid}
+.domain-head{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:12px;align-items:start;background:var(--ink);color:var(--paper);padding:14px 16px}
+.domain-no{display:grid;place-items:center;width:32px;height:26px;background:var(--red);color:#fff;font:700 8px/1 var(--mono);letter-spacing:.08em}
+.domain-head h3{font-family:var(--display);font-size:17px;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase}
+.domain-head p{margin-top:3px;font-size:10px;line-height:1.4;color:#bdb6a8}
+.domain-count{font:700 9px/1.4 var(--mono);color:var(--amber);white-space:nowrap;padding-top:2px}
+.domain-items{padding:0 16px}
+
+.criterion{display:grid;grid-template-columns:minmax(0,1fr) 154px 318px;gap:16px;align-items:start;padding:15px 0;border-bottom:1px solid var(--rule-2)}
+.domain-items .criterion:last-child{border-bottom:0}
+body.mode-rehearsal .criterion{grid-template-columns:minmax(0,1fr) 170px}
+body.mode-audience .criterion{grid-template-columns:minmax(0,1fr) 330px}
+.crit-copy{min-width:0}
+.crit-top{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.crit-num{font:800 9px/1 var(--mono);letter-spacing:.06em;color:var(--red)}
+.crit-top h4{font-size:15.5px;line-height:1.25;font-weight:700}
+.core-badge{display:inline-block;padding:2px 5px;border:1px solid var(--amber);background:var(--amber-soft);color:#5c4615;font:700 7.5px/1.2 var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.crit-copy>p{margin-top:4px;font-size:14px;line-height:1.5;color:var(--ink-2);max-width:68ch}
+.drill{margin-top:5px;padding:5px 7px;border-left:2px solid var(--blue);background:var(--blue-soft);font-size:12px;line-height:1.45;color:#2d4258}
+.drill b{font:700 8px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-right:3px}
+.crit-cell{min-width:0}
+.rehearsal-cell{padding-top:1px}
+.cell-label{display:block;font:700 8px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.check{display:flex;align-items:center;gap:7px;font:700 9px/1.35 var(--mono);letter-spacing:.03em;color:var(--ink-2);cursor:pointer}
+.check input{appearance:none;width:18px;height:18px;border:1.5px solid var(--ink);background:transparent;display:grid;place-content:center;flex:none;margin:0}
+.check input::before{content:"";width:10px;height:10px;transform:scale(0);background:var(--green)}
+.check input:checked::before{transform:scale(1)}
+.check input:checked+span{color:var(--ink)}
+.audience-cell{display:none}
+body.mode-audience .rehearsal-cell{display:none}
+body.mode-audience .audience-cell{display:block}
+body.mode-rehearsal .audience-cell{display:none}
+body.mode-rehearsal .criterion{grid-template-columns:minmax(0,1fr) 180px}
+.audience-cell{display:none}
+body.mode-dual .audience-cell{display:block}
+body.mode-dual .rehearsal-cell{display:block}
+.rating-row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:4px}
+.rating-group{display:flex;gap:3px;flex-wrap:wrap}
+.rate-btn{border:1px solid var(--rule);background:var(--white);color:var(--muted);padding:4px 6px;font:700 7.5px/1.2 var(--mono);letter-spacing:.03em;text-transform:uppercase}
+.rate-btn:hover{border-color:var(--ink);color:var(--ink)}
+.rate-btn[aria-pressed="true"][data-rating="strong"]{background:var(--green);border-color:var(--green);color:#fff}
+.rate-btn[aria-pressed="true"][data-rating="solid"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.rate-btn[aria-pressed="true"][data-rating="fix"]{background:var(--rose);border-color:var(--rose);color:#fff}
+.note{width:100%;border:1px solid var(--rule);background:var(--white);padding:7px 8px;font:12px/1.4 var(--sans);color:var(--ink)}
+.note::placeholder{color:#958d7f}
+.note:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.print-note,.print-rating,.print-synth,.print-plan,.print-overview,.print-log{display:none}
+
+/* ---------- synthesis ---------- */
+.synthesis{padding:clamp(38px,5vw,58px) 0}
+.synth-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;border-top:2px solid var(--ink);padding-top:16px}
+.synth-head h2{font-family:var(--display);font-size:clamp(30px,3.6vw,42px);line-height:.96;letter-spacing:-.04em;text-transform:uppercase;max-width:20ch}
+.synth-head p{margin-top:6px;font-size:13.5px;color:var(--muted)}
+.synth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.synth-card{border:1px solid var(--rule);background:var(--white);padding:16px}
+.synth-card.glow{border-top:3px solid var(--green)}
+.synth-card.grow{border-top:3px solid var(--amber)}
+.synth-card.qa{border-top:3px solid var(--ink)}
+.synth-card label{display:block;font:700 9px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.synth-card .q{margin-top:4px;font-size:12px;line-height:1.45;color:var(--muted);min-height:2.9em}
+.synth-card textarea{width:100%;min-height:84px;margin-top:8px;border:1px solid var(--rule);background:var(--paper);padding:8px;font:13px/1.5 var(--sans);resize:vertical}
+.synth-card textarea:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.synth-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.copy-status{font:600 9px/1.4 var(--mono);color:var(--muted);min-height:1.4em}
+
+/* ---------- footer ---------- */
+.footer{background:var(--ink);color:#b8b1a4;padding:24px 0 28px;font:400 10px/1.6 var(--mono)}
+.footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+.footer b{color:var(--paper)}
+.footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid #5c584f}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .hero{grid-template-columns:1fr;gap:26px}
+  .stage-panel{min-height:350px}
+  .session-top{grid-template-columns:1fr}
+  .dashboard{justify-content:flex-start}
+  .session-fields{grid-template-columns:1fr 1fr}
+  .how-strip .wrap{grid-template-columns:1fr}
+  .criterion{grid-template-columns:minmax(0,1fr) 140px 285px;gap:12px}
+  body.mode-audience .criterion{grid-template-columns:minmax(0,1fr) 300px}
+}
+@media (max-width:760px){
+  body{padding-top:104px}
+  .topbar{height:104px;flex-wrap:wrap;align-content:center;gap:5px 9px;padding:7px 13px}
+  .brand{font-size:9.5px;letter-spacing:.08em}
+  .brand span{display:none}
+  .print-btn{margin-left:auto;font-size:8.5px;padding:8px 9px}
+  .mode-switch{order:5;flex:1;min-width:0}
+  .mode-btn{flex:1;padding:9px 6px;font-size:8px}
+  .progress{order:6;width:100%;margin-left:0;gap:7px}
+  .progress-track{flex:1;width:auto}
+  html{scroll-padding-top:114px}
+  .wrap{width:min(calc(100% - 30px),1180px)}
+  .hero{padding-top:30px}
+  .hero h1{font-size:clamp(38px,11.5vw,58px)}
+  .hero .dek{font-size:18px}
+  .stage-panel{padding:17px 16px 14px;min-height:320px}
+  .stage-foot{display:block}
+  .stage-caption{max-width:none;margin-bottom:7px}
+  .zone-drill{width:100%}
+  .session-panel{padding:18px 16px 16px}
+  .session-top h2{font-size:30px}
+  .dashboard{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .metric{min-width:0}
+  .metric:last-child{grid-column:1/-1}
+  .session-fields{grid-template-columns:1fr}
+  .how-strip{padding:18px 0}
+  .sec-head{grid-template-columns:1fr;gap:5px}
+  .sec-no{font-size:34px}
+  .sec-head h2{font-size:clamp(30px,8.5vw,38px)}
+  .level-row{align-items:flex-start}
+  .filterbar{gap:4px}
+  .filter-btn{font-size:8px;padding:6px 6px}
+  .clips-grid{grid-template-columns:1fr}
+  .domain{margin-top:18px}
+  .domain-head{grid-template-columns:32px 1fr;gap:8px;padding:12px}
+  .domain-no{width:26px;height:22px}
+  .domain-head h3{font-size:15px}
+  .domain-count{grid-column:2;padding-top:0}
+  .domain-items{padding:0 12px}
+  .criterion,body.mode-audience .criterion,body.mode-rehearsal .criterion{grid-template-columns:1fr;gap:9px;padding:13px 0}
+  .crit-cell{width:100%}
+  .rate-btn{padding:8px 8px;font-size:8.5px;min-height:38px}
+  .rating-row{display:block}
+  .rating-group{display:grid;grid-template-columns:repeat(3,1fr);width:100%;margin-top:2px}
+  .check{min-height:40px}
+  .check input{width:20px;height:20px}
+  .note{min-height:44px}
+  .synth-grid{grid-template-columns:1fr}
+  .synth-head h2{font-size:32px}
+}
+@media (max-width:430px){
+  .hero h1{font-size:clamp(34px,11vw,46px)}
+  .stage-zones{gap:5px}
+  .zone{padding:12px 5px 10px;font-size:7.5px}
+  .zone small{font-size:6.8px}
+  .dashboard{grid-template-columns:1fr}
+  .metric:last-child{grid-column:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .progress-track i,.metric-bar i{transition:none}
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{size:A4;margin:13mm 13mm 12mm}
+  html,body{background:#fff;padding:0}
+  body{font-size:9pt;line-height:1.4;color:#111}
+  .topbar,.hero-actions,.stage-panel,.how-strip,.filterbar,.clips,.footer,.print-btn,.rate-btn,.synth-actions,.copy-status,.skip,.mode-switch,.progress,.mode-note{display:none!important}
+  .wrap{width:auto;max-width:none;margin:0}
+  .hero{display:block;padding:0 0 5mm;border-bottom:1.5pt solid #111}
+  .hero h1{font-size:34pt;line-height:.9;margin-top:3mm;max-width:none}
+  .hero .dek{font-size:12pt;max-width:38ch;margin-top:2mm}
+  .hero .intro{font-size:8.5pt;max-width:72ch;margin-top:2mm}
+  .hero-meta{font-size:6.8pt;margin-top:2mm;padding-top:1.5mm;gap:3mm 6mm}
+  .kicker{font-size:6.8pt}
+  .session{padding:0 0 4mm}
+  .session-panel{border:1pt solid #111;padding:3mm 4mm;box-shadow:none}
+  .session-top{display:block;border-bottom:.5pt solid #999;padding-bottom:2mm}
+  .session-top h2{font-size:16pt}
+  .session-top p{font-size:8pt}
+  .dashboard{display:flex;gap:2mm;justify-content:flex-start;margin-top:2mm}
+  .metric{min-width:28mm;padding:1.5mm 2mm;border:.5pt solid #999;background:#fff}
+  .metric-label{font-size:6pt}
+  .metric-value{font-size:12pt}
+  .metric-small{font-size:6pt}
+  .metric .timer-row{display:none}
+  .session-fields{grid-template-columns:repeat(4,1fr);gap:2mm;margin-top:2mm}
+  .field label{font-size:6pt}
+  .field input,.field select{font-size:8pt;border:0;border-bottom:.4pt solid #999;padding:1mm 0;background:#fff}
+  #checklist{break-before:auto}
+  .checklist{padding:0}
+  .print-overview{display:block;margin-top:6mm;padding-top:3mm;border-top:1pt solid #111}
+  .print-overview h3{font-size:10pt;margin:0 0 2mm}
+  .po-grid{display:grid;grid-template-columns:1fr 1fr;gap:1mm 8mm}
+  .po-grid p{font-size:8pt;line-height:1.5;margin:0}
+  .po-grid b{font-family:var(--mono);color:var(--red);margin-right:2mm}
+  .po-note{font-size:7.5pt;line-height:1.5;color:#444;margin-top:2mm}
+  .sec-head{grid-template-columns:10mm 1fr;gap:2mm;padding-bottom:2mm;margin-bottom:2mm}
+  .sec-no{font-size:24pt}
+  .sec-head h2{font-size:18pt;max-width:24ch}
+  .sec-head .lead{font-size:8pt;margin-top:2mm}
+  .level-row{display:none}
+  .mode-note{font-size:7pt;margin-top:1mm}
+  .domain{margin-top:4mm;border:1pt solid #111;break-inside:auto}
+  .domain-head{background:#fff;color:#111;border-bottom:1pt solid #111;padding:1.5mm 2mm;grid-template-columns:7mm 1fr 18mm;gap:2mm;break-after:avoid}
+  .domain-no{width:6mm;height:5mm;background:#111;color:#fff;font-size:6pt}
+  .domain-head h3{font-size:10pt}
+  .domain-head p{font-size:7pt;color:#333}
+  .domain-count{font-size:7pt;color:#111}
+  .domain-items{padding:0 2mm}
+  .criterion,body.mode-audience .criterion,body.mode-rehearsal .criterion{grid-template-columns:minmax(0,1fr) 26mm 49mm;gap:2mm;padding:1.8mm 0;break-inside:avoid}
+  .crit-num{font-size:6pt}
+  .crit-top h4{font-size:9pt}
+  .core-badge{font-size:5.5pt;padding:0 1mm}
+  .crit-copy>p{font-size:7.5pt;line-height:1.35;margin-top:1mm}
+  .drill{font-size:6.5pt;padding:1mm;margin-top:1mm}
+  .crit-cell{display:block!important}
+  .rehearsal-cell,.audience-cell{display:block!important}
+  .cell-label{font-size:5.5pt;margin-bottom:1mm}
+  .check{font-size:6.5pt;gap:1mm;white-space:nowrap}
+  .check input{appearance:auto;width:10px;height:10px;border:.5pt solid #111;accent-color:#111}
+  .check input::before{display:none}
+  .rating-row{display:block}
+  .rating-group{display:none}
+  .print-rating{display:block;min-height:3.5mm;border-bottom:.3pt solid #999;font:6pt/1.3 var(--mono);color:#333;padding-top:.5mm}
+  .note{display:none}
+  .print-note{display:block;min-height:5mm;border-bottom:.3pt solid #999;font:6pt/1.3 var(--mono);color:#333;white-space:pre-wrap}
+  .synthesis{padding:0;break-before:page;break-inside:avoid}
+  .synth-head{padding-top:2mm}
+  .synth-head h2{font-size:16pt}
+  .synth-grid{grid-template-columns:repeat(3,1fr);gap:2mm;margin-top:2mm}
+  .synth-card{padding:2mm;border:.5pt solid #999}
+  .synth-card label{font-size:6.5pt}
+  .synth-card .q{display:none}
+  .synth-card textarea{display:none}
+  .print-plan{display:block;margin-top:5mm;border-top:1pt solid #111;padding-top:3mm;break-inside:avoid}
+  .print-plan b{display:block;font:700 8pt/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2mm}
+  .print-plan p{font-size:8pt;line-height:1.8;margin:1mm 0;color:#333}
+  .print-plan p span{display:inline-block;min-width:75%;border-bottom:.3pt solid #999}
+  .print-log{display:block;margin-top:6mm;border-top:1pt solid #111;padding-top:3mm;break-inside:avoid}
+  .print-log>b{display:block;font:700 8pt/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2mm}
+  .print-log table{width:100%;border-collapse:collapse;table-layout:fixed}
+  .print-log th{font:700 6.5pt/1.4 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:#333;text-align:left;border-bottom:.6pt solid #111;padding:1mm 1mm 1mm 0}
+  .print-log td{border-bottom:.3pt solid #999;height:9mm}
+  .print-log th:nth-child(1),.print-log td:nth-child(1){width:15%}
+  .print-log th:nth-child(2),.print-log td:nth-child(2){width:8%}
+  .print-log th:nth-child(3),.print-log td:nth-child(3){width:12%}
+  .print-log th:nth-child(4),.print-log td:nth-child(4){width:12%}
+  .print-log th:nth-child(5),.print-log td:nth-child(5){width:10%}
+  .print-log .print-sign{margin:4mm 0 0;font-size:8pt;color:#333}
+  .print-log .print-sign span{display:inline-block;min-width:55mm;border-bottom:.3pt solid #999}
+  .synth-card .print-synth{display:block;min-height:12mm;border-bottom:.3pt solid #999;font:6.5pt/1.3 var(--mono);white-space:pre-wrap}
+}
+</style>
+</head>
+<body class="mode-dual level-full">
+<a class="skip" href="#checklist">Skip to the checklist</a>
+
+<header class="topbar">
+  <a class="brand" href="#top"><i aria-hidden="true"></i>Delivery<span> / Deck-Sync</span></a>
+  <div class="mode-switch" role="group" aria-label="Checklist view">
+    <button class="mode-btn is-active" type="button" data-mode="dual" aria-pressed="true">Dual</button>
+    <button class="mode-btn" type="button" data-mode="rehearsal" aria-pressed="false">Rehearse</button>
+    <button class="mode-btn" type="button" data-mode="audience" aria-pressed="false">Audience</button>
+  </div>
+  <div class="progress">
+    <span class="progress-label" id="progressLabel" aria-live="polite">0 / 18 checked</span>
+    <span class="progress-track" aria-hidden="true"><i id="progressBar"></i></span>
+  </div>
+  <button class="print-btn" type="button" onclick="window.print()">Print / PDF</button>
+</header>
+
+<main id="top">
+
+<!-- ============================================================ HERO -->
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div>
+    <p class="kicker">Weeks 11–12 · Delivery &amp; Presence</p>
+    <h1 id="hero-title">Delivery<br><span class="line2"><span class="amp">&amp;</span> <em>deck-sync.</em></span></h1>
+    <p class="dek">A rehearsal checklist for the speaker. A live audit for the audience.</p>
+    <p class="intro">Eighteen observable criteria across four domains. Tick what you can do, or hand the page to a listener and let them rate what they see. Then choose one target for the next take.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#checklist">Start the checklist <span aria-hidden="true">→</span></a>
+      <a class="btn" href="#synthesis">Jump to synthesis</a>
+    </div>
+    <p class="hero-meta"><span>18 checks</span><span>10 Core</span><span>4 domains</span><span>Saved locally</span></p>
+  </div>
+
+  <div class="stage-panel" aria-label="Stage map for eye contact practice">
+    <div class="stage-head"><span>The room</span><b>Eye contact</b></div>
+    <div class="stage-screen">Slide / screen</div>
+    <div class="stage-floor">
+      <div class="stage-speaker">You</div>
+      <div class="stage-zones" role="group" aria-label="Eye contact zones">
+        <button class="zone" type="button" data-zone="left">Left<small>one sentence</small></button>
+        <button class="zone" type="button" data-zone="center">Center<small>one sentence</small></button>
+        <button class="zone" type="button" data-zone="right">Right<small>one sentence</small></button>
+      </div>
+    </div>
+    <div class="stage-back">Back row</div>
+    <div class="stage-foot">
+      <p class="stage-caption" id="zoneCaption" aria-live="polite">One thought, one look.</p>
+      <button class="zone-drill" type="button" id="zoneDrill" aria-pressed="false">Run 3-zone drill</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SESSION -->
+<section class="session wrap" aria-labelledby="session-title">
+  <div class="session-panel">
+    <div class="session-top">
+      <div>
+        <p class="kicker">Session setup</p>
+        <h2 id="session-title">Name the run.</h2>
+        <p>Fill this in before rehearsal or peer observation. The dashboard updates as you check and rate the criteria.</p>
+      </div>
+      <div class="dashboard" aria-label="Live dashboard">
+        <div class="metric">
+          <span class="metric-label">Rehearsal ready</span>
+          <span class="metric-value"><span id="rehearsalCount">0</span>/<span id="rehearsalTotal">18</span></span>
+          <span class="metric-bar"><i id="rehearsalBar"></i></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Audit score</span>
+          <span class="metric-value red" id="auditScore">—</span>
+          <span class="metric-small" id="auditLabel">Not rated yet</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Speech timer</span>
+          <span class="metric-value" id="speechTimer">00:00</span>
+          <span class="timer-row"><button type="button" id="timerBtn">Start</button><button type="button" id="timerReset">Reset</button></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="session-fields">
+      <div class="field"><label for="metaPresenter">Presenter</label><input id="metaPresenter" data-meta="presenter" type="text" placeholder="Speaker's name" autocomplete="off"></div>
+      <div class="field"><label for="metaObserver">Observer</label><input id="metaObserver" data-meta="observer" type="text" placeholder="Self or peer reviewer" autocomplete="off"></div>
+      <div class="field"><label for="metaTopic">Topic</label><input id="metaTopic" data-meta="topic" type="text" placeholder="e.g. Campus cup deposit proposal" autocomplete="off"></div>
+      <div class="field"><label for="metaFocus">Row focus</label>
+        <select id="metaFocus" data-meta="focus">
+          <option value="all">All four domains</option>
+          <option value="vocal">01 · Audibility, pacing &amp; time</option>
+          <option value="connection">02 · Eye contact &amp; interaction</option>
+          <option value="sync">03 · Slide sync &amp; pre-flight</option>
+          <option value="physical">04 · Posture, arc &amp; Q&amp;A</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class=print-overview>
+  <h3>What this checklist covers</h3>
+  <div class=po-grid>
+    <p><b>01</b> Audibility, pacing &amp; time · 5 checks</p>
+    <p><b>02</b> Eye contact &amp; audience interaction · 4 checks</p>
+    <p><b>03</b> Slide sync &amp; technical readiness · 5 checks</p>
+    <p><b>04</b> Posture, narrative &amp; Q&amp;A · 4 checks</p>
+  </div>
+  <p class=po-note>18 criteria total · 10 beginner core. Rehearse the core first; use the full audit when the basics are stable.</p>
+</div>
+
+<!-- ============================================================ HOW -->
+<section class="how-strip" aria-label="How to use this checklist">
+  <div class="wrap">
+    <div class="how-item"><b>01 / Rehearse</b><span>Tick only what you can actually do in one run. Leave the rest blank.</span></div>
+    <div class="how-item"><b>02 / Audit</b><span>Hand it to a listener. Rate Strong, Solid, or Fix, and write one specific note.</span></div>
+    <div class="how-item"><b>03 / Compare</b><span>Read the score and the notes. Choose one observable target for the next take.</span></div>
+  </div>
+</section>
+
+<!-- ============================================================ CHECKLIST -->
+<section class="checklist" id="checklist" aria-labelledby="checklist-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-no" aria-hidden="true">01</div>
+      <div>
+        <p class="kicker">The checklist</p>
+        <h2 id="checklist-title">Eighteen checks. <em>Four</em> domains.</h2>
+        <p class="lead">The full audit shows all 18 criteria. The beginner core shows the 10 essentials for a first rehearsal. Dual view shows both the self-check and the audience rating.</p>
+        <div class="level-row">
+          <div class="level-switch" role="group" aria-label="Checklist level">
+            <button class="level-btn" type="button" data-level="beginner" aria-pressed="false">Core 10</button>
+            <button class="level-btn is-active" type="button" data-level="full" aria-pressed="true">Full 18</button>
+          </div>
+          <span class="level-hint" id="levelHint">Showing 18 criteria · 10 beginner core</span>
+        </div>
+        <p class="mode-note"><i aria-hidden="true"></i><span id="modeNote"><b>Dual view</b> — self-check and audience rating together.</span></p>
+      </div>
+    </div>
+
+    <div class="filterbar" role="group" aria-label="Filter by domain">
+      <span class="flabel">Domain</span>
+      <button class="filter-btn is-active" type="button" data-domain="all">All</button>
+      <button class="filter-btn" type="button" data-domain="vocal">01 · Vocal (5)</button>
+      <button class="filter-btn" type="button" data-domain="connection">02 · Connection (4)</button>
+      <button class="filter-btn" type="button" data-domain="sync">03 · Sync (5)</button>
+      <button class="filter-btn" type="button" data-domain="physical">04 · Physical (4)</button>
+    </div>
+
+    <details class="clips">
+      <summary>Calibration clips · four examples to audit</summary>
+      <div class="clips-grid">
+        <div class="clip"><b>Good vs. bad presentation</b><span>Audibility, eye contact, pre-flight</span><a href="https://www.youtube.com/watch?v=V8eLdbKXGzk" target="_blank" rel="noopener">YouTube ↗</a></div>
+        <div class="clip"><b>Body language for presentations</b><span>Gaze, stance, pauses</span><a href="https://www.youtube.com/watch?v=TmbQFWBvTtY" target="_blank" rel="noopener">YouTube ↗</a></div>
+        <div class="clip"><b>4 body language tips</b><span>Open posture, podium trap</span><a href="https://www.youtube.com/watch?v=ZK3jSXYBNak" target="_blank" rel="noopener">YouTube ↗</a></div>
+        <div class="clip"><b>Death by PowerPoint</b><span>Visual competition, slide focus</span><a href="https://www.youtube.com/watch?v=Iwpi1Lm6dFo" target="_blank" rel="noopener">YouTube ↗</a></div>
+      </div>
+    </details>
+
+    <div id="checklist-container">
+      <section class="domain" data-domain="vocal" aria-labelledby="domain-vocal">
+        <header class="domain-head"><span class="domain-no">01</span><div><h3 id="domain-vocal">Audibility, Pacing &amp; Time</h3><p>Foundational receiver clarity and time discipline.</p></div><span class="domain-count" id="count-vocal">0 / 5</span></header>
+        <div class="domain-items" id="items-vocal"></div>
+      </section>
+      <section class="domain" data-domain="connection" aria-labelledby="domain-connection">
+        <header class="domain-head"><span class="domain-no">02</span><div><h3 id="domain-connection">Eye Contact &amp; Audience Interaction</h3><p>Two-way sender–receiver engagement.</p></div><span class="domain-count" id="count-connection">0 / 4</span></header>
+        <div class="domain-items" id="items-connection"></div>
+      </section>
+      <section class="domain" data-domain="sync" aria-labelledby="domain-sync">
+        <header class="domain-head"><span class="domain-no">03</span><div><h3 id="domain-sync">Slide Sync &amp; Technical Readiness</h3><p>Visual choreography and pre-flight control.</p></div><span class="domain-count" id="count-sync">0 / 5</span></header>
+        <div class="domain-items" id="items-sync"></div>
+      </section>
+      <section class="domain" data-domain="physical" aria-labelledby="domain-physical">
+        <header class="domain-head"><span class="domain-no">04</span><div><h3 id="domain-physical">Posture, Narrative &amp; Q&amp;A</h3><p>Stage authority and structure under pressure.</p></div><span class="domain-count" id="count-physical">0 / 4</span></header>
+        <div class="domain-items" id="items-physical"></div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SYNTHESIS -->
+<section class="synthesis" id="synthesis" aria-labelledby="synthesis-title">
+  <div class="wrap">
+    <div class="synth-head">
+      <div>
+        <p class="kicker">Synthesis &amp; action plan</p>
+        <h2 id="synthesis-title">Glow. Grow. <em>Answer.</em></h2>
+        <p>Complete this immediately after the run. One strength, one fix, one Q&amp;A note.</p>
+      </div>
+      <div class="synth-actions">
+        <button class="btn" type="button" id="copyBtn">Copy summary</button>
+        <button class="btn" type="button" id="resetBtn">Reset</button>
+        <span class="copy-status" id="copyStatus" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="synth-grid">
+      <div class="synth-card glow">
+        <label for="synthGlow">1 · Top strength</label>
+        <p class="q">What specific vocal, timing, eye-contact, or slide-sync habit worked best?</p>
+        <textarea id="synthGlow" data-synth="glow" rows="4" placeholder="e.g. Clear back-row volume; the opening question made the room look up."></textarea>
+        <span class="print-synth" aria-hidden="true"></span>
+      </div>
+      <div class="synth-card grow">
+        <label for="synthGrow">2 · Highest-leverage fix</label>
+        <p class="q">What single adjustment will improve the next run-through most?</p>
+        <textarea id="synthGrow" data-synth="grow" rows="4" placeholder="e.g. Trim 30 seconds of background so the benefit slide is not rushed."></textarea>
+        <span class="print-synth" aria-hidden="true"></span>
+      </div>
+      <div class="synth-card qa">
+        <label for="synthQA">3 · Interaction / Q&amp;A note</label>
+        <p class="q">How did the speaker engage listeners or handle a difficult question?</p>
+        <textarea id="synthQA" data-synth="qa" rows="4" placeholder="e.g. Used direct eye contact before answering; started the answer with a clear point."></textarea>
+        <span class="print-synth" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="print-plan">
+      <b>Before the next take</b>
+      <p>One change I will make first: <span></span></p>
+      <p>When and where I will rehearse: <span></span></p>
+      <p>Who will watch and give one note: <span></span></p>
+      <p>What I will keep: <span></span></p>
+    </div>
+    <div class="print-log">
+      <b>Run log</b>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Take</th><th>Runtime</th><th>Checked</th><th>Audit</th><th>One note to carry forward</th></tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <p class="print-sign">Observer signature / date: <span></span></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <span><b>Delivery &amp; Deck-Sync</b> · English Presentation Skills · Weeks 11–12</span>
+    <span>18 criteria · 10 core · Rehearsal + audience audit · Print A4</span>
+  </div>
+</footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  var $ = function(sel, root){ return (root || document).querySelector(sel); };
+  var $$ = function(sel, root){ return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+
+  var DATA = [
+    {id:"vocal-1",domain:"vocal",core:true,title:"Back-row audibility & volume projection",cue:"Project your voice to the farthest back corner of the room without mumbling, whispering, or straining.",drill:"Aim your voice at the back wall, not the front row."},
+    {id:"vocal-2",domain:"vocal",core:true,title:"End-of-sentence clarity",cue:"Maintain breath support, articulation, and volume through the final two or three words of every sentence.",drill:"Keep your chin level through the last syllable; do not drop the ending into your collar."},
+    {id:"vocal-3",domain:"vocal",core:true,title:"Controlled pacing & 1.5-second pauses",cue:"Speak at a steady, digestible tempo with clean 1.5–2 second silent pauses after slide changes and key points, replacing fillers with silence.",drill:"Mark // on your notes. Take one full silent breath at every mark before continuing."},
+    {id:"vocal-4",domain:"vocal",core:true,title:"Time balance across sections",cue:"Allocate time proportionally — roughly 20% hook and bridge, 60% evidence and journey, 20% takeaway and close — without over-explaining the background or rushing the ending.",drill:"Write checkpoint times on your notes and rehearse with the speech timer."},
+    {id:"vocal-5",domain:"vocal",core:false,title:"Vocal stress & pitch variety",cue:"Modulate pitch and slow down on rhetorical pivots — the complication, the benefit, the answer — rather than speaking in a flat monotone.",drill:"Highlight two or three power words and punch them vocally."},
+
+    {id:"conn-1",domain:"connection",core:true,title:"Sustained eye contact: one thought, one look",cue:"Hold steady, friendly eye contact with one listener for a complete sentence, then move across left, center, and right zones.",drill:"Finish the entire sentence with one person before shifting your gaze."},
+    {id:"conn-2",domain:"connection",core:true,title:"Direct audience interaction",cue:"Involve listeners at least once with a quick show of hands, a direct or rhetorical question, a relatable scenario, or audience-centered “you / your” framing.",drill:"Build one 10-second interaction into the hook or bridge."},
+    {id:"conn-3",domain:"connection",core:false,title:"Facial warmth & emotional congruence",cue:"Use an approachable smile and natural expressions that match the tone of the message, rather than a rigid deer-in-the-headlights stare.",drill:"Smile during the opening greeting and at positive benefit outcomes."},
+    {id:"conn-4",domain:"connection",core:false,title:"Real-time audience calibration",cue:"Read listener cues — nods, puzzled looks — and adjust pace, clarify jargon, or invite reactions smoothly during the talk.",drill:"Pause after complex data and ask whether the distinction is clear."},
+
+    {id:"sync-1",domain:"sync",core:true,title:"Technical & environmental readiness",cue:"Run a pre-flight check: phone silenced and away, clicker and transitions tested, fonts legible from the back row, and standing position clear of the projector beam.",drill:"Silence the phone, test the clicker, step to the side of the screen, and check back-row readability."},
+    {id:"sync-2",domain:"sync",core:true,title:"No back-turning, zero slide-reading",cue:"Face the audience and paraphrase ideas naturally. Do not turn back to the screen or read slide text word for word.",drill:"Rehearse with the screen black to test whether you know the point without reading it."},
+    {id:"sync-3",domain:"sync",core:true,title:"Touch–turn–talk choreography",cue:"Glance or gesture toward the slide, turn back to the audience, then speak. The turn is the transition.",drill:"Stay silent during the touch and turn; speak only when facing listeners."},
+    {id:"sync-4",domain:"sync",core:false,title:"Guide → interpret → connect",cue:"Direct the audience’s eyes (“Look at the highlighted bar…”), explain the takeaway, and link it to audience value.",drill:"Write the exact one-sentence guide cue at the top of each data slide’s notes."},
+    {id:"sync-5",domain:"sync",core:false,title:"Clicker timing & visual reveal",cue:"Advance slides or animations just before introducing each new point. Never leave a new slide unexplained or click late.",drill:"Click on the transition word between ideas so the visual arrives on beat."},
+
+    {id:"phys-1",domain:"physical",core:true,title:"Grounded stance & open posture",cue:"Stand with feet shoulder-width apart and soft knees. Avoid swaying, hip-shifting, or aimless pacing; keep hands uncrossed and out of pockets.",drill:"Plant your feet during the opening 45 seconds and the final takeaway."},
+    {id:"phys-2",domain:"physical",core:false,title:"Purposeful gestures, no podium leaning",cue:"Use natural, open-palm gestures at waist or chest level to show scale or contrast. Avoid leaning on or gripping the podium.",drill:"Step half a step back from the podium so both hands are free."},
+    {id:"phys-3",domain:"physical",core:false,title:"High-impact hook & crisp close",cue:"Open cleanly with SCQA or PAS, without throat-clearing. End with a decisive What → So What → Now What takeaway rather than trailing off.",drill:"Memorize the opening two sentences and the closing two sentences word for word."},
+    {id:"phys-4",domain:"physical",core:false,title:"PREP Q&A defense under pressure",cue:"Pause two seconds after a question. State the direct Point first, support it with a Reason and Example, then restate the Point concisely in under 45 seconds.",drill:"Never start with “Um, well…” — nod, pause, and answer “Yes / No, because…” first."}
+  ];
+
+  var DOMAINS = {
+    vocal:{label:"Audibility, Pacing & Time",total:5},
+    connection:{label:"Eye Contact & Audience Interaction",total:4},
+    sync:{label:"Slide Sync & Technical Readiness",total:5},
+    physical:{label:"Posture, Narrative & Q&A",total:4}
+  };
+
+  var KEY = "eps-wk11-delivery-v3";
+  var state = {
+    mode:"dual", level:"full", domain:"all",
+    checks:{}, ratings:{}, notes:{}, meta:{presenter:"",observer:"",topic:"",focus:"all"},
+    synth:{glow:"",grow:"",qa:""}
+  };
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved) {
+      var parsed = JSON.parse(saved);
+      state = Object.assign(state, parsed);
+      state.checks = state.checks || {};
+      state.ratings = state.ratings || {};
+      state.notes = state.notes || {};
+      state.meta = state.meta || {};
+      state.synth = state.synth || {};
+    }
+  } catch (e) {}
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  function activeItems(){
+    return DATA.filter(function(item){ return state.level === "full" || item.core; });
+  }
+  function itemById(id){ return DATA.filter(function(i){ return i.id === id; })[0]; }
+
+  function cardHTML(item, index){
+    var core = item.core
+      ? '<span class="core-badge">Core</span>'
+      : '<span class="core-badge" style="border-color:var(--rule);background:var(--paper-2);color:var(--muted)">Polish</span>';
+    return '' +
+      '<article class="criterion" data-id="' + item.id + '" data-core="' + item.core + '">' +
+        '<div class="crit-copy">' +
+          '<div class="crit-top"><span class="crit-num">' + String(index + 1).padStart(2, "0") + '</span><h4>' + item.title + '</h4>' + core + '</div>' +
+          '<p>' + item.cue + '</p>' +
+          '<p class="drill"><b>Rehearsal drill</b>' + item.drill + '</p>' +
+        '</div>' +
+        '<div class="crit-cell rehearsal-cell">' +
+          '<span class="cell-label">Rehearsal</span>' +
+          '<label class="check"><input type="checkbox" data-check="' + item.id + '"><span>Synced &amp; ready</span></label>' +
+        '</div>' +
+        '<div class="crit-cell audience-cell">' +
+          '<div class="rating-row"><span class="cell-label">Audience</span>' +
+            '<div class="rating-group" role="group" aria-label="Rating for ' + item.title.replace(/"/g, '&quot;') + '">' +
+              '<button class="rate-btn" type="button" data-rate="' + item.id + '" data-rating="strong" aria-pressed="false">Strong</button>' +
+              '<button class="rate-btn" type="button" data-rate="' + item.id + '" data-rating="solid" aria-pressed="false">Solid</button>' +
+              '<button class="rate-btn" type="button" data-rate="' + item.id + '" data-rating="fix" aria-pressed="false">Fix</button>' +
+            '</div>' +
+          '</div>' +
+          '<span class="print-rating" aria-hidden="true"></span>' +
+          '<input class="note" type="text" data-note="' + item.id + '" placeholder="Strength / fix...">' +
+          '<span class="print-note" aria-hidden="true"></span>' +
+        '</div>' +
+      '</article>';
+  }
+
+  function render(){
+    Object.keys(DOMAINS).forEach(function(domain){
+      var host = document.getElementById("items-" + domain);
+      if (!host) return;
+      var html = DATA.filter(function(item){ return item.domain === domain; })
+        .map(function(item){ return cardHTML(item, DATA.indexOf(item)); })
+        .join("");
+      host.innerHTML = html;
+    });
+  }
+
+  function applyState(){
+    $$("[data-check]").forEach(function(box){
+      box.checked = !!state.checks[box.dataset.check];
+    });
+    $$("[data-rate]").forEach(function(btn){
+      var id = btn.dataset.rate;
+      var on = state.ratings[id] === btn.dataset.rating;
+      btn.setAttribute("aria-pressed", String(on));
+    });
+    $$("[data-note]").forEach(function(input){
+      var id = input.dataset.note;
+      input.value = state.notes[id] || "";
+      var mirror = input.parentElement.querySelector(".print-note");
+      if (mirror) mirror.textContent = input.value;
+    });
+    $$("[data-rate]").forEach(function(btn){
+      var id = btn.dataset.rate;
+      var mirror = btn.closest(".audience-cell").querySelector(".print-rating");
+      if (mirror) mirror.textContent = state.ratings[id] ? state.ratings[id].toUpperCase() : "";
+    });
+    $$("[data-meta]").forEach(function(el){
+      var key = el.dataset.meta;
+      el.value = (state.meta && state.meta[key]) || "";
+    });
+    $$("[data-synth]").forEach(function(area){
+      var key = area.dataset.synth;
+      area.value = (state.synth && state.synth[key]) || "";
+      var mirror = area.parentElement.querySelector(".print-synth");
+      if (mirror) mirror.textContent = area.value;
+    });
+    setLevel(state.level, false);
+    setMode(state.mode, false);
+    filterDomain(state.domain, false);
+    update();
+  }
+
+  function update(){
+    var items = activeItems();
+    var total = items.length;
+    var checked = items.filter(function(item){ return !!state.checks[item.id]; }).length;
+    var rated = items.filter(function(item){ return !!state.ratings[item.id]; });
+    var points = rated.reduce(function(sum, item){
+      return sum + (state.ratings[item.id] === "strong" ? 3 : state.ratings[item.id] === "solid" ? 2 : 1);
+    }, 0);
+
+    $("#progressLabel").textContent = checked + " / " + total + " checked";
+    $("#progressBar").style.width = (total ? (checked / total * 100) : 0) + "%";
+    $("#rehearsalCount").textContent = checked;
+    $("#rehearsalTotal").textContent = total;
+    $("#rehearsalBar").style.width = (total ? (checked / total * 100) : 0) + "%";
+
+    if (!rated.length) {
+      $("#auditScore").textContent = "—";
+      $("#auditLabel").textContent = "Not rated yet";
+    } else {
+      $("#auditScore").textContent = Math.round(points / (rated.length * 3) * 100) + "%";
+      $("#auditLabel").textContent = rated.length + " / " + total + " criteria audited";
+    }
+
+    Object.keys(DOMAINS).forEach(function(domain){
+      var domainItems = items.filter(function(item){ return item.domain === domain; });
+      var done = domainItems.filter(function(item){ return !!state.checks[item.id]; }).length;
+      var count = document.getElementById("count-" + domain);
+      if (count) count.textContent = done + " / " + domainItems.length;
+    });
+
+    $("#levelHint").textContent = state.level === "beginner"
+      ? "Showing 10 beginner core criteria"
+      : "Showing 18 criteria · 10 beginner core";
+    $("#modeNote").innerHTML = state.mode === "audience"
+      ? "<b>Audience view</b> — rate and note what you see."
+      : state.mode === "rehearsal"
+        ? "<b>Rehearsal view</b> — tick what you can do in one run."
+        : "<b>Dual view</b> — self-check and audience rating together.";
+  }
+
+  function setMode(mode, persist){
+    state.mode = mode;
+    document.body.classList.remove("mode-dual", "mode-rehearsal", "mode-audience");
+    document.body.classList.add("mode-" + mode);
+    $$(".mode-btn").forEach(function(btn){
+      var on = btn.dataset.mode === mode;
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-pressed", String(on));
+    });
+    update();
+    if (persist !== false) save();
+  }
+
+  function setLevel(level, persist){
+    state.level = level;
+    document.body.classList.remove("level-beginner", "level-full");
+    document.body.classList.add("level-" + level);
+    $$(".level-btn").forEach(function(btn){
+      var on = btn.dataset.level === level;
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-pressed", String(on));
+    });
+    $$(".criterion").forEach(function(card){
+      var hide = level === "beginner" && card.dataset.core !== "true";
+      card.hidden = hide;
+    });
+    update();
+    if (persist !== false) save();
+  }
+
+  function filterDomain(domain, persist){
+    state.domain = domain;
+    $$(".filter-btn").forEach(function(btn){
+      btn.classList.toggle("is-active", btn.dataset.domain === domain);
+    });
+    $$(".domain").forEach(function(sec){
+      sec.hidden = domain !== "all" && sec.dataset.domain !== domain;
+    });
+    var focus = $("#metaFocus");
+    if (focus) focus.value = domain;
+    if (persist !== false) save();
+  }
+
+  function bind(){
+    $$("[data-check]").forEach(function(box){
+      box.addEventListener("change", function(){
+        state.checks[box.dataset.check] = box.checked;
+        save(); update();
+      });
+    });
+
+    $$("[data-rate]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.dataset.rate;
+        var value = btn.dataset.rating;
+        state.ratings[id] = state.ratings[id] === value ? "" : value;
+        $$('[data-rate="' + id + '"]').forEach(function(b){
+          b.setAttribute("aria-pressed", String(state.ratings[id] === b.dataset.rating));
+        });
+        var cell = btn.closest(".audience-cell");
+        var mirror = cell && cell.querySelector(".print-rating");
+        if (mirror) mirror.textContent = state.ratings[id] ? state.ratings[id].toUpperCase() : "";
+        save(); update();
+      });
+    });
+
+    $$("[data-note]").forEach(function(input){
+      input.addEventListener("input", function(){
+        state.notes[input.dataset.note] = input.value;
+        var mirror = input.parentElement.querySelector(".print-note");
+        if (mirror) mirror.textContent = input.value;
+        save();
+      });
+    });
+
+    $$("[data-meta]").forEach(function(el){
+      el.addEventListener("input", function(){
+        state.meta[el.dataset.meta] = el.value;
+        save();
+      });
+      el.addEventListener("change", function(){
+        state.meta[el.dataset.meta] = el.value;
+        if (el.dataset.meta === "focus") filterDomain(el.value);
+        save();
+      });
+    });
+
+    $$("[data-synth]").forEach(function(area){
+      area.addEventListener("input", function(){
+        state.synth[area.dataset.synth] = area.value;
+        var mirror = area.parentElement.querySelector(".print-synth");
+        if (mirror) mirror.textContent = area.value;
+        save();
+      });
+    });
+
+    $$(".mode-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){ setMode(btn.dataset.mode); });
+    });
+    $$(".level-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){ setLevel(btn.dataset.level); });
+    });
+    $$(".filter-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){ filterDomain(btn.dataset.domain); });
+    });
+  }
+
+  /* stage drill */
+  var zones = $$(".zone");
+  var zoneCaption = $("#zoneCaption");
+  var zoneDrill = $("#zoneDrill");
+  var zoneTimer = null;
+  var zoneIndex = 0;
+  var zoneText = {left:"Look left. One complete sentence.",center:"Look center. One complete sentence.",right:"Look right. One complete sentence."};
+  function setZone(name){
+    zones.forEach(function(zone){ zone.classList.toggle("is-active", zone.dataset.zone === name); });
+    if (zoneCaption && zoneText[name]) zoneCaption.textContent = zoneText[name];
+  }
+  function stopDrill(){
+    if (zoneTimer) { clearInterval(zoneTimer); zoneTimer = null; }
+    zoneDrill.textContent = "Run 3-zone drill";
+    zoneDrill.setAttribute("aria-pressed", "false");
+  }
+  zones.forEach(function(zone){
+    zone.addEventListener("click", function(){
+      if (zoneTimer) stopDrill();
+      setZone(zone.dataset.zone);
+    });
+  });
+  zoneDrill.addEventListener("click", function(){
+    if (zoneTimer) {
+      stopDrill(); zoneCaption.textContent = "Drill stopped. Pick a zone or run it again.";
+      return;
+    }
+    var sequence = ["left","center","right","left","center","right"];
+    zoneIndex = 0; setZone(sequence[0]);
+    zoneDrill.textContent = "Stop drill"; zoneDrill.setAttribute("aria-pressed", "true");
+    zoneTimer = setInterval(function(){
+      zoneIndex++;
+      if (zoneIndex >= sequence.length) {
+        stopDrill(); zoneCaption.textContent = "Drill complete. Run it again with a new sentence.";
+        return;
+      }
+      setZone(sequence[zoneIndex]);
+    }, 2000);
+  });
+
+  /* timer */
+  var timerSeconds = 0;
+  var timerInterval = null;
+  var timerBtn = $("#timerBtn");
+  var timerDisplay = $("#speechTimer");
+  function formatTime(total){
+    var m = Math.floor(total / 60), s = total % 60;
+    return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+  }
+  timerBtn.addEventListener("click", function(){
+    if (timerInterval) {
+      clearInterval(timerInterval); timerInterval = null; timerBtn.textContent = "Start";
+    } else {
+      timerInterval = setInterval(function(){ timerSeconds++; timerDisplay.textContent = formatTime(timerSeconds); }, 1000);
+      timerBtn.textContent = "Pause";
+    }
+  });
+  $("#timerReset").addEventListener("click", function(){
+    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+    timerSeconds = 0; timerDisplay.textContent = "00:00"; timerBtn.textContent = "Start";
+  });
+
+  /* copy summary */
+  $("#copyBtn").addEventListener("click", function(){
+    var items = activeItems();
+    var lines = [];
+    lines.push("DELIVERY & DECK-SYNC — WEEKS 11–12");
+    lines.push("Presenter: " + (state.meta.presenter || "—"));
+    lines.push("Observer: " + (state.meta.observer || "—"));
+    lines.push("Topic: " + (state.meta.topic || "—"));
+    lines.push("Rehearsal: " + items.filter(function(i){ return !!state.checks[i.id]; }).length + " / " + items.length);
+    var rated = items.filter(function(i){ return !!state.ratings[i.id]; });
+    var points = rated.reduce(function(sum,i){ return sum + (state.ratings[i.id] === "strong" ? 3 : state.ratings[i.id] === "solid" ? 2 : 1); }, 0);
+    lines.push("Audit: " + (rated.length ? Math.round(points / (rated.length * 3) * 100) + "% (" + rated.length + " rated)" : "not rated"));
+    lines.push("");
+    items.forEach(function(item){
+      var mark = state.checks[item.id] ? "[x]" : "[ ]";
+      var rating = state.ratings[item.id] || "—";
+      var note = (state.notes[item.id] || "").trim();
+      lines.push(mark + " " + item.title + " · " + rating + (note ? " — " + note : ""));
+    });
+    lines.push("");
+    lines.push("Glow: " + (state.synth.glow || "—"));
+    lines.push("Grow: " + (state.synth.grow || "—"));
+    lines.push("Q&A: " + (state.synth.qa || "—"));
+    var text = lines.join("\n");
+    var status = $("#copyStatus");
+    function done(){ status.textContent = "Copied to clipboard."; setTimeout(function(){ status.textContent = ""; }, 2200); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function(){ status.textContent = "Copy failed — select the text manually."; });
+    } else {
+      var t = document.createElement("textarea"); t.value = text; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); done(); } catch (e) { status.textContent = "Copy failed — select the text manually."; }
+      t.remove();
+    }
+  });
+
+  $("#resetBtn").addEventListener("click", function(){
+    if (!window.confirm("Clear all checks, ratings, notes, session details, and synthesis?")) return;
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    window.location.reload();
+  });
+
+  render();
+  bind();
+  applyState();
+})();
+</script>
+</body>
+</html>
