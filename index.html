@@ -118,10 +118,11 @@ button{cursor:pointer}
 
 /* ---------- hero ---------- */
 .hero{
-  padding:clamp(38px,5.5vw,70px) 0 clamp(30px,4vw,50px);
-  display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);
-  gap:clamp(30px,4vw,52px);align-items:center;
+  padding:clamp(34px,4.6vw,58px) 0 clamp(26px,3.4vw,42px);
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(330px,.92fr);
+  gap:clamp(28px,4vw,56px);align-items:start;
 }
+.hero-side{padding-top:38px}
 .hero h1{
   margin-top:14px;font-family:var(--display);font-size:clamp(44px,5.6vw,74px);
   line-height:.9;letter-spacing:-.055em;text-transform:uppercase;max-width:12ch;
@@ -129,32 +130,10 @@ button{cursor:pointer}
 .hero h1 .amp{color:var(--red)}
 .hero h1 .line2{white-space:nowrap}
 .hero h1 em{font-style:normal}
-.hero .dek{margin-top:20px;font-size:clamp(18px,1.8vw,21px);line-height:1.45;color:var(--ink-2);max-width:34ch;font-weight:600}
+.hero .dek{margin-top:0;font-size:clamp(18px,1.8vw,21px);line-height:1.45;color:var(--ink-2);max-width:36ch;font-weight:600}
 .hero .intro{margin-top:14px;font-size:15.5px;line-height:1.62;color:var(--muted);max-width:55ch}
 .hero-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .hero-meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:22px;padding-top:12px;border-top:1px solid var(--rule);font:600 9px/1.5 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
-
-/* ---------- stage panel ---------- */
-.stage-panel{background:var(--stage);color:var(--paper);padding:20px 22px 16px;border:1px solid #34373d;display:flex;flex-direction:column;min-height:410px}
-.stage-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font:700 8.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9f998c}
-.stage-head b{color:var(--amber)}
-.stage-screen{margin-top:14px;border:1px solid #4b4f57;padding:9px;text-align:center;font:700 8.5px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#aaa397}
-.stage-floor{position:relative;flex:1;min-height:185px;margin-top:8px}
-.stage-speaker{position:absolute;left:50%;top:18px;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);font:700 8px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;z-index:2}
-.stage-speaker::after{content:"";position:absolute;top:100%;left:50%;width:1px;height:32px;background:#5b5f67;transform:translateX(-50%)}
-.stage-zones{position:absolute;left:0;right:0;bottom:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.zone{border:1px solid #555a62;background:#1d2025;color:#c6c0b3;padding:14px 7px 12px;font:700 8.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;text-align:center}
-.zone small{display:block;margin-top:4px;font:400 7.5px/1.35 var(--mono);letter-spacing:.03em;color:#8f897c;text-transform:none}
-.zone:hover{border-color:var(--amber);color:#fff}
-.zone.is-active{background:var(--amber);border-color:var(--amber);color:var(--ink)}
-.zone.is-active small{color:#3d3217}
-.stage-back{display:flex;align-items:center;gap:9px;border-top:1px dashed #4b4f57;padding-top:7px;font:700 7.5px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:#8d877a}
-.stage-back::before,.stage-back::after{content:"";height:1px;background:#4b4f57;flex:1}
-.stage-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding-top:8px;border-top:1px solid #34373d}
-.stage-caption{font:400 9.5px/1.45 var(--mono);color:#a8a294;max-width:25ch}
-.zone-drill{border:1px solid #666;background:transparent;color:var(--paper);padding:7px 9px;font:700 8px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
-.zone-drill:hover{background:var(--paper);color:var(--ink)}
-.zone-drill[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
 
 /* ---------- session ---------- */
 .session{padding:0 0 clamp(30px,4vw,48px)}
@@ -178,6 +157,14 @@ button{cursor:pointer}
 .field input,.field select{width:100%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:8px 9px;font:13.5px/1.4 var(--sans)}
 .field input::placeholder{color:#9a9284}
 .field input:focus,.field select:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+
+.live-strip{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule-2)}
+.live-strip>div{min-width:0}
+.live-kicker{display:flex;align-items:center;gap:6px;font:700 8px/1.4 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--green)}
+.live-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);flex:none}
+.live-strip b{display:block;margin-top:3px;font-family:var(--display);font-size:16px;line-height:1.1;letter-spacing:-.01em;text-transform:uppercase}
+.live-strip span{display:block;margin-top:3px;font-size:12.5px;line-height:1.45;color:var(--muted);max-width:62ch}
+.live-strip .btn{flex:none}
 
 /* ---------- how strip ---------- */
 .how-strip{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0}
@@ -213,6 +200,8 @@ button{cursor:pointer}
 .clip{border-left:2px solid var(--amber);padding-left:9px}
 .clip b{display:block;font-size:12px;line-height:1.4}
 .clip span{display:block;margin-top:2px;font:600 9px/1.4 var(--mono);color:var(--muted)}
+.clip p{margin:4px 0 0;font:400 9.5px/1.55 var(--mono);color:var(--ink-2)}
+.clip p code{font:600 9px/1.4 var(--mono);color:var(--red);background:transparent;padding:0}
 .clip a{display:inline-block;margin-top:4px;font:700 9px/1.4 var(--mono);text-decoration:none;border-bottom:1px solid var(--ink)}
 
 .domain{margin-top:24px;border:1px solid var(--ink);background:var(--paper);break-inside:avoid}
@@ -288,14 +277,16 @@ body.mode-dual .rehearsal-cell{display:block}
 
 /* ---------- responsive ---------- */
 @media (max-width:1080px){
-  .hero{grid-template-columns:1fr;gap:26px}
-  .stage-panel{min-height:350px}
   .session-top{grid-template-columns:1fr}
   .dashboard{justify-content:flex-start}
   .session-fields{grid-template-columns:1fr 1fr}
   .how-strip .wrap{grid-template-columns:1fr}
   .criterion{grid-template-columns:minmax(0,1fr) 140px 285px;gap:12px}
   body.mode-audience .criterion{grid-template-columns:minmax(0,1fr) 300px}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:18px}
+  .hero-side{padding-top:0}
 }
 @media (max-width:760px){
   body{padding-top:104px}
@@ -312,16 +303,14 @@ body.mode-dual .rehearsal-cell{display:block}
   .hero{padding-top:30px}
   .hero h1{font-size:clamp(38px,11.5vw,58px)}
   .hero .dek{font-size:18px}
-  .stage-panel{padding:17px 16px 14px;min-height:320px}
-  .stage-foot{display:block}
-  .stage-caption{max-width:none;margin-bottom:7px}
-  .zone-drill{width:100%}
   .session-panel{padding:18px 16px 16px}
   .session-top h2{font-size:30px}
   .dashboard{display:grid;grid-template-columns:1fr 1fr;gap:7px}
   .metric{min-width:0}
   .metric:last-child{grid-column:1/-1}
   .session-fields{grid-template-columns:1fr}
+  .live-strip{display:block}
+  .live-strip .btn{width:100%;margin-top:10px}
   .how-strip{padding:18px 0}
   .sec-head{grid-template-columns:1fr;gap:5px}
   .sec-no{font-size:34px}
@@ -349,9 +338,6 @@ body.mode-dual .rehearsal-cell{display:block}
 }
 @media (max-width:430px){
   .hero h1{font-size:clamp(34px,11vw,46px)}
-  .stage-zones{gap:5px}
-  .zone{padding:12px 5px 10px;font-size:7.5px}
-  .zone small{font-size:6.8px}
   .dashboard{grid-template-columns:1fr}
   .metric:last-child{grid-column:auto}
 }
@@ -365,9 +351,10 @@ body.mode-dual .rehearsal-cell{display:block}
   @page{size:A4;margin:13mm 13mm 12mm}
   html,body{background:#fff;padding:0}
   body{font-size:9pt;line-height:1.4;color:#111}
-  .topbar,.hero-actions,.stage-panel,.how-strip,.filterbar,.clips,.footer,.print-btn,.rate-btn,.synth-actions,.copy-status,.skip,.mode-switch,.progress,.mode-note{display:none!important}
+  .topbar,.hero-actions,.how-strip,.filterbar,.clips,.footer,.print-btn,.rate-btn,.synth-actions,.copy-status,.skip,.mode-switch,.progress,.mode-note,.live-strip{display:none!important}
   .wrap{width:auto;max-width:none;margin:0}
   .hero{display:block;padding:0 0 5mm;border-bottom:1.5pt solid #111}
+  .hero-side{padding-top:0}
   .hero h1{font-size:34pt;line-height:.9;margin-top:3mm;max-width:none}
   .hero .dek{font-size:12pt;max-width:38ch;margin-top:2mm}
   .hero .intro{font-size:8.5pt;max-width:72ch;margin-top:2mm}
@@ -474,9 +461,11 @@ body.mode-dual .rehearsal-cell{display:block}
 
 <!-- ============================================================ HERO -->
 <section class="hero wrap" aria-labelledby="hero-title">
-  <div>
+  <div class="hero-lead">
     <p class="kicker">Weeks 11–12 · Delivery &amp; Presence</p>
     <h1 id="hero-title">Delivery<br><span class="line2"><span class="amp">&amp;</span> <em>deck-sync.</em></span></h1>
+  </div>
+  <div class="hero-side">
     <p class="dek">A rehearsal checklist for the speaker. A live audit for the audience.</p>
     <p class="intro">Eighteen observable criteria across four domains. Tick what you can do, or hand the page to a listener and let them rate what they see. Then choose one target for the next take.</p>
     <div class="hero-actions">
@@ -484,24 +473,6 @@ body.mode-dual .rehearsal-cell{display:block}
       <a class="btn" href="#synthesis">Jump to synthesis</a>
     </div>
     <p class="hero-meta"><span>18 checks</span><span>10 Core</span><span>4 domains</span><span>Saved locally</span></p>
-  </div>
-
-  <div class="stage-panel" aria-label="Stage map for eye contact practice">
-    <div class="stage-head"><span>The room</span><b>Eye contact</b></div>
-    <div class="stage-screen">Slide / screen</div>
-    <div class="stage-floor">
-      <div class="stage-speaker">You</div>
-      <div class="stage-zones" role="group" aria-label="Eye contact zones">
-        <button class="zone" type="button" data-zone="left">Left<small>one sentence</small></button>
-        <button class="zone" type="button" data-zone="center">Center<small>one sentence</small></button>
-        <button class="zone" type="button" data-zone="right">Right<small>one sentence</small></button>
-      </div>
-    </div>
-    <div class="stage-back">Back row</div>
-    <div class="stage-foot">
-      <p class="stage-caption" id="zoneCaption" aria-live="polite">One thought, one look.</p>
-      <button class="zone-drill" type="button" id="zoneDrill" aria-pressed="false">Run 3-zone drill</button>
-    </div>
   </div>
 </section>
 
@@ -546,6 +517,15 @@ body.mode-dual .rehearsal-cell{display:block}
           <option value="physical">04 · Posture, arc &amp; Q&amp;A</option>
         </select>
       </div>
+    </div>
+
+    <div class="live-strip">
+      <div>
+        <p class="live-kicker">Live audience</p>
+        <b>Let the room rate you from their phones.</b>
+        <span>Strong, Solid, or Fix on all 18 criteria. The dashboard updates as students tap — no accounts, no app.</span>
+      </div>
+      <a class="btn amber" href="live.html">Open live dashboard →</a>
     </div>
   </div>
 </section>
@@ -600,12 +580,32 @@ body.mode-dual .rehearsal-cell{display:block}
     </div>
 
     <details class="clips">
-      <summary>Calibration clips · four examples to audit</summary>
+      <summary>Case-study videos · four examples to audit</summary>
       <div class="clips-grid">
-        <div class="clip"><b>Good vs. bad presentation</b><span>Audibility, eye contact, pre-flight</span><a href="https://www.youtube.com/watch?v=V8eLdbKXGzk" target="_blank" rel="noopener">YouTube ↗</a></div>
-        <div class="clip"><b>Body language for presentations</b><span>Gaze, stance, pauses</span><a href="https://www.youtube.com/watch?v=TmbQFWBvTtY" target="_blank" rel="noopener">YouTube ↗</a></div>
-        <div class="clip"><b>4 body language tips</b><span>Open posture, podium trap</span><a href="https://www.youtube.com/watch?v=ZK3jSXYBNak" target="_blank" rel="noopener">YouTube ↗</a></div>
-        <div class="clip"><b>Death by PowerPoint</b><span>Visual competition, slide focus</span><a href="https://www.youtube.com/watch?v=Iwpi1Lm6dFo" target="_blank" rel="noopener">YouTube ↗</a></div>
+        <div class="clip">
+          <b>Delivering a bad presentation — spot the mistakes</b>
+          <span>University of Bedfordshire · 4:51</span>
+          <p><code>00:00</code> tech scramble · <code>00:40</code> dry agenda · <code>01:40</code> reading the screen · <code>02:26</code> rushed Q&amp;A</p>
+          <a href="https://www.youtube.com/watch?v=ATfY8dvbuFg" target="_blank" rel="noopener">Watch ↗</a>
+        </div>
+        <div class="clip">
+          <b>Presentation good / bad examples</b>
+          <span>Husain S. · 2:29</span>
+          <p><code>00:05</code> podium clutter · <code>00:23</code> paragraph walls · <code>01:29</code> improved open posture</p>
+          <a href="https://www.youtube.com/watch?v=S5c1susCPAE" target="_blank" rel="noopener">Watch ↗</a>
+        </div>
+        <div class="clip">
+          <b>Bad presentation vs good presentation</b>
+          <span>Kyle Murtagh · 5:31</span>
+          <p><code>00:14</code> note-clutching · <code>00:42</code> story hook · <code>01:15</code> five-point breakdown</p>
+          <a href="https://www.youtube.com/watch?v=y_NdFygTzew" target="_blank" rel="noopener">Watch ↗</a>
+        </div>
+        <div class="clip">
+          <b>Good presentation vs bad presentation</b>
+          <span>Project IDEA · 5:13</span>
+          <p><code>00:23</code> mumbling at paper · <code>03:16</code> clear projection and eye contact</p>
+          <a href="https://www.youtube.com/watch?v=V8eLdbKXGzk" target="_blank" rel="noopener">Watch ↗</a>
+        </div>
       </div>
     </details>
 
@@ -987,46 +987,6 @@ body.mode-dual .rehearsal-cell{display:block}
       btn.addEventListener("click", function(){ filterDomain(btn.dataset.domain); });
     });
   }
-
-  /* stage drill */
-  var zones = $$(".zone");
-  var zoneCaption = $("#zoneCaption");
-  var zoneDrill = $("#zoneDrill");
-  var zoneTimer = null;
-  var zoneIndex = 0;
-  var zoneText = {left:"Look left. One complete sentence.",center:"Look center. One complete sentence.",right:"Look right. One complete sentence."};
-  function setZone(name){
-    zones.forEach(function(zone){ zone.classList.toggle("is-active", zone.dataset.zone === name); });
-    if (zoneCaption && zoneText[name]) zoneCaption.textContent = zoneText[name];
-  }
-  function stopDrill(){
-    if (zoneTimer) { clearInterval(zoneTimer); zoneTimer = null; }
-    zoneDrill.textContent = "Run 3-zone drill";
-    zoneDrill.setAttribute("aria-pressed", "false");
-  }
-  zones.forEach(function(zone){
-    zone.addEventListener("click", function(){
-      if (zoneTimer) stopDrill();
-      setZone(zone.dataset.zone);
-    });
-  });
-  zoneDrill.addEventListener("click", function(){
-    if (zoneTimer) {
-      stopDrill(); zoneCaption.textContent = "Drill stopped. Pick a zone or run it again.";
-      return;
-    }
-    var sequence = ["left","center","right","left","center","right"];
-    zoneIndex = 0; setZone(sequence[0]);
-    zoneDrill.textContent = "Stop drill"; zoneDrill.setAttribute("aria-pressed", "true");
-    zoneTimer = setInterval(function(){
-      zoneIndex++;
-      if (zoneIndex >= sequence.length) {
-        stopDrill(); zoneCaption.textContent = "Drill complete. Run it again with a new sentence.";
-        return;
-      }
-      setZone(sequence[zoneIndex]);
-    }, 2000);
-  });
 
   /* timer */
   var timerSeconds = 0;

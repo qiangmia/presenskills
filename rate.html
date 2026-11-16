@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rate the delivery — Live Audience</title>
+<meta name="description" content="Rate a presentation on 18 delivery criteria. Strong, Solid, or Fix. Ratings save automatically.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315171a'/%3E%3Crect x='7' y='8' width='18' height='3' fill='%23d9a22e'/%3E%3Crect x='7' y='15' width='12' height='2' fill='%23f3efe5'/%3E%3Crect x='7' y='21' width='18' height='2' fill='%23b23a2c'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="live.css">
+</head>
+<body class="rate-page">
+
+<header class="livebar">
+  <a class="brand" href="index.html"><i aria-hidden="true"></i>Delivery<span> / Deck-Sync</span></a>
+  <span class="room-chip" id="roomChip">------</span>
+</header>
+
+<main class="rate-wrap">
+
+  <section class="loading" data-view="loading" hidden>
+    <b>Joining the room…</b>
+    <span>Takes a second. Keep this page open.</span>
+  </section>
+
+  <section data-view="error" hidden>
+    <div class="error-view">
+      <p class="kicker">Live audience</p>
+      <h1>Could not join.</h1>
+      <p id="errorMessage">Check the room link and try again.</p>
+      <button class="btn primary" type="button" id="retryBtn">Try again</button>
+      <a class="btn" href="index.html">Back to checklist</a>
+      <p class="error-detail" id="errorDetail"></p>
+    </div>
+  </section>
+
+  <section data-view="rate" hidden>
+    <div class="rate-hero">
+      <p class="kicker">Live audience audit</p>
+      <h1>Rate the delivery.</h1>
+      <p class="lead" id="rateLead">Tap one rating for each criterion. Your feedback saves as you go — no submit button.</p>
+      <p class="room-label">Room <b id="roomCodeLabel">------</b> · <span id="roomTitleText">Delivery &amp; Deck-Sync</span></p>
+    </div>
+
+    <div id="closedNote" class="closed-note" hidden>
+      <b>This room is closed.</b>
+      The presenter has stopped collecting ratings. You can review your answers but cannot change them.
+    </div>
+
+    <div class="identity">
+      <label for="initialsInput">Your initials (optional)</label>
+      <input id="initialsInput" type="text" maxlength="24" placeholder="e.g. AL" autocomplete="off" autocapitalize="characters">
+      <span class="save-state" id="saveState" aria-live="polite"></span>
+    </div>
+
+    <div class="progress-strip">
+      <div class="inner">
+        <span class="label" id="ratedLabel">0 / 18 rated</span>
+        <span class="track" aria-hidden="true"><i id="ratedBar"></i></span>
+        <span class="pct" id="ratedPct">0%</span>
+      </div>
+    </div>
+
+    <div class="rate-list" id="rateList"></div>
+
+    <div class="done-note" id="doneNote" hidden>
+      All 18 rated. Thank you — you can close this page.
+    </div>
+
+    <footer class="rate-foot">
+      Ratings save automatically to this room. Strong = 3, Solid = 2, Fix = 1.
+    </footer>
+  </section>
+
+</main>
+
+<script type="module" src="rate.js"></script>
+</body>
+</html>

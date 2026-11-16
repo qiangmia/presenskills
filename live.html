@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Audience — Delivery &amp; Deck-Sync</title>
+<meta name="description" content="A live classroom dashboard for audience ratings of presentation delivery: Strong, Solid, Fix across 18 criteria.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315171a'/%3E%3Crect x='7' y='8' width='18' height='3' fill='%23d9a22e'/%3E%3Crect x='7' y='15' width='12' height='2' fill='%23f3efe5'/%3E%3Crect x='7' y='21' width='18' height='2' fill='%23b23a2c'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="live.css">
+</head>
+<body>
+
+<header class="livebar">
+  <a class="brand" href="index.html"><i aria-hidden="true"></i>Delivery<span> / Deck-Sync</span></a>
+  <span class="tag">Live audience</span>
+  <a class="bar-link" href="index.html">Checklist ↗</a>
+</header>
+
+<main>
+
+  <!-- setup -->
+  <section class="setup wrap" data-view="setup">
+    <div class="setup-grid">
+      <div>
+        <p class="kicker">Live audience room</p>
+        <h1>Every phone.<br><em>One screen.</em></h1>
+        <p class="lead">Students open a link, rate the 18 criteria, and this dashboard updates as they tap. No accounts, no app, no passing a tablet around.</p>
+        <div class="setup-points">
+          <span>18 criteria</span>
+          <span>Strong · Solid · Fix</span>
+          <span>Live totals</span>
+          <span>Anonymous by default</span>
+        </div>
+      </div>
+      <div class="setup-card">
+        <h2>Start a room</h2>
+        <p>The room code is the key. Share the QR or link with the class.</p>
+        <form id="createForm">
+          <div class="field">
+            <label for="roomTitle">Session label (optional)</label>
+            <input id="roomTitle" type="text" maxlength="80" placeholder="e.g. Week 11 — Campus cup proposal" autocomplete="off">
+          </div>
+          <button class="btn primary" type="submit" id="createBtn">Create live room →</button>
+        </form>
+        <p class="setup-note"><b>Free plan.</b> Ratings are anonymous unless a student adds initials. The room can be closed at any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- loading -->
+  <section class="loading wrap" data-view="loading" hidden>
+    <b>Opening the room…</b>
+    <span>Connecting to the live database.</span>
+  </section>
+
+  <!-- room -->
+  <section class="room wrap" data-view="room" hidden>
+    <div class="room-head">
+      <div>
+        <p class="kicker">Live audience</p>
+        <h1 id="roomTitleDisplay">Live room</h1>
+        <p class="room-status" id="roomStatusLine"><i class="dot" aria-hidden="true"></i><span id="roomStatusText">Open</span> · Room <b id="roomCodeText">------</b></p>
+      </div>
+      <div class="room-actions">
+        <button class="btn ghost" type="button" id="copyLinkBtn">Copy link</button>
+        <button class="btn ghost" type="button" id="openRateBtn">Audience page ↗</button>
+        <button class="btn ghost" type="button" id="closeRoomBtn">Close room</button>
+        <button class="btn ghost" type="button" id="newRoomBtn">New room</button>
+      </div>
+    </div>
+
+    <div class="room-grid">
+      <aside class="qr-card" aria-label="Audience link">
+        <div class="qr-box" id="qrBox"></div>
+        <p class="qr-code" id="qrCode">------</p>
+        <p class="qr-hint" id="qrHint">Scan to rate on a phone</p>
+        <a class="btn" id="rateLink" href="#" target="_blank" rel="noopener">Open rating page</a>
+      </aside>
+      <div class="stats" aria-label="Live totals">
+        <div class="stat"><span>Raters</span><b id="statRaters">0</b><small>at least one rating</small></div>
+        <div class="stat"><span>Completed</span><b id="statCompleted">0</b><small>all 18 criteria</small></div>
+        <div class="stat"><span>Class average</span><b class="red" id="statAverage">—</b><small>Strong 3 · Solid 2 · Fix 1</small></div>
+        <div class="stat"><span>Ratings in</span><b id="statRatings">0</b><small id="statRatingsSub">of 0 possible</small></div>
+      </div>
+    </div>
+
+    <div class="domain-summary" id="domainSummary"></div>
+
+    <section class="results" aria-labelledby="resultsTitle">
+      <div class="results-head">
+        <h2 id="resultsTitle">Live results</h2>
+        <button class="btn ghost" type="button" id="copyResultsBtn">Copy summary</button>
+        <button class="btn ghost" type="button" id="csvBtn">Download CSV</button>
+        <span class="live-stamp" id="liveStamp">Waiting for the first rating…</span>
+      </div>
+
+      <div class="waiting" id="waitingNote">
+        <b>Waiting for the room to fill.</b>
+        <span>Share the link or let students scan the QR. Results appear here as they rate.</span>
+      </div>
+
+      <div id="resultsList"></div>
+    </section>
+  </section>
+
+  <!-- error -->
+  <section class="error-view wrap" data-view="error" hidden>
+    <p class="kicker">Live audience</p>
+    <h1>Could not open the room.</h1>
+    <p id="errorMessage">Check the room link and try again.</p>
+    <button class="btn primary" type="button" id="retryBtn">Try again</button>
+    <a class="btn" href="index.html">Back to checklist</a>
+    <p class="error-detail" id="errorDetail"></p>
+  </section>
+
+</main>
+
+<script src="qrcode.min.js"></script>
+<script type="module" src="live.js"></script>
+</body>
+</html>
