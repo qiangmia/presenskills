@@ -61,6 +61,9 @@ Fix values are read as 5 / 3 / 1.
 - Firestore database: `(default)`, `asia-east1`
 - Anonymous sign-in: enabled
 - Authorized domain: `qiangmia.github.io`
+- The browser API key is restricted to `https://qiangmia.github.io/*`,
+  `http://localhost:8944/*`, and `http://127.0.0.1:8944/*`, and to the Firebase
+  APIs used by the app. It is a public client key, not a server secret.
 - Firestore rules: rooms are readable/writable by authenticated users; only the
   room creator can close a room; each rater can write only their own ratings.
 
