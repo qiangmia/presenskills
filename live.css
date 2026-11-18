@@ -170,7 +170,7 @@ button{cursor:pointer}
 .stat.is-wide{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
 .stat.is-wide b{font-size:22px;margin-top:0}
 
-.domain-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.domain-summary{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
 .domain-card{background:var(--paper-2);border-top:2px solid var(--red);padding:10px 11px}
 .domain-card span{display:block;font:700 7.5px/1.35 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .domain-card b{display:block;margin-top:3px;font:800 20px/1 var(--display);letter-spacing:-.03em}
@@ -298,6 +298,10 @@ button{cursor:pointer}
 .rate-domain>header .no{font:700 9px/1 var(--mono);color:var(--amber)}
 .rate-domain>header small{font:700 8px/1.4 var(--mono);color:#c9c3b6;white-space:nowrap}
 .rate-domain .items{padding:0 12px}
+.arc-strip{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin:8px 12px 4px;padding:7px 9px;background:var(--amber-soft);border-left:3px solid var(--amber);font:700 8px/1.4 var(--mono);letter-spacing:.02em;text-transform:uppercase}
+.arc-strip b{margin-right:4px;color:var(--red)}
+.arc-strip span{color:var(--ink)}
+.arc-strip i{font-style:normal;color:var(--red)}
 .rate-item{padding:13px 0;border-bottom:1px solid var(--rule-2)}
 .rate-item:last-child{border-bottom:0}
 .rate-copy h3{font-size:15px;line-height:1.3;font-weight:700}
@@ -336,7 +340,7 @@ button{cursor:pointer}
   .setup-grid{grid-template-columns:1fr;gap:24px}
   .setup h1{font-size:clamp(40px,8vw,64px)}
   .room-grid{grid-template-columns:190px minmax(0,1fr)}
-  .domain-summary{grid-template-columns:1fr 1fr}
+  .domain-summary{grid-template-columns:repeat(3,1fr)}
   .result-row{grid-template-columns:minmax(0,1fr) 190px 58px}
 }
 @media (max-width:680px){
@@ -361,6 +365,7 @@ button{cursor:pointer}
   .stat b{font-size:26px}
   .stat.is-wide{grid-column:1/-1}
   .domain-summary{grid-template-columns:1fr 1fr}
+  .domain-summary .domain-card:last-child{grid-column:1/-1}
   .results-head h2{font-size:26px}
   .result-row{grid-template-columns:1fr;gap:5px;padding:10px 0}
   .result-avg{text-align:left;display:flex;align-items:baseline;gap:6px}
@@ -396,6 +401,7 @@ button{cursor:pointer}
   .results{margin-top:4mm}
   .results-head{border-top:1.5pt solid #111;padding-top:2mm}
   .result-domain{break-inside:avoid;margin-top:3mm}
+  .arc-strip{margin:1mm 2mm;padding:1mm 2mm;background:#fff;border-left:1pt solid #111;font-size:6pt}
   .result-domain>header{background:#fff;color:#111;border-bottom:1pt solid #111}
   .result-domain>header span{color:#111}
   .result-row{grid-template-columns:1fr 55mm 14mm}

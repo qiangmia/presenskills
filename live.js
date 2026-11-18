@@ -3,7 +3,7 @@
    ========================================================================== */
 
 import {
-  DOMAINS, ALL_ITEMS, ensureAuth, createRoom, getRoom, watchRoom, watchRaters,
+  DOMAINS, ALL_ITEMS, ARC_STRIP_HTML, ensureAuth, createRoom, getRoom, watchRoom, watchRaters,
   closeRoom, aggregateRaters, criterionAverage, domainSummary, rateUrl,
   normalizeRoomCode, isValidRoomCode, formatDate, formatScore
 } from "./live-core.js";
@@ -258,6 +258,7 @@ function renderResults() {
         "<header><h3>" + domain.no + " · " + escapeHTML(domain.label) + "</h3>" +
           "<span>" + (summary.average === null ? "No ratings" : formatScore(summary.average) + " avg") + "</span>" +
         "</header>" +
+        (domain.arc ? ARC_STRIP_HTML : "") +
         '<div class="rows">' + rows + "</div>" +
       "</section>"
     );

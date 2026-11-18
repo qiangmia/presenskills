@@ -7,18 +7,26 @@ Weeks 11–12 **Delivery & Presence** unit.
 
 ## What it is
 
-Eighteen observable presentation criteria across four domains:
+Eighteen observable presentation criteria across five domains:
 
-1. Audibility, pacing & time (5)
-2. Eye contact & audience interaction (4)
-3. Slide sync & technical readiness (5)
-4. Posture, narrative & Q&A (4)
+1. Vocal & pacing (4)
+2. Connection & interaction (3)
+3. Visual design (3)
+4. Narrative arc & SCQA (5)
+5. Presence & Q&A (3)
 
-Ten of the eighteen are marked as the beginner core.
+Thirteen of the eighteen are marked as the core. The core includes the full
+narrative arc; the full audit adds time balance, signal/contrast, gestures, and
+Q&A refinements.
+
+The narrative domain uses the course's **Hook → Bridge → Climax → Resolution →
+Takeaway** arc, with **SCQA** as the micro-order inside it. The checklist asks
+whether the five moves are audible, not whether a particular framework label was
+mentioned.
 
 ## How to use it
 
-- **Rehearse** — tick only what you can actually do in one run.
+- **Rehearse** — tick only what you can actually do in one run. The core 13 is the first-pass set; the full 18 adds refinements.
 - **Audit** — hand the page to a listener; rate each criterion from 1 to 5, and add one specific note.
 - **Compare** — read the score and notes, then choose one target for the next take.
 
@@ -34,7 +42,8 @@ The **Open live dashboard** button on the checklist opens `live.html`.
 3. Students open `rate.html?room=CODE` on their phones and rate each criterion
    from 1 to 5: **1** needs work, **3** solid, **5** exemplary. Initials are optional.
 4. The dashboard updates live with rater count, completion, class average
-   (out of 5), per-domain averages, and per-criterion 1–5 distributions.
+   (out of 5), per-domain averages, and per-criterion 1–5 distributions across
+   the five domains.
 5. Close the room when the class is done. The results remain visible; the
    rating page becomes read-only.
 

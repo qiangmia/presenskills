@@ -29,41 +29,46 @@ export const db = getFirestore(app);
 /* ---------- checklist model ---------- */
 export const DOMAINS = [
   {
-    id: "vocal", no: "01", label: "Audibility, pacing & time",
+    id: "vocal", no: "01", label: "Vocal & pacing",
     items: [
       { id: "vocal-1", title: "Back-row audibility & volume projection", cue: "Can you hear every word at the back?" },
       { id: "vocal-2", title: "End-of-sentence clarity", cue: "Do the last words land, or trail off?" },
-      { id: "vocal-3", title: "Controlled pacing & 1.5-second pauses", cue: "Steady pace with clean pauses, not fillers." },
-      { id: "vocal-4", title: "Time balance across sections", cue: "Sections fit the limit; the close is not rushed." },
-      { id: "vocal-5", title: "Vocal stress & pitch variety", cue: "Pitch and stress vary with the point." }
+      { id: "vocal-3", title: "Pacing, pauses & vocal variety", cue: "Steady pace, clean pauses, varied pitch." },
+      { id: "vocal-4", title: "Time balance across sections", cue: "Sections fit the limit; the close is not rushed." }
     ]
   },
   {
-    id: "connection", no: "02", label: "Eye contact & interaction",
+    id: "connection", no: "02", label: "Connection & interaction",
     items: [
       { id: "conn-1", title: "Sustained eye contact: one thought, one look", cue: "Holds one listener for a full sentence." },
       { id: "conn-2", title: "Direct audience interaction", cue: "Invites a response, question, or show of hands." },
-      { id: "conn-3", title: "Facial warmth & emotional congruence", cue: "Expressions match the message." },
-      { id: "conn-4", title: "Real-time audience calibration", cue: "Reads the room and adjusts." }
+      { id: "conn-3", title: "Warmth & real-time calibration", cue: "Expressions match the message; reads the room." }
     ]
   },
   {
-    id: "sync", no: "03", label: "Slide sync & pre-flight",
+    id: "visual", no: "03", label: "Visual design",
     items: [
-      { id: "sync-1", title: "Technical & environmental readiness", cue: "Tech checked; phone silent; standing clear." },
-      { id: "sync-2", title: "No back-turning, zero slide-reading", cue: "Faces the audience; does not read the slide." },
-      { id: "sync-3", title: "Touch–turn–talk choreography", cue: "Touch, turn, then talk." },
-      { id: "sync-4", title: "Guide → interpret → connect", cue: "Points to the visual, explains it, links it." },
-      { id: "sync-5", title: "Clicker timing & visual reveal", cue: "Advances on the beat, not late." }
+      { id: "visual-1", title: "Order — hierarchy & whitespace", cue: "One clear first read; space, not paragraph walls." },
+      { id: "visual-2", title: "Structure — grid & balance", cue: "Consistent margins, alignment, and balance." },
+      { id: "visual-3", title: "Signal — color, contrast & legibility", cue: "Strong contrast and readable type from the back." }
     ]
   },
   {
-    id: "physical", no: "04", label: "Posture, narrative & Q&A",
+    id: "narrative", no: "04", label: "Narrative arc & SCQA", arc: true,
     items: [
-      { id: "phys-1", title: "Grounded stance & open posture", cue: "Planted feet, open posture, no swaying." },
-      { id: "phys-2", title: "Purposeful gestures, no podium leaning", cue: "Gestures support the point; no podium lean." },
-      { id: "phys-3", title: "High-impact hook & crisp close", cue: "Clean hook and a decisive close." },
-      { id: "phys-4", title: "PREP Q&A defense under pressure", cue: "Pauses, answers Point-first, stays under 45s." }
+      { id: "narrative-1", title: "Hook", cue: "A concrete moment, question, or statistic; no agenda." },
+      { id: "narrative-2", title: "Bridge & stakes", cue: "Minimum context and why-now; connects to the body." },
+      { id: "narrative-3", title: "Climax / turn", cue: "The decisive evidence or insight; the argument turns." },
+      { id: "narrative-4", title: "Resolution", cue: "The tension is answered; no new topic." },
+      { id: "narrative-5", title: "Takeaway & call to action", cue: "One sentence: what to think or do next." }
+    ]
+  },
+  {
+    id: "presence", no: "05", label: "Presence & Q&A",
+    items: [
+      { id: "presence-1", title: "Face the audience & grounded stance", cue: "Faces the room; touch–turn–talk; no slide-reading." },
+      { id: "presence-2", title: "Purposeful gestures, no podium leaning", cue: "Gestures support the point; no podium lean." },
+      { id: "presence-3", title: "PREP Q&A defense under pressure", cue: "Pauses, answers Point-first, stays under 45s." }
     ]
   }
 ];
@@ -71,6 +76,8 @@ export const DOMAINS = [
 export const ALL_ITEMS = DOMAINS.flatMap(domain =>
   domain.items.map(item => ({ ...item, domain: domain.id, domainLabel: domain.label }))
 );
+
+export const ARC_STRIP_HTML = '<div class="arc-strip" aria-label="Narrative arc"><b>The arc</b><span>Hook</span><i>→</i><span>Bridge</span><i>→</i><span>Climax</span><i>→</i><span>Resolution</span><i>→</i><span>Takeaway</span></div>';
 
 export const MAX_RATINGS = ALL_ITEMS.length;
 export const RATING_VALUES = [1, 2, 3, 4, 5];

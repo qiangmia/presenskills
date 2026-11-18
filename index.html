@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Delivery &amp; Deck-Sync — Weeks 11–12 Diagnostic Checklist</title>
-<meta name="description" content="A responsive, dual-purpose rehearsal checklist and live audience audit for presentation delivery: audibility, pacing, eye contact, slide sync, posture, narrative, and Q&amp;A.">
+<meta name="description" content="A responsive, dual-purpose rehearsal checklist and live audience audit for presentation delivery: audibility, pacing, eye contact, visual design, narrative arc, presence, and Q&amp;A.">
 <link rel="canonical" href="https://qiangmia.github.io/presenskills/">
 <meta name="theme-color" content="#15171a">
 <meta property="og:type" content="website">
@@ -147,7 +147,7 @@ button{cursor:pointer}
 .metric-value{display:block;margin-top:3px;font:800 20px/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
 .metric-value.red{color:var(--red)}
 .metric-small{display:block;margin-top:2px;font:600 8px/1.4 var(--mono);color:var(--muted)}
-.metric-bar{width:100%;height:3px;background:var(--rule);margin-top:7px;overflow:hidden}
+.metric-bar{display:block;width:100%;height:3px;background:var(--rule);margin-top:7px;overflow:hidden}
 .metric-bar i{display:block;width:0;height:100%;background:var(--green);transition:width .25s}
 .metric .timer-row{display:flex;align-items:center;gap:5px;margin-top:5px}
 .metric .timer-row button{border:1px solid var(--ink);background:transparent;padding:4px 6px;font:700 8px/1 var(--mono);text-transform:uppercase}
@@ -165,6 +165,8 @@ button{cursor:pointer}
 .live-strip b{display:block;margin-top:3px;font-family:var(--display);font-size:16px;line-height:1.1;letter-spacing:-.01em;text-transform:uppercase}
 .live-strip span{display:block;margin-top:3px;font-size:12.5px;line-height:1.45;color:var(--muted);max-width:62ch}
 .live-strip .btn{flex:none}
+.preflight{margin-top:14px;padding-top:10px;border-top:1px dashed var(--rule);font:600 9px/1.55 var(--mono);letter-spacing:.03em;color:var(--muted)}
+.preflight b{color:var(--ink);text-transform:uppercase}
 
 /* ---------- how strip ---------- */
 .how-strip{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0}
@@ -215,7 +217,10 @@ body.mode-rehearsal .scale-note{display:none}
 .domain-head p{margin-top:3px;font-size:10px;line-height:1.4;color:#bdb6a8}
 .domain-count{font:700 9px/1.4 var(--mono);color:var(--amber);white-space:nowrap;padding-top:2px}
 .domain-items{padding:0 16px}
-
+.arc-strip{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin:10px 16px 0;padding:7px 9px;background:var(--amber-soft);border-left:3px solid var(--amber);font:700 8px/1.4 var(--mono);letter-spacing:.02em;text-transform:uppercase}
+.arc-strip b{margin-right:4px;color:var(--red)}
+.arc-strip span{color:var(--ink)}
+.arc-strip i{font-style:normal;color:var(--red)}
 .criterion{display:grid;grid-template-columns:minmax(0,1fr) 154px 318px;gap:16px;align-items:start;padding:15px 0;border-bottom:1px solid var(--rule-2)}
 .domain-items .criterion:last-child{border-bottom:0}
 body.mode-rehearsal .criterion{grid-template-columns:minmax(0,1fr) 170px}
@@ -395,19 +400,22 @@ body.mode-dual .rehearsal-cell{display:block}
   .level-row{display:none}
   .mode-note{font-size:7pt;margin-top:1mm}
   .scale-note{display:block!important;font-size:6.5pt;margin-top:1mm}
-  .domain{margin-top:4mm;border:1pt solid #111;break-inside:auto}
-  .domain-head{background:#fff;color:#111;border-bottom:1pt solid #111;padding:1.5mm 2mm;grid-template-columns:7mm 1fr 18mm;gap:2mm;break-after:avoid}
+  .domain{margin-top:3mm;border:1pt solid #111;break-inside:auto}
+  .domain[data-domain="narrative"]{break-before:page}
+  .domain-head{background:#fff;color:#111;border-bottom:1pt solid #111;padding:1.2mm 2mm;grid-template-columns:7mm 1fr 18mm;gap:2mm;break-after:avoid}
   .domain-no{width:6mm;height:5mm;background:#111;color:#fff;font-size:6pt}
   .domain-head h3{font-size:10pt}
   .domain-head p{font-size:7pt;color:#333}
   .domain-count{font-size:7pt;color:#111}
   .domain-items{padding:0 2mm}
-  .criterion,body.mode-audience .criterion,body.mode-rehearsal .criterion{grid-template-columns:minmax(0,1fr) 26mm 49mm;gap:2mm;padding:1.8mm 0;break-inside:avoid}
+  .arc-strip{margin:.8mm 2mm 0;padding:.8mm 2mm;background:#fff;border-left:1pt solid #111;font-size:5.6pt;gap:2mm}
+  .preflight{display:block;font-size:6.5pt;margin-top:1mm;padding-top:1mm;border-top:.5pt solid #999}
+  .criterion,body.mode-audience .criterion,body.mode-rehearsal .criterion{grid-template-columns:minmax(0,1fr) 26mm 49mm;gap:2mm;padding:1.4mm 0;break-inside:avoid}
   .crit-num{font-size:6pt}
   .crit-top h4{font-size:9pt}
   .core-badge{font-size:5.5pt;padding:0 1mm}
-  .crit-copy>p{font-size:7.5pt;line-height:1.35;margin-top:1mm}
-  .drill{font-size:6.5pt;padding:1mm;margin-top:1mm}
+  .crit-copy>p{font-size:7.2pt;line-height:1.3;margin-top:.8mm}
+  .drill{font-size:6.2pt;padding:.8mm;margin-top:.8mm}
   .crit-cell{display:block!important}
   .rehearsal-cell,.audience-cell{display:block!important}
   .cell-label{font-size:5.5pt;margin-bottom:1mm}
@@ -474,12 +482,12 @@ body.mode-dual .rehearsal-cell{display:block}
   </div>
   <div class="hero-side">
     <p class="dek">A rehearsal checklist for the speaker. A live audit for the audience.</p>
-    <p class="intro">Eighteen observable criteria across four domains. Tick what you can do, or hand the page to a listener and let them rate what they see. Then choose one target for the next take.</p>
+    <p class="intro">Eighteen observable criteria across five domains. Tick what you can do, or hand the page to a listener and let them rate what they see. Then choose one target for the next take.</p>
     <div class="hero-actions">
       <a class="btn primary" href="#checklist">Start the checklist <span aria-hidden="true">→</span></a>
       <a class="btn" href="#synthesis">Jump to synthesis</a>
     </div>
-    <p class="hero-meta"><span>18 checks</span><span>10 Core</span><span>4 domains</span><span>Saved locally</span></p>
+    <p class="hero-meta"><span>18 checks</span><span>13 Core</span><span>5 domains</span><span>Saved locally</span></p>
   </div>
 </section>
 
@@ -517,14 +525,17 @@ body.mode-dual .rehearsal-cell{display:block}
       <div class="field"><label for="metaTopic">Topic</label><input id="metaTopic" data-meta="topic" type="text" placeholder="e.g. Campus cup deposit proposal" autocomplete="off"></div>
       <div class="field"><label for="metaFocus">Row focus</label>
         <select id="metaFocus" data-meta="focus">
-          <option value="all">All four domains</option>
-          <option value="vocal">01 · Audibility, pacing &amp; time</option>
-          <option value="connection">02 · Eye contact &amp; interaction</option>
-          <option value="sync">03 · Slide sync &amp; pre-flight</option>
-          <option value="physical">04 · Posture, arc &amp; Q&amp;A</option>
+          <option value="all">All five domains</option>
+          <option value="vocal">01 · Vocal &amp; pacing</option>
+          <option value="connection">02 · Connection &amp; interaction</option>
+          <option value="visual">03 · Visual design</option>
+          <option value="narrative">04 · Narrative arc &amp; SCQA</option>
+          <option value="presence">05 · Presence &amp; Q&amp;A</option>
         </select>
       </div>
     </div>
+
+    <p class="preflight"><b>Before you start</b> · phone silent · clicker tested · back-row legible · clear of the projector.</p>
 
     <div class="live-strip">
       <div>
@@ -540,12 +551,13 @@ body.mode-dual .rehearsal-cell{display:block}
 <div class=print-overview>
   <h3>What this checklist covers</h3>
   <div class=po-grid>
-    <p><b>01</b> Audibility, pacing &amp; time · 5 checks</p>
-    <p><b>02</b> Eye contact &amp; audience interaction · 4 checks</p>
-    <p><b>03</b> Slide sync &amp; technical readiness · 5 checks</p>
-    <p><b>04</b> Posture, narrative &amp; Q&amp;A · 4 checks</p>
+    <p><b>01</b> Vocal &amp; pacing · 4 checks</p>
+    <p><b>02</b> Connection &amp; interaction · 3 checks</p>
+    <p><b>03</b> Visual design · 3 checks</p>
+    <p><b>04</b> Narrative arc &amp; SCQA · 5 checks</p>
+    <p><b>05</b> Presence &amp; Q&amp;A · 3 checks</p>
   </div>
-  <p class=po-note>18 criteria total · 10 beginner core. Rehearse the core first; use the full audit when the basics are stable.</p>
+  <p class=po-note>18 criteria total · 13 core. Start with the core; use the full audit to refine time, signal, gestures, and Q&amp;A.</p>
 </div>
 
 <!-- ============================================================ HOW -->
@@ -564,14 +576,14 @@ body.mode-dual .rehearsal-cell{display:block}
       <div class="sec-no" aria-hidden="true">01</div>
       <div>
         <p class="kicker">The checklist</p>
-        <h2 id="checklist-title">Eighteen checks. <em>Four</em> domains.</h2>
-        <p class="lead">The full audit shows all 18 criteria. The beginner core shows the 10 essentials for a first rehearsal. Dual view shows both the self-check and the audience rating.</p>
+        <h2 id="checklist-title">Eighteen checks. <em>Five</em> domains.</h2>
+        <p class="lead">The full audit shows all 18. The core 13 covers the full narrative arc plus the delivery fundamentals. Dual view shows both the self-check and the audience rating.</p>
         <div class="level-row">
           <div class="level-switch" role="group" aria-label="Checklist level">
-            <button class="level-btn" type="button" data-level="beginner" aria-pressed="false">Core 10</button>
+            <button class="level-btn" type="button" data-level="beginner" aria-pressed="false">Core 13</button>
             <button class="level-btn is-active" type="button" data-level="full" aria-pressed="true">Full 18</button>
           </div>
-          <span class="level-hint" id="levelHint">Showing 18 criteria · 10 beginner core</span>
+          <span class="level-hint" id="levelHint">Showing 18 criteria · 13 core</span>
         </div>
         <p class="mode-note"><i aria-hidden="true"></i><span id="modeNote"><b>Dual view</b> — self-check and audience rating together.</span></p>
         <p class="scale-note"><b>Audience scale</b> · 1 needs work · 2 developing · 3 solid · 4 strong · 5 exemplary</p>
@@ -581,10 +593,11 @@ body.mode-dual .rehearsal-cell{display:block}
     <div class="filterbar" role="group" aria-label="Filter by domain">
       <span class="flabel">Domain</span>
       <button class="filter-btn is-active" type="button" data-domain="all">All</button>
-      <button class="filter-btn" type="button" data-domain="vocal">01 · Vocal (5)</button>
-      <button class="filter-btn" type="button" data-domain="connection">02 · Connection (4)</button>
-      <button class="filter-btn" type="button" data-domain="sync">03 · Sync (5)</button>
-      <button class="filter-btn" type="button" data-domain="physical">04 · Physical (4)</button>
+      <button class="filter-btn" type="button" data-domain="vocal">01 · Vocal (4)</button>
+      <button class="filter-btn" type="button" data-domain="connection">02 · Connection (3)</button>
+      <button class="filter-btn" type="button" data-domain="visual">03 · Visual (3)</button>
+      <button class="filter-btn" type="button" data-domain="narrative">04 · Narrative (5)</button>
+      <button class="filter-btn" type="button" data-domain="presence">05 · Presence (3)</button>
     </div>
 
     <details class="clips">
@@ -625,20 +638,25 @@ body.mode-dual .rehearsal-cell{display:block}
 
     <div id="checklist-container">
       <section class="domain" data-domain="vocal" aria-labelledby="domain-vocal">
-        <header class="domain-head"><span class="domain-no">01</span><div><h3 id="domain-vocal">Audibility, Pacing &amp; Time</h3><p>Foundational receiver clarity and time discipline.</p></div><span class="domain-count" id="count-vocal">0 / 5</span></header>
+        <header class="domain-head"><span class="domain-no">01</span><div><h3 id="domain-vocal">Vocal &amp; Pacing</h3><p>Audibility, clarity, pacing, and time discipline.</p></div><span class="domain-count" id="count-vocal">0 / 4</span></header>
         <div class="domain-items" id="items-vocal"></div>
       </section>
       <section class="domain" data-domain="connection" aria-labelledby="domain-connection">
-        <header class="domain-head"><span class="domain-no">02</span><div><h3 id="domain-connection">Eye Contact &amp; Audience Interaction</h3><p>Two-way sender–receiver engagement.</p></div><span class="domain-count" id="count-connection">0 / 4</span></header>
+        <header class="domain-head"><span class="domain-no">02</span><div><h3 id="domain-connection">Connection &amp; Interaction</h3><p>Two-way sender–receiver engagement.</p></div><span class="domain-count" id="count-connection">0 / 3</span></header>
         <div class="domain-items" id="items-connection"></div>
       </section>
-      <section class="domain" data-domain="sync" aria-labelledby="domain-sync">
-        <header class="domain-head"><span class="domain-no">03</span><div><h3 id="domain-sync">Slide Sync &amp; Technical Readiness</h3><p>Visual choreography and pre-flight control.</p></div><span class="domain-count" id="count-sync">0 / 5</span></header>
-        <div class="domain-items" id="items-sync"></div>
+      <section class="domain" data-domain="visual" aria-labelledby="domain-visual">
+        <header class="domain-head"><span class="domain-no">03</span><div><h3 id="domain-visual">Visual Design</h3><p>What the room sees: order, structure, and signal.</p></div><span class="domain-count" id="count-visual">0 / 3</span></header>
+        <div class="domain-items" id="items-visual"></div>
       </section>
-      <section class="domain" data-domain="physical" aria-labelledby="domain-physical">
-        <header class="domain-head"><span class="domain-no">04</span><div><h3 id="domain-physical">Posture, Narrative &amp; Q&amp;A</h3><p>Stage authority and structure under pressure.</p></div><span class="domain-count" id="count-physical">0 / 4</span></header>
-        <div class="domain-items" id="items-physical"></div>
+      <section class="domain" data-domain="narrative" aria-labelledby="domain-narrative">
+        <header class="domain-head"><span class="domain-no">04</span><div><h3 id="domain-narrative">Narrative Arc &amp; SCQA</h3><p>The visible shape of the argument; SCQA is the micro-order.</p></div><span class="domain-count" id="count-narrative">0 / 5</span></header>
+        <div class="arc-strip" aria-label="Narrative arc"><b>The arc</b><span>Hook</span><i>→</i><span>Bridge</span><i>→</i><span>Climax</span><i>→</i><span>Resolution</span><i>→</i><span>Takeaway</span></div>
+        <div class="domain-items" id="items-narrative"></div>
+      </section>
+      <section class="domain" data-domain="presence" aria-labelledby="domain-presence">
+        <header class="domain-head"><span class="domain-no">05</span><div><h3 id="domain-presence">Presence &amp; Q&amp;A</h3><p>Stage authority, physical control, and Q&amp;A under pressure.</p></div><span class="domain-count" id="count-presence">0 / 3</span></header>
+        <div class="domain-items" id="items-presence"></div>
       </section>
     </div>
   </div>
@@ -708,7 +726,7 @@ body.mode-dual .rehearsal-cell{display:block}
 <footer class="footer">
   <div class="wrap">
     <span><b>Delivery &amp; Deck-Sync</b> · English Presentation Skills · Weeks 11–12</span>
-    <span>18 criteria · 10 core · Rehearsal + audience audit · Print A4</span>
+    <span>18 criteria · 13 core · 5 domains · Rehearsal + audience audit · Print A4</span>
   </div>
 </footer>
 </main>
@@ -723,32 +741,34 @@ body.mode-dual .rehearsal-cell{display:block}
   var DATA = [
     {id:"vocal-1",domain:"vocal",core:true,title:"Back-row audibility & volume projection",cue:"Project your voice to the farthest back corner of the room without mumbling, whispering, or straining.",drill:"Aim your voice at the back wall, not the front row."},
     {id:"vocal-2",domain:"vocal",core:true,title:"End-of-sentence clarity",cue:"Maintain breath support, articulation, and volume through the final two or three words of every sentence.",drill:"Keep your chin level through the last syllable; do not drop the ending into your collar."},
-    {id:"vocal-3",domain:"vocal",core:true,title:"Controlled pacing & 1.5-second pauses",cue:"Speak at a steady, digestible tempo with clean 1.5–2 second silent pauses after slide changes and key points, replacing fillers with silence.",drill:"Mark // on your notes. Take one full silent breath at every mark before continuing."},
-    {id:"vocal-4",domain:"vocal",core:true,title:"Time balance across sections",cue:"Allocate time proportionally — roughly 20% hook and bridge, 60% evidence and journey, 20% takeaway and close — without over-explaining the background or rushing the ending.",drill:"Write checkpoint times on your notes and rehearse with the speech timer."},
-    {id:"vocal-5",domain:"vocal",core:false,title:"Vocal stress & pitch variety",cue:"Modulate pitch and slow down on rhetorical pivots — the complication, the benefit, the answer — rather than speaking in a flat monotone.",drill:"Highlight two or three power words and punch them vocally."},
+    {id:"vocal-3",domain:"vocal",core:true,title:"Pacing, pauses & vocal variety",cue:"Speak at a steady, digestible tempo with clean 1.5–2 second pauses after slide changes and key points. Vary pitch and stress on rhetorical pivots instead of a flat monotone.",drill:"Mark // on your notes for a silent breath; highlight two or three power words and punch them vocally."},
+    {id:"vocal-4",domain:"vocal",core:false,title:"Time balance across sections",cue:"Allocate roughly 20% hook and bridge, 60% evidence and journey, 20% takeaway and close — without over-explaining the background or rushing the ending.",drill:"Write checkpoint times on your notes and rehearse with the speech timer."},
 
     {id:"conn-1",domain:"connection",core:true,title:"Sustained eye contact: one thought, one look",cue:"Hold steady, friendly eye contact with one listener for a complete sentence, then move across left, center, and right zones.",drill:"Finish the entire sentence with one person before shifting your gaze."},
     {id:"conn-2",domain:"connection",core:true,title:"Direct audience interaction",cue:"Involve listeners at least once with a quick show of hands, a direct or rhetorical question, a relatable scenario, or audience-centered “you / your” framing.",drill:"Build one 10-second interaction into the hook or bridge."},
-    {id:"conn-3",domain:"connection",core:false,title:"Facial warmth & emotional congruence",cue:"Use an approachable smile and natural expressions that match the tone of the message, rather than a rigid deer-in-the-headlights stare.",drill:"Smile during the opening greeting and at positive benefit outcomes."},
-    {id:"conn-4",domain:"connection",core:false,title:"Real-time audience calibration",cue:"Read listener cues — nods, puzzled looks — and adjust pace, clarify jargon, or invite reactions smoothly during the talk.",drill:"Pause after complex data and ask whether the distinction is clear."},
+    {id:"conn-3",domain:"connection",core:false,title:"Warmth & real-time calibration",cue:"Use an approachable smile and expressions that match the message. Read nods, puzzled looks, and other cues, then adjust pace, clarify jargon, or invite reactions smoothly.",drill:"Pause after complex data and ask whether the distinction is clear."},
 
-    {id:"sync-1",domain:"sync",core:true,title:"Technical & environmental readiness",cue:"Run a pre-flight check: phone silenced and away, clicker and transitions tested, fonts legible from the back row, and standing position clear of the projector beam.",drill:"Silence the phone, test the clicker, step to the side of the screen, and check back-row readability."},
-    {id:"sync-2",domain:"sync",core:true,title:"No back-turning, zero slide-reading",cue:"Face the audience and paraphrase ideas naturally. Do not turn back to the screen or read slide text word for word.",drill:"Rehearse with the screen black to test whether you know the point without reading it."},
-    {id:"sync-3",domain:"sync",core:true,title:"Touch–turn–talk choreography",cue:"Glance or gesture toward the slide, turn back to the audience, then speak. The turn is the transition.",drill:"Stay silent during the touch and turn; speak only when facing listeners."},
-    {id:"sync-4",domain:"sync",core:false,title:"Guide → interpret → connect",cue:"Direct the audience’s eyes (“Look at the highlighted bar…”), explain the takeaway, and link it to audience value.",drill:"Write the exact one-sentence guide cue at the top of each data slide’s notes."},
-    {id:"sync-5",domain:"sync",core:false,title:"Clicker timing & visual reveal",cue:"Advance slides or animations just before introducing each new point. Never leave a new slide unexplained or click late.",drill:"Click on the transition word between ideas so the visual arrives on beat."},
+    {id:"visual-1",domain:"visual",core:true,title:"Order — hierarchy & whitespace",cue:"Each slide has one clear first read: the claim dominates, whitespace separates ideas, and decoration does not compete with the point. No paragraph walls.",drill:"Squint at the projected slide from the back; if two elements fight for attention, demote one. Delete a third of the words."},
+    {id:"visual-2",domain:"visual",core:true,title:"Structure — grid & balance",cue:"Elements align to a consistent grid with even margins. The layout is balanced, with no accidental overlaps, drift, or edge-to-edge text.",drill:"Turn on the grid; align every element to it; check the slide from five metres away."},
+    {id:"visual-3",domain:"visual",core:false,title:"Signal — color, contrast & legibility",cue:"Text and background have strong contrast from the back row. The palette is consistent; color marks meaning rather than decoration; body type is large enough to read.",drill:"Check the projected deck from the back row; if the title or body blurs, increase contrast or size."},
 
-    {id:"phys-1",domain:"physical",core:true,title:"Grounded stance & open posture",cue:"Stand with feet shoulder-width apart and soft knees. Avoid swaying, hip-shifting, or aimless pacing; keep hands uncrossed and out of pockets.",drill:"Plant your feet during the opening 45 seconds and the final takeaway."},
-    {id:"phys-2",domain:"physical",core:false,title:"Purposeful gestures, no podium leaning",cue:"Use natural, open-palm gestures at waist or chest level to show scale or contrast. Avoid leaning on or gripping the podium.",drill:"Step half a step back from the podium so both hands are free."},
-    {id:"phys-3",domain:"physical",core:false,title:"High-impact hook & crisp close",cue:"Open cleanly with SCQA or PAS, without throat-clearing. End with a decisive What → So What → Now What takeaway rather than trailing off.",drill:"Memorize the opening two sentences and the closing two sentences word for word."},
-    {id:"phys-4",domain:"physical",core:false,title:"PREP Q&A defense under pressure",cue:"Pause two seconds after a question. State the direct Point first, support it with a Reason and Example, then restate the Point concisely in under 45 seconds.",drill:"Never start with “Um, well…” — nod, pause, and answer “Yes / No, because…” first."}
+    {id:"narrative-1",domain:"narrative",core:true,title:"Hook",cue:"The first 20–30 seconds use a concrete moment, question, or statistic that earns the next line. No agenda, throat-clearing, or long self-introduction.",drill:"Write the first two sentences word for word; cut anything that comes before the hook."},
+    {id:"narrative-2",domain:"narrative",core:true,title:"Bridge & stakes",cue:"Supply the minimum context and the problem or why-now. Connect the hook to the body — SCQA Situation and Complication — without a second beginning or an extended background.",drill:"Read Hook + Bridge together; if the bridge becomes a new start, cut it back."},
+    {id:"narrative-3",domain:"narrative",core:true,title:"Climax / turn",cue:"A decisive piece of evidence, insight, or example creates the peak or the turn. The argument moves rather than listing; visual evidence is interpreted, not just shown.",drill:"Mark the one slide or moment the talk is built around; cut anything that delays it."},
+    {id:"narrative-4",domain:"narrative",core:true,title:"Resolution",cue:"The tension is answered. The change, benefit, or result is clear, with no new topic and no dropped thread.",drill:"Say the resolution in one sentence; if it introduces a new idea, move that idea earlier or cut it."},
+    {id:"narrative-5",domain:"narrative",core:true,title:"Takeaway & call to action",cue:"One memorable sentence states what the audience should think or do next. This is a call to action, not a summary or a trailing thank-you.",drill:"Write the final two sentences word for word; end on the action, not on logistics."},
+
+    {id:"presence-1",domain:"presence",core:true,title:"Face the audience & grounded stance",cue:"Face the room with feet planted and soft knees. Glance or touch the screen, turn back, then speak; advance on the beat. Never read the slide or turn your back.",drill:"Rehearse with the screen black; plant your feet for the opening and close."},
+    {id:"presence-2",domain:"presence",core:false,title:"Purposeful gestures, no podium leaning",cue:"Natural, open-palm gestures at waist or chest level support scale and contrast. No leaning on or gripping the podium, hands in pockets, or crossed arms.",drill:"Step half a step back from the podium so both hands are free."},
+    {id:"presence-3",domain:"presence",core:false,title:"PREP Q&A defense under pressure",cue:"Pause two seconds after a question. State the direct Point first, support it with a Reason and Example, then restate the Point concisely in under 45 seconds.",drill:"Never start with “Um, well…” — nod, pause, and answer “Yes / No, because…” first."}
   ];
 
   var DOMAINS = {
-    vocal:{label:"Audibility, Pacing & Time",total:5},
-    connection:{label:"Eye Contact & Audience Interaction",total:4},
-    sync:{label:"Slide Sync & Technical Readiness",total:5},
-    physical:{label:"Posture, Narrative & Q&A",total:4}
+    vocal:{label:"Vocal & Pacing",total:4},
+    connection:{label:"Connection & Interaction",total:3},
+    visual:{label:"Visual Design",total:3},
+    narrative:{label:"Narrative Arc & SCQA",total:5},
+    presence:{label:"Presence & Q&A",total:3}
   };
 
   var KEY = "eps-wk11-delivery-v3";
@@ -789,6 +809,13 @@ body.mode-dual .rehearsal-cell{display:block}
     }
   });
   if (ratingsMigrated) save();
+
+  /* the domain set changed from four domains to five */
+  var VALID_DOMAINS = ["all","vocal","connection","visual","narrative","presence"];
+  var domainMigrated = false;
+  if (VALID_DOMAINS.indexOf(state.domain) === -1) { state.domain = "all"; domainMigrated = true; }
+  if (state.meta && VALID_DOMAINS.indexOf(state.meta.focus) === -1) { state.meta.focus = "all"; domainMigrated = true; }
+  if (domainMigrated) save();
 
   var SCORE_LABELS = {1:"Needs work",2:"Developing",3:"Solid",4:"Strong",5:"Exemplary"};
 
@@ -909,8 +936,8 @@ body.mode-dual .rehearsal-cell{display:block}
     });
 
     $("#levelHint").textContent = state.level === "beginner"
-      ? "Showing 10 beginner core criteria"
-      : "Showing 18 criteria · 10 beginner core";
+      ? "Showing 13 core criteria"
+      : "Showing 18 criteria · 13 core";
     $("#modeNote").innerHTML = state.mode === "audience"
       ? "<b>Audience view</b> — rate and note what you see."
       : state.mode === "rehearsal"

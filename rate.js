@@ -3,7 +3,7 @@
    ========================================================================== */
 
 import {
-  DOMAINS, ALL_ITEMS, MAX_RATINGS, RATING_LABELS, ensureAuth, getRoom,
+  DOMAINS, ALL_ITEMS, MAX_RATINGS, RATING_LABELS, ARC_STRIP_HTML, ensureAuth, getRoom,
   watchRoom, loadMyRatings, saveRatings, normalizeRoomCode, isValidRoomCode, normalizeScore
 } from "./live-core.js";
 
@@ -115,6 +115,7 @@ function renderRateList() {
           "<h2>" + escapeHTML(domain.label) + "</h2>" +
           "<small>0 / " + domain.items.length + "</small>" +
         "</header>" +
+        (domain.arc ? ARC_STRIP_HTML : "") +
         '<div class="items">' + items + "</div>" +
       "</section>"
     );
