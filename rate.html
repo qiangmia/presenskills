@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rate the delivery — Live Audience</title>
-<meta name="description" content="Rate a presentation on 18 delivery criteria. Strong, Solid, or Fix. Ratings save automatically.">
+<meta name="description" content="Rate a presentation on 18 delivery criteria from 1 to 5. Ratings save automatically.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315171a'/%3E%3Crect x='7' y='8' width='18' height='3' fill='%23d9a22e'/%3E%3Crect x='7' y='15' width='12' height='2' fill='%23f3efe5'/%3E%3Crect x='7' y='21' width='18' height='2' fill='%23b23a2c'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="live.css">
 </head>
@@ -41,6 +41,14 @@
       <p class="room-label">Room <b id="roomCodeLabel">------</b> · <span id="roomTitleText">Delivery &amp; Deck-Sync</span></p>
     </div>
 
+    <div class="scale-key" aria-label="Rating scale">
+      <span><b>1</b> Needs work</span>
+      <span><b>2</b> Developing</span>
+      <span><b>3</b> Solid</span>
+      <span><b>4</b> Strong</span>
+      <span><b>5</b> Exemplary</span>
+    </div>
+
     <div id="closedNote" class="closed-note" hidden>
       <b>This room is closed.</b>
       The presenter has stopped collecting ratings. You can review your answers but cannot change them.
@@ -67,7 +75,7 @@
     </div>
 
     <footer class="rate-foot">
-      Ratings save automatically to this room. Strong = 3, Solid = 2, Fix = 1.
+      Ratings save automatically to this room. 1 needs work · 3 solid · 5 exemplary.
     </footer>
   </section>
 

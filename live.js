@@ -4,8 +4,8 @@
 
 import {
   DOMAINS, ALL_ITEMS, ensureAuth, createRoom, getRoom, watchRoom, watchRaters,
-  closeRoom, aggregateRaters, criterionPercent, domainSummary, rateUrl,
-  normalizeRoomCode, isValidRoomCode, formatDate
+  closeRoom, aggregateRaters, criterionAverage, domainSummary, rateUrl,
+  normalizeRoomCode, isValidRoomCode, formatDate, formatScore
 } from "./live-core.js";
 
 const HOST_KEY = "eps-live-host-room";
@@ -194,7 +194,7 @@ function renderStats() {
 
   $("#statRaters").textContent = agg.raterCount;
   $("#statCompleted").textContent = agg.completed;
-  $("#statAverage").textContent = agg.average === null ? "—" : agg.average + "%";
+  $("#statAverage").textContent = formatScore(agg.average);
   $("#statRatings").textContent = agg.totalRatings;
   $("#statRatingsSub").textContent = "of " + (agg.raterCount * ALL_ITEMS.length) + " possible";
 
@@ -209,8 +209,8 @@ function renderStats() {
   $("#domainSummary").innerHTML = summaries.map(domain => (
     '<div class="domain-card">' +
       '<span>' + domain.no + " · " + escapeHTML(domain.label) + "</span>" +
-      "<b>" + (domain.percent === null ? "—" : domain.percent + "%") + "</b>" +
-      "<small>" + (domain.total ? domain.total + " ratings" : "No ratings yet") + "</small>" +
+      "<b>" + formatScore(domain.average) + "</b>" +
+      "<small>" + (domain.total ? domain.total + " ratings · out of 5" : "No ratings yet") + "</small>" +
     "</div>"
   )).join("");
 }
@@ -223,10 +223,10 @@ function renderResults() {
     const summary = summaries.find(entry => entry.id === domain.id);
     const rows = domain.items.map(item => {
       const cell = agg.byCriterion[item.id];
-      const percent = criterionPercent(cell);
-      const strongWidth = cell.total ? (cell.strong / cell.total * 100) : 0;
-      const solidWidth = cell.total ? (cell.solid / cell.total * 100) : 0;
-      const fixWidth = cell.total ? (cell.fix / cell.total * 100) : 0;
+      const average = criterionAverage(cell);
+      const widths = [1, 2, 3, 4, 5].map(score => (
+        cell.total ? (cell[score] / cell.total * 100) : 0
+      ));
 
       return (
         '<div class="result-row">' +
@@ -236,18 +236,18 @@ function renderResults() {
           "</div>" +
           '<div class="result-bars">' +
             '<div class="bar-track" aria-hidden="true">' +
-              '<i class="s-strong" style="width:' + strongWidth.toFixed(1) + '%"></i>' +
-              '<i class="s-solid" style="width:' + solidWidth.toFixed(1) + '%"></i>' +
-              '<i class="s-fix" style="width:' + fixWidth.toFixed(1) + '%"></i>' +
+              [1, 2, 3, 4, 5].map(score => (
+                '<i class="s-' + score + '" style="width:' + widths[score - 1].toFixed(1) + '%"></i>'
+              )).join("") +
             "</div>" +
             '<div class="bar-counts">' +
-              '<span class="c-strong"><b>' + cell.strong + "</b> Strong</span>" +
-              '<span class="c-solid"><b>' + cell.solid + "</b> Solid</span>" +
-              '<span class="c-fix"><b>' + cell.fix + "</b> Fix</span>" +
+              [1, 2, 3, 4, 5].map(score => (
+                '<span class="c-' + score + '">' + score + ':<b>' + cell[score] + "</b></span>"
+              )).join("") +
             "</div>" +
           "</div>" +
-          '<div class="result-avg' + (percent === null ? " is-empty" : "") + '">' +
-            "<b>" + (percent === null ? "—" : percent + "%") + "</b><span>avg</span>" +
+          '<div class="result-avg' + (average === null ? " is-empty" : "") + '">' +
+            "<b>" + formatScore(average) + "</b><span>avg /5</span>" +
           "</div>" +
         "</div>"
       );
@@ -256,7 +256,7 @@ function renderResults() {
     return (
       '<section class="result-domain">' +
         "<header><h3>" + domain.no + " · " + escapeHTML(domain.label) + "</h3>" +
-          "<span>" + (summary.percent === null ? "No ratings" : summary.percent + "% avg") + "</span>" +
+          "<span>" + (summary.average === null ? "No ratings" : formatScore(summary.average) + " avg") + "</span>" +
         "</header>" +
         '<div class="rows">' + rows + "</div>" +
       "</section>"
@@ -295,7 +295,7 @@ function summaryText() {
     "DELIVERY & DECK-SYNC — LIVE AUDIENCE",
     "Room: " + state.code,
     "Session: " + ((state.room && state.room.title) || "Delivery & Deck-Sync"),
-    "Raters: " + agg.raterCount + " · Completed: " + agg.completed + " · Class average: " + (agg.average === null ? "—" : agg.average + "%"),
+    "Raters: " + agg.raterCount + " · Completed: " + agg.completed + " · Class average: " + (agg.average === null ? "—" : formatScore(agg.average) + " / 5"),
     ""
   ];
 
@@ -303,10 +303,10 @@ function summaryText() {
     lines.push(domain.no + " · " + domain.label);
     domain.items.forEach(item => {
       const cell = agg.byCriterion[item.id];
-      const percent = criterionPercent(cell);
+      const average = criterionAverage(cell);
       lines.push(
-        "  " + item.title + " — Strong " + cell.strong + " · Solid " + cell.solid +
-        " · Fix " + cell.fix + " · " + (percent === null ? "—" : percent + "%")
+        "  " + item.title + " — 1:" + cell[1] + " · 2:" + cell[2] + " · 3:" + cell[3] +
+        " · 4:" + cell[4] + " · 5:" + cell[5] + " · avg " + formatScore(average) + " / 5"
       );
     });
     lines.push("");
@@ -316,16 +316,16 @@ function summaryText() {
 }
 
 function csvText() {
-  const rows = [["Room", "Session", "Domain", "Criterion", "Strong", "Solid", "Fix", "Average"]];
+  const rows = [["Room", "Session", "Domain", "Criterion", "1", "2", "3", "4", "5", "Average /5"]];
   const session = (state.room && state.room.title) || "Delivery & Deck-Sync";
   DOMAINS.forEach(domain => {
     domain.items.forEach(item => {
       const cell = state.agg.byCriterion[item.id];
-      const percent = criterionPercent(cell);
+      const average = criterionAverage(cell);
       rows.push([
         state.code, session, domain.label, item.title,
-        cell.strong, cell.solid, cell.fix,
-        percent === null ? "" : percent + "%"
+        cell[1], cell[2], cell[3], cell[4], cell[5],
+        average === null ? "" : formatScore(average)
       ]);
     });
   });

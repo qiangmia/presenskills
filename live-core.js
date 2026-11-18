@@ -9,6 +9,10 @@ import {
   getFirestore, doc, getDoc, setDoc, updateDoc, onSnapshot, collection, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
+/* Firebase web API keys are public identifiers, not server secrets.
+   This key is restricted to the project's GitHub Pages and localhost origins,
+   and to the Firebase APIs used here. Access to data is enforced by Firestore
+   security rules. See README.md for the security model. */
 const firebaseConfig = {
   apiKey: "AIzaSyA7QbQvZOxe4H8VIXl6_viXjsNXhV6-_dw",
   authDomain: "presenskills.firebaseapp.com",
@@ -69,9 +73,28 @@ export const ALL_ITEMS = DOMAINS.flatMap(domain =>
 );
 
 export const MAX_RATINGS = ALL_ITEMS.length;
-export const RATING_VALUES = ["strong", "solid", "fix"];
-export const RATING_POINTS = { strong: 3, solid: 2, fix: 1 };
-export const RATING_LABELS = { strong: "Strong", solid: "Solid", fix: "Fix" };
+export const RATING_VALUES = [1, 2, 3, 4, 5];
+export const RATING_LABELS = {
+  1: "Needs work",
+  2: "Developing",
+  3: "Solid",
+  4: "Strong",
+  5: "Exemplary"
+};
+
+const LEGACY_RATING_MAP = { strong: 5, solid: 3, fix: 1 };
+
+export function normalizeScore(value) {
+  if (typeof value === "string" && value in LEGACY_RATING_MAP) {
+    return LEGACY_RATING_MAP[value];
+  }
+  const score = Number(value);
+  return Number.isInteger(score) && score >= 1 && score <= 5 ? score : null;
+}
+
+export function formatScore(value) {
+  return value == null ? "—" : value.toFixed(1);
+}
 
 export function itemById(id) {
   return ALL_ITEMS.find(item => item.id === id) || null;
@@ -205,7 +228,8 @@ export async function saveRatings(code, initials, ratings) {
   const user = await ensureAuth();
   const cleanRatings = {};
   ALL_ITEMS.forEach(item => {
-    if (RATING_VALUES.includes(ratings[item.id])) cleanRatings[item.id] = ratings[item.id];
+    const score = normalizeScore(ratings[item.id]);
+    if (score !== null) cleanRatings[item.id] = score;
   });
 
   await setDoc(doc(db, "rooms", code, "raters", user.uid), {
@@ -221,7 +245,7 @@ export async function saveRatings(code, initials, ratings) {
 export function aggregateRaters(raters) {
   const byCriterion = {};
   ALL_ITEMS.forEach(item => {
-    byCriterion[item.id] = { strong: 0, solid: 0, fix: 0, total: 0, points: 0 };
+    byCriterion[item.id] = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, total: 0, points: 0 };
   });
 
   let completed = 0;
@@ -233,19 +257,19 @@ export function aggregateRaters(raters) {
     const ratings = rater.ratings || {};
     const ratedIds = ALL_ITEMS
       .map(item => item.id)
-      .filter(id => RATING_VALUES.includes(ratings[id]));
+      .filter(id => normalizeScore(ratings[id]) !== null);
 
     if (ratedIds.length) raterCount += 1;
     if (ratedIds.length === MAX_RATINGS) completed += 1;
 
     ratedIds.forEach(id => {
-      const value = ratings[id];
+      const score = normalizeScore(ratings[id]);
       const cell = byCriterion[id];
-      cell[value] += 1;
+      cell[score] += 1;
       cell.total += 1;
-      cell.points += RATING_POINTS[value];
+      cell.points += score;
       totalRatings += 1;
-      totalPoints += RATING_POINTS[value];
+      totalPoints += score;
     });
   });
 
@@ -255,13 +279,13 @@ export function aggregateRaters(raters) {
     completed,
     totalRatings,
     totalPoints,
-    average: totalRatings ? Math.round(totalPoints / (totalRatings * 3) * 100) : null
+    average: totalRatings ? totalPoints / totalRatings : null
   };
 }
 
-export function criterionPercent(cell) {
+export function criterionAverage(cell) {
   if (!cell || !cell.total) return null;
-  return Math.round(cell.points / (cell.total * 3) * 100);
+  return cell.points / cell.total;
 }
 
 export function domainSummary(agg) {
@@ -278,7 +302,7 @@ export function domainSummary(agg) {
       label: domain.label,
       no: domain.no,
       total,
-      percent: total ? Math.round(points / (total * 3) * 100) : null
+      average: total ? points / total : null
     };
   });
 }

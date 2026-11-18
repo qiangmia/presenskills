@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Live Audience — Delivery &amp; Deck-Sync</title>
-<meta name="description" content="A live classroom dashboard for audience ratings of presentation delivery: Strong, Solid, Fix across 18 criteria.">
+<meta name="description" content="A live classroom dashboard for audience ratings of presentation delivery on a 1–5 scale across 18 criteria.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315171a'/%3E%3Crect x='7' y='8' width='18' height='3' fill='%23d9a22e'/%3E%3Crect x='7' y='15' width='12' height='2' fill='%23f3efe5'/%3E%3Crect x='7' y='21' width='18' height='2' fill='%23b23a2c'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="live.css">
 </head>
@@ -24,17 +24,17 @@
       <div>
         <p class="kicker">Live audience room</p>
         <h1>Every phone.<br><em>One screen.</em></h1>
-        <p class="lead">Students open a link, rate the 18 criteria, and this dashboard updates as they tap. No accounts, no app, no passing a tablet around.</p>
+        <p class="lead">Students open a link, rate the 18 criteria from 1 to 5, and this dashboard updates as they tap. No accounts, no app, no passing a tablet around.</p>
         <div class="setup-points">
           <span>18 criteria</span>
-          <span>Strong · Solid · Fix</span>
+          <span>1–5 scale</span>
           <span>Live totals</span>
           <span>Anonymous by default</span>
         </div>
       </div>
       <div class="setup-card">
         <h2>Start a room</h2>
-        <p>The room code is the key. Share the QR or link with the class.</p>
+        <p>The room code is the key. Share the QR or link with the class. Students rate each criterion from 1 to 5.</p>
         <form id="createForm">
           <div class="field">
             <label for="roomTitle">Session label (optional)</label>
@@ -79,7 +79,7 @@
       <div class="stats" aria-label="Live totals">
         <div class="stat"><span>Raters</span><b id="statRaters">0</b><small>at least one rating</small></div>
         <div class="stat"><span>Completed</span><b id="statCompleted">0</b><small>all 18 criteria</small></div>
-        <div class="stat"><span>Class average</span><b class="red" id="statAverage">—</b><small>Strong 3 · Solid 2 · Fix 1</small></div>
+        <div class="stat"><span>Class average</span><b class="red" id="statAverage">—</b><small>out of 5</small></div>
         <div class="stat"><span>Ratings in</span><b id="statRatings">0</b><small id="statRatingsSub">of 0 possible</small></div>
       </div>
     </div>

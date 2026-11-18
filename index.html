@@ -187,6 +187,9 @@ button{cursor:pointer}
 .mode-note{display:flex;align-items:center;gap:8px;margin-top:9px;font:600 10px/1.4 var(--mono);color:var(--muted)}
 .mode-note i{display:block;width:7px;height:7px;background:var(--amber);flex:none}
 .mode-note b{color:var(--ink)}
+.scale-note{margin-top:6px;font:600 8.5px/1.6 var(--mono);letter-spacing:.03em;color:var(--muted)}
+.scale-note b{color:var(--ink)}
+body.mode-rehearsal .scale-note{display:none}
 
 .filterbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:18px}
 .filterbar .flabel{font:700 8.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:3px}
@@ -242,12 +245,14 @@ body.mode-rehearsal .criterion{grid-template-columns:minmax(0,1fr) 180px}
 body.mode-dual .audience-cell{display:block}
 body.mode-dual .rehearsal-cell{display:block}
 .rating-row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:4px}
-.rating-group{display:flex;gap:3px;flex-wrap:wrap}
-.rate-btn{border:1px solid var(--rule);background:var(--white);color:var(--muted);padding:4px 6px;font:700 7.5px/1.2 var(--mono);letter-spacing:.03em;text-transform:uppercase}
+.rating-group{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;flex:1;margin-left:8px}
+.rate-btn{border:1px solid var(--rule);background:var(--white);color:var(--muted);padding:4px 0;font:800 9px/1.2 var(--display);letter-spacing:.02em;text-align:center;min-width:0}
 .rate-btn:hover{border-color:var(--ink);color:var(--ink)}
-.rate-btn[aria-pressed="true"][data-rating="strong"]{background:var(--green);border-color:var(--green);color:#fff}
-.rate-btn[aria-pressed="true"][data-rating="solid"]{background:var(--blue);border-color:var(--blue);color:#fff}
-.rate-btn[aria-pressed="true"][data-rating="fix"]{background:var(--rose);border-color:var(--rose);color:#fff}
+.rate-btn[aria-pressed="true"][data-score="1"]{background:#a54537;border-color:#a54537;color:#fff}
+.rate-btn[aria-pressed="true"][data-score="2"]{background:#c46a3a;border-color:#c46a3a;color:#fff}
+.rate-btn[aria-pressed="true"][data-score="3"]{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.rate-btn[aria-pressed="true"][data-score="4"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.rate-btn[aria-pressed="true"][data-score="5"]{background:var(--green);border-color:var(--green);color:#fff}
 .note{width:100%;border:1px solid var(--rule);background:var(--white);padding:7px 8px;font:12px/1.4 var(--sans);color:var(--ink)}
 .note::placeholder{color:#958d7f}
 .note:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
@@ -328,9 +333,9 @@ body.mode-dual .rehearsal-cell{display:block}
   .domain-items{padding:0 12px}
   .criterion,body.mode-audience .criterion,body.mode-rehearsal .criterion{grid-template-columns:1fr;gap:9px;padding:13px 0}
   .crit-cell{width:100%}
-  .rate-btn{padding:8px 8px;font-size:8.5px;min-height:38px}
+  .rate-btn{padding:8px 0;font-size:11px;min-height:38px}
   .rating-row{display:block}
-  .rating-group{display:grid;grid-template-columns:repeat(3,1fr);width:100%;margin-top:2px}
+  .rating-group{grid-template-columns:repeat(5,1fr);width:100%;margin-top:2px;margin-left:0}
   .check{min-height:40px}
   .check input{width:20px;height:20px}
   .note{min-height:44px}
@@ -389,6 +394,7 @@ body.mode-dual .rehearsal-cell{display:block}
   .sec-head .lead{font-size:8pt;margin-top:2mm}
   .level-row{display:none}
   .mode-note{font-size:7pt;margin-top:1mm}
+  .scale-note{display:block!important;font-size:6.5pt;margin-top:1mm}
   .domain{margin-top:4mm;border:1pt solid #111;break-inside:auto}
   .domain-head{background:#fff;color:#111;border-bottom:1pt solid #111;padding:1.5mm 2mm;grid-template-columns:7mm 1fr 18mm;gap:2mm;break-after:avoid}
   .domain-no{width:6mm;height:5mm;background:#111;color:#fff;font-size:6pt}
@@ -524,7 +530,7 @@ body.mode-dual .rehearsal-cell{display:block}
       <div>
         <p class="live-kicker">Live audience</p>
         <b>Let the room rate you from their phones.</b>
-        <span>Strong, Solid, or Fix on all 18 criteria. The dashboard updates as students tap — no accounts, no app.</span>
+        <span>Rate all 18 criteria from 1 to 5. The dashboard updates as students tap — no accounts, no app.</span>
       </div>
       <a class="btn amber" href="https://qiangmia.github.io/presenskills/live.html" target="_blank" rel="noopener">Open live dashboard →</a>
     </div>
@@ -546,7 +552,7 @@ body.mode-dual .rehearsal-cell{display:block}
 <section class="how-strip" aria-label="How to use this checklist">
   <div class="wrap">
     <div class="how-item"><b>01 / Rehearse</b><span>Tick only what you can actually do in one run. Leave the rest blank.</span></div>
-    <div class="how-item"><b>02 / Audit</b><span>Hand it to a listener. Rate Strong, Solid, or Fix, and write one specific note.</span></div>
+    <div class="how-item"><b>02 / Audit</b><span>Hand it to a listener, or open a live room. Rate 1–5, and write one specific note.</span></div>
     <div class="how-item"><b>03 / Compare</b><span>Read the score and the notes. Choose one observable target for the next take.</span></div>
   </div>
 </section>
@@ -568,6 +574,7 @@ body.mode-dual .rehearsal-cell{display:block}
           <span class="level-hint" id="levelHint">Showing 18 criteria · 10 beginner core</span>
         </div>
         <p class="mode-note"><i aria-hidden="true"></i><span id="modeNote"><b>Dual view</b> — self-check and audience rating together.</span></p>
+        <p class="scale-note"><b>Audience scale</b> · 1 needs work · 2 developing · 3 solid · 4 strong · 5 exemplary</p>
       </div>
     </div>
 
@@ -766,6 +773,25 @@ body.mode-dual .rehearsal-cell{display:block}
   function save(){
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
   }
+
+  /* migrate the old Strong / Solid / Fix ratings to the 1–5 scale */
+  var LEGACY_RATINGS = {strong:5, solid:3, fix:1};
+  var ratingsMigrated = false;
+  Object.keys(state.ratings).forEach(function(id){
+    var value = state.ratings[id];
+    var score = typeof value === "string" ? LEGACY_RATINGS[value] : Number(value);
+    if (score >= 1 && score <= 5 && Math.floor(score) === score) {
+      state.ratings[id] = score;
+      if (score !== value) ratingsMigrated = true;
+    } else {
+      delete state.ratings[id];
+      ratingsMigrated = true;
+    }
+  });
+  if (ratingsMigrated) save();
+
+  var SCORE_LABELS = {1:"Needs work",2:"Developing",3:"Solid",4:"Strong",5:"Exemplary"};
+
   function activeItems(){
     return DATA.filter(function(item){ return state.level === "full" || item.core; });
   }
@@ -775,6 +801,9 @@ body.mode-dual .rehearsal-cell{display:block}
     var core = item.core
       ? '<span class="core-badge">Core</span>'
       : '<span class="core-badge" style="border-color:var(--rule);background:var(--paper-2);color:var(--muted)">Polish</span>';
+    var ratingButtons = [1,2,3,4,5].map(function(score){
+      return '<button class="rate-btn" type="button" data-rate="' + item.id + '" data-score="' + score + '" aria-pressed="false" aria-label="' + score + " — " + SCORE_LABELS[score] + '" title="' + score + " — " + SCORE_LABELS[score] + '">' + score + '</button>';
+    }).join("");
     return '' +
       '<article class="criterion" data-id="' + item.id + '" data-core="' + item.core + '">' +
         '<div class="crit-copy">' +
@@ -789,13 +818,11 @@ body.mode-dual .rehearsal-cell{display:block}
         '<div class="crit-cell audience-cell">' +
           '<div class="rating-row"><span class="cell-label">Audience</span>' +
             '<div class="rating-group" role="group" aria-label="Rating for ' + item.title.replace(/"/g, '&quot;') + '">' +
-              '<button class="rate-btn" type="button" data-rate="' + item.id + '" data-rating="strong" aria-pressed="false">Strong</button>' +
-              '<button class="rate-btn" type="button" data-rate="' + item.id + '" data-rating="solid" aria-pressed="false">Solid</button>' +
-              '<button class="rate-btn" type="button" data-rate="' + item.id + '" data-rating="fix" aria-pressed="false">Fix</button>' +
+              ratingButtons +
             '</div>' +
           '</div>' +
           '<span class="print-rating" aria-hidden="true"></span>' +
-          '<input class="note" type="text" data-note="' + item.id + '" placeholder="Strength / fix...">' +
+          '<input class="note" type="text" data-note="' + item.id + '" placeholder="One specific note...">' +
           '<span class="print-note" aria-hidden="true"></span>' +
         '</div>' +
       '</article>';
@@ -818,7 +845,7 @@ body.mode-dual .rehearsal-cell{display:block}
     });
     $$("[data-rate]").forEach(function(btn){
       var id = btn.dataset.rate;
-      var on = state.ratings[id] === btn.dataset.rating;
+      var on = Number(state.ratings[id]) === Number(btn.dataset.score);
       btn.setAttribute("aria-pressed", String(on));
     });
     $$("[data-note]").forEach(function(input){
@@ -827,10 +854,12 @@ body.mode-dual .rehearsal-cell{display:block}
       var mirror = input.parentElement.querySelector(".print-note");
       if (mirror) mirror.textContent = input.value;
     });
-    $$("[data-rate]").forEach(function(btn){
-      var id = btn.dataset.rate;
-      var mirror = btn.closest(".audience-cell").querySelector(".print-rating");
-      if (mirror) mirror.textContent = state.ratings[id] ? state.ratings[id].toUpperCase() : "";
+    $$(".audience-cell").forEach(function(cell){
+      var btn = cell.querySelector("[data-rate]");
+      var mirror = cell.querySelector(".print-rating");
+      if (!btn || !mirror) return;
+      var score = state.ratings[btn.dataset.rate];
+      mirror.textContent = score ? score + " / 5" : "";
     });
     $$("[data-meta]").forEach(function(el){
       var key = el.dataset.meta;
@@ -852,10 +881,11 @@ body.mode-dual .rehearsal-cell{display:block}
     var items = activeItems();
     var total = items.length;
     var checked = items.filter(function(item){ return !!state.checks[item.id]; }).length;
-    var rated = items.filter(function(item){ return !!state.ratings[item.id]; });
-    var points = rated.reduce(function(sum, item){
-      return sum + (state.ratings[item.id] === "strong" ? 3 : state.ratings[item.id] === "solid" ? 2 : 1);
-    }, 0);
+    var rated = items.filter(function(item){
+      var score = Number(state.ratings[item.id]);
+      return score >= 1 && score <= 5;
+    });
+    var points = rated.reduce(function(sum, item){ return sum + Number(state.ratings[item.id]); }, 0);
 
     $("#progressLabel").textContent = checked + " / " + total + " checked";
     $("#progressBar").style.width = (total ? (checked / total * 100) : 0) + "%";
@@ -867,7 +897,7 @@ body.mode-dual .rehearsal-cell{display:block}
       $("#auditScore").textContent = "—";
       $("#auditLabel").textContent = "Not rated yet";
     } else {
-      $("#auditScore").textContent = Math.round(points / (rated.length * 3) * 100) + "%";
+      $("#auditScore").textContent = (points / rated.length).toFixed(1) + "/5";
       $("#auditLabel").textContent = rated.length + " / " + total + " criteria audited";
     }
 
@@ -942,14 +972,15 @@ body.mode-dual .rehearsal-cell{display:block}
     $$("[data-rate]").forEach(function(btn){
       btn.addEventListener("click", function(){
         var id = btn.dataset.rate;
-        var value = btn.dataset.rating;
-        state.ratings[id] = state.ratings[id] === value ? "" : value;
+        var score = Number(btn.dataset.score);
+        if (state.ratings[id] === score) delete state.ratings[id];
+        else state.ratings[id] = score;
         $$('[data-rate="' + id + '"]').forEach(function(b){
-          b.setAttribute("aria-pressed", String(state.ratings[id] === b.dataset.rating));
+          b.setAttribute("aria-pressed", String(Number(state.ratings[id]) === Number(b.dataset.score)));
         });
         var cell = btn.closest(".audience-cell");
         var mirror = cell && cell.querySelector(".print-rating");
-        if (mirror) mirror.textContent = state.ratings[id] ? state.ratings[id].toUpperCase() : "";
+        if (mirror) mirror.textContent = state.ratings[id] ? state.ratings[id] + " / 5" : "";
         save(); update();
       });
     });
@@ -1026,13 +1057,16 @@ body.mode-dual .rehearsal-cell{display:block}
     lines.push("Observer: " + (state.meta.observer || "—"));
     lines.push("Topic: " + (state.meta.topic || "—"));
     lines.push("Rehearsal: " + items.filter(function(i){ return !!state.checks[i.id]; }).length + " / " + items.length);
-    var rated = items.filter(function(i){ return !!state.ratings[i.id]; });
-    var points = rated.reduce(function(sum,i){ return sum + (state.ratings[i.id] === "strong" ? 3 : state.ratings[i.id] === "solid" ? 2 : 1); }, 0);
-    lines.push("Audit: " + (rated.length ? Math.round(points / (rated.length * 3) * 100) + "% (" + rated.length + " rated)" : "not rated"));
+    var rated = items.filter(function(i){
+      var score = Number(state.ratings[i.id]);
+      return score >= 1 && score <= 5;
+    });
+    var points = rated.reduce(function(sum,i){ return sum + Number(state.ratings[i.id]); }, 0);
+    lines.push("Audit: " + (rated.length ? (points / rated.length).toFixed(1) + " / 5 (" + rated.length + " rated)" : "not rated"));
     lines.push("");
     items.forEach(function(item){
       var mark = state.checks[item.id] ? "[x]" : "[ ]";
-      var rating = state.ratings[item.id] || "—";
+      var rating = state.ratings[item.id] ? state.ratings[item.id] + " / 5" : "—";
       var note = (state.notes[item.id] || "").trim();
       lines.push(mark + " " + item.title + " · " + rating + (note ? " — " + note : ""));
     });

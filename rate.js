@@ -3,8 +3,8 @@
    ========================================================================== */
 
 import {
-  DOMAINS, ALL_ITEMS, MAX_RATINGS, RATING_VALUES, ensureAuth, getRoom,
-  watchRoom, loadMyRatings, saveRatings, normalizeRoomCode, isValidRoomCode
+  DOMAINS, ALL_ITEMS, MAX_RATINGS, RATING_LABELS, ensureAuth, getRoom,
+  watchRoom, loadMyRatings, saveRatings, normalizeRoomCode, isValidRoomCode, normalizeScore
 } from "./live-core.js";
 
 const $ = (selector, root = document) => (root || document).querySelector(selector);
@@ -65,9 +65,8 @@ function writeLocal() {
 function normalizeRatings(source) {
   const clean = {};
   ALL_ITEMS.forEach(item => {
-    if (source && RATING_VALUES.includes(source[item.id])) {
-      clean[item.id] = source[item.id];
-    }
+    const score = normalizeScore(source && source[item.id]);
+    if (score !== null) clean[item.id] = score;
   });
   return clean;
 }
@@ -79,18 +78,20 @@ function setSaveState(text, isError) {
 }
 
 function ratedCount() {
-  return ALL_ITEMS.filter(item => RATING_VALUES.includes(state.ratings[item.id])).length;
+  return ALL_ITEMS.filter(item => normalizeScore(state.ratings[item.id]) !== null).length;
 }
 
 /* ---------- rendering ---------- */
 function renderRateList() {
   const html = DOMAINS.map(domain => {
     const items = domain.items.map(item => {
-      const buttons = ["strong", "solid", "fix"].map(value => (
-        '<button class="rate-btn" type="button" data-id="' + item.id + '" data-rating="' + value + '"' +
-          ' aria-pressed="' + (state.ratings[item.id] === value ? "true" : "false") + '"' +
+      const buttons = [1, 2, 3, 4, 5].map(score => (
+        '<button class="rate-btn" type="button" data-id="' + item.id + '" data-score="' + score + '"' +
+          ' aria-pressed="' + (state.ratings[item.id] === score ? "true" : "false") + '"' +
+          ' aria-label="' + score + " — " + RATING_LABELS[score] + '"' +
+          ' title="' + score + " — " + RATING_LABELS[score] + '"' +
           (state.closed ? " disabled" : "") + ">" +
-          value.charAt(0).toUpperCase() + value.slice(1) +
+          score +
         "</button>"
       )).join("");
 
@@ -134,7 +135,7 @@ function renderProgress() {
   $$(".rate-domain").forEach(section => {
     const domain = DOMAINS.find(entry => entry.id === section.dataset.domain);
     if (!domain) return;
-    const count = domain.items.filter(item => RATING_VALUES.includes(state.ratings[item.id])).length;
+    const count = domain.items.filter(item => normalizeScore(state.ratings[item.id]) !== null).length;
     const label = section.querySelector("small");
     if (label) label.textContent = count + " / " + domain.items.length;
   });
@@ -143,7 +144,7 @@ function renderProgress() {
 function updateButtons(id) {
   $$(".rate-btn").forEach(button => {
     if (button.dataset.id !== id) return;
-    button.setAttribute("aria-pressed", state.ratings[id] === button.dataset.rating ? "true" : "false");
+    button.setAttribute("aria-pressed", state.ratings[id] === normalizeScore(button.dataset.score) ? "true" : "false");
   });
 }
 
@@ -285,13 +286,13 @@ $("#rateList").addEventListener("click", event => {
   if (!button || state.closed) return;
 
   const id = button.dataset.id;
-  const value = button.dataset.rating;
-  if (!RATING_VALUES.includes(value)) return;
+  const score = normalizeScore(button.dataset.score);
+  if (score === null) return;
 
-  if (state.ratings[id] === value) {
+  if (state.ratings[id] === score) {
     delete state.ratings[id];
   } else {
-    state.ratings[id] = value;
+    state.ratings[id] = score;
   }
 
   updateButtons(id);

@@ -19,7 +19,7 @@ Ten of the eighteen are marked as the beginner core.
 ## How to use it
 
 - **Rehearse** — tick only what you can actually do in one run.
-- **Audit** — hand the page to a listener; rate Strong, Solid, or Fix, and add one specific note.
+- **Audit** — hand the page to a listener; rate each criterion from 1 to 5, and add one specific note.
 - **Compare** — read the score and notes, then choose one target for the next take.
 
 The page works in Dual, Rehearsal, and Audience views, saves progress in the
@@ -31,16 +31,17 @@ The **Open live dashboard** button on the checklist opens `live.html`.
 
 1. Create a room and give it a session label.
 2. Project or share the QR code / audience link.
-3. Students open `rate.html?room=CODE` on their phones and rate each criterion:
-   **Strong**, **Solid**, or **Fix**. Initials are optional.
-4. The dashboard updates live with rater count, completion, class average,
-   per-domain averages, and per-criterion totals.
+3. Students open `rate.html?room=CODE` on their phones and rate each criterion
+   from 1 to 5: **1** needs work, **3** solid, **5** exemplary. Initials are optional.
+4. The dashboard updates live with rater count, completion, class average
+   (out of 5), per-domain averages, and per-criterion 1–5 distributions.
 5. Close the room when the class is done. The results remain visible; the
    rating page becomes read-only.
 
 Ratings are stored in Firestore, not in the presenter's browser. A student can
 change an answer until the room is closed; the dashboard replaces the old rating
-rather than counting it twice.
+rather than counting it twice. Scores are numeric 1–5; legacy Strong / Solid /
+Fix values are read as 5 / 3 / 1.
 
 ### Privacy and practical notes
 
