@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Final Report Guidelines</title>
+<meta name="description" content="A practical guide to the final group presentation: choose a purpose, build a one-page brief, write the script, design the deck, rehearse the handoffs, and deliver.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315171a'/%3E%3Crect x='7' y='8' width='18' height='3' fill='%23d9a22e'/%3E%3Crect x='7' y='15' width='12' height='2' fill='%23f3efe5'/%3E%3Crect x='7' y='21' width='18' height='2' fill='%23b23a2c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --paper:#f3efe5;
+  --paper-2:#e9e2d4;
+  --white:#fffdf7;
+  --ink:#15171a;
+  --ink-2:#36342f;
+  --muted:#645f55;
+  --faint:#675f54;
+  --rule:#d5cebf;
+  --rule-2:#e4ded1;
+  --red:#b23a2c;
+  --red-deep:#8e2b21;
+  --amber:#d9a22e;
+  --amber-soft:#f3dfb8;
+  --green:#3f7a4f;
+  --green-soft:#e6efe4;
+  --blue:#2f5f8f;
+  --blue-soft:#e7eef5;
+  --rose:#a54537;
+  --rose-soft:#f3e6e2;
+  --display:"Arial Black","Helvetica Neue",Impact,"Segoe UI",sans-serif;
+  --sans:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --mono:"Consolas","SF Mono","Cascadia Mono",monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  margin:0;padding-top:60px;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+::selection{background:var(--amber);color:var(--ink)}
+h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;z-index:3000;background:var(--amber);color:var(--ink);padding:10px 14px;font:700 12px var(--mono)}
+.skip:focus{left:12px;top:12px}
+.wrap{width:min(calc(100% - 40px),1180px);margin:0 auto}
+.kicker{font:700 10px/1.4 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+.lead{font-size:17.5px;line-height:1.55;color:var(--ink-2);max-width:70ch}
+.small{font-size:13.5px;line-height:1.55;color:var(--muted)}
+.mono{font-family:var(--mono)}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
+  display:flex;align-items:center;gap:14px;padding:0 clamp(14px,2.6vw,28px);
+  background:var(--ink);color:var(--paper);border-bottom:1px solid #34373d;
+}
+.brand{display:flex;align-items:center;gap:8px;flex:none;text-decoration:none;font:700 10px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
+.brand i{width:9px;height:9px;background:var(--red);display:block;flex:none}
+.brand span{color:#a8a294;font-weight:400}
+.top-tag{padding:5px 8px;background:var(--amber);color:var(--ink);font:700 8px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.top-links{margin-left:auto;display:flex;align-items:center;gap:12px}
+.top-links a{color:#d8d1c3;text-decoration:none;font:700 8.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.top-links a:hover{color:#fff}
+.top-links button{border:1px solid #666;background:transparent;color:var(--paper);padding:8px 9px;font:700 8.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.top-links button:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(38px,5.5vw,72px) 0 clamp(30px,4vw,46px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:clamp(28px,4.5vw,60px);align-items:start}
+.hero h1{margin-top:12px;font-family:var(--display);font-size:clamp(42px,5.2vw,68px);line-height:.9;letter-spacing:-.055em;text-transform:uppercase;max-width:none}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .dek{margin-top:18px;font-size:clamp(19px,2vw,23px);line-height:1.35;font-weight:600;color:var(--ink-2);max-width:34ch}
+.hero .intro{margin-top:18px;font-size:15.5px;line-height:1.6;color:var(--muted);max-width:58ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0}
+.hero-facts div{min-width:0}
+.hero-facts span{display:block;font:700 7.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hero-facts b{display:block;margin-top:2px;font:700 10.5px/1.45 var(--mono);color:var(--ink);letter-spacing:.01em}
+.hero-meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:20px;padding-top:11px;border-top:1px solid var(--rule);font:600 9px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.score-card{background:var(--ink);color:var(--paper);padding:22px;border:1px solid #34373d;box-shadow:0 16px 38px rgba(21,23,26,.12)}
+.score-card .kicker{color:var(--amber)}
+.score-card h2{margin-top:5px;font-family:var(--display);font-size:26px;line-height:1;text-transform:uppercase;letter-spacing:-.03em}
+.score-card p{margin-top:6px;font-size:12px;line-height:1.5;color:#bdb6a8}
+.score-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px solid #3a3d43;padding:9px 0}
+.score-row:first-of-type{margin-top:14px}
+.score-row span{font:700 8.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#d8d1c3}
+.score-row b{font:800 22px/1 var(--display);letter-spacing:-.03em;color:var(--amber)}
+.score-val{text-align:right}
+.score-val b{display:block}
+.score-row small{display:block;font:600 8px/1.4 var(--mono);color:#9f998c;letter-spacing:.02em}
+.score-note{margin-top:12px;padding-top:10px;border-top:1px solid #3a3d43;color:#bdb6a8}
+.score-card .btn{width:100%;margin-top:12px;border-color:var(--amber);color:var(--ink);background:var(--amber)}
+
+/* ---------- shared ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:10px 13px;font:700 9px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn.amber{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.btn.amber:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+
+/* ---------- toc ---------- */
+.toc{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;display:flex;flex-wrap:wrap;gap:5px 7px;align-items:center}
+.toc>span{font:700 8px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.toc a{text-decoration:none;border:1px solid var(--rule);background:var(--white);padding:5px 7px;font:700 8px/1.3 var(--mono);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.toc a:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+
+/* ---------- sections ---------- */
+.section{padding:clamp(36px,4.5vw,54px) 0;border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:62px minmax(0,1fr);gap:16px;align-items:start;margin-bottom:22px}
+.sec-no{font-family:var(--display);font-size:42px;line-height:.8;letter-spacing:-.04em;color:var(--red)}
+.sec-head h2{margin-top:4px;font-family:var(--display);font-size:clamp(30px,4vw,42px);line-height:.95;letter-spacing:-.045em;text-transform:uppercase;max-width:22ch}
+.sec-head h2 em{font-style:normal;color:var(--red)}
+.sec-head .lead{margin-top:10px;max-width:72ch}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.card{background:var(--white);border:1px solid var(--rule);padding:17px}
+.card h3{font-family:var(--display);font-size:17px;line-height:1.1;letter-spacing:-.02em;text-transform:uppercase}
+.card h3 em{font-style:normal;color:var(--red)}
+.card p{margin-top:6px;font-size:13px;line-height:1.5;color:var(--muted)}
+.card ul{margin-top:8px;display:grid;gap:4px}
+.card li{position:relative;padding-left:12px;font-size:12.5px;line-height:1.45;color:var(--ink-2)}
+.card li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;background:var(--red)}
+.tag{display:inline-block;padding:3px 6px;background:var(--paper-2);border:1px solid var(--rule);font:700 7.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tag.red{background:var(--rose-soft);border-color:#d8b7ad;color:var(--red-deep)}
+.tag.blue{background:var(--blue-soft);border-color:#b7c9da;color:#254b70}
+.tag.amber{background:var(--amber-soft);border-color:#d7be82;color:#5f4810}
+.callout{margin-top:16px;border:1px solid var(--ink);background:var(--amber-soft);padding:14px 16px}
+.callout b{display:block;font:800 10px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.callout p{margin-top:3px;font-size:13.5px;line-height:1.5;color:var(--ink-2);max-width:76ch}
+.note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:10px 12px;font-size:12.5px;line-height:1.5;color:#2d4258}
+.note b{font:700 8px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+
+/* ---------- deliverables ---------- */
+.deliverable{background:var(--white);border:1px solid var(--rule);padding:16px;display:flex;flex-direction:column;min-height:155px}
+.deliverable .weight{font:800 26px/1 var(--display);letter-spacing:-.04em;color:var(--red)}
+.deliverable h3{margin-top:5px}
+.deliverable p{flex:1}
+.sequence{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:16px;padding:12px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font:700 8px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sequence span{padding:5px 7px;background:var(--white);border:1px solid var(--rule)}
+.sequence i{font-style:normal;color:var(--red)}
+
+/* ---------- tracks ---------- */
+.track{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--ink);padding:17px}
+.track.persuade{border-top-color:var(--red)}
+.track.inform{border-top-color:var(--blue)}
+.track.entertain{border-top-color:var(--amber)}
+.track h3{margin-top:8px}
+.track .job{margin-top:3px;font:700 8px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.track .structure{margin-top:10px;padding-top:8px;border-top:1px solid var(--rule-2);font:600 9.5px/1.6 var(--mono);color:var(--ink-2)}
+.track .close-line{margin-top:8px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.track .close-line b{color:var(--ink)}
+
+/* ---------- topics ---------- */
+.topic{background:var(--white);border:1px solid var(--rule);padding:17px}
+.topic .quote{margin-top:10px;padding:11px 12px;border-left:3px solid var(--red);background:var(--paper-2);font:600 12.5px/1.5 var(--sans);color:var(--ink)}
+.topic p{margin-top:8px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.topic .facts{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.topic .facts span{font:600 8px/1.35 var(--mono);color:var(--muted);border:1px solid var(--rule);padding:3px 5px;background:var(--paper)}
+.purpose-topics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.purpose-col{display:flex;flex-direction:column;gap:10px}
+.purpose-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;border-bottom:2px solid var(--ink);padding-bottom:6px}
+.purpose-head b{font-family:var(--display);font-size:18px;line-height:1;text-transform:uppercase;letter-spacing:-.02em}
+.purpose-head span{font:700 8px/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.purpose-col .topic{flex:1}
+.rules{margin-top:14px;border:1px solid var(--ink);background:var(--white);padding:15px 17px}
+.rules h3{margin-top:0}
+.rules ol{margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:5px 20px;counter-reset:rule}
+.rules li{position:relative;padding-left:20px;font-size:12.5px;line-height:1.45;color:var(--ink-2);counter-increment:rule}
+.rules li::before{content:counter(rule,decimal-leading-zero);position:absolute;left:0;top:0;font:700 8px/1.5 var(--mono);color:var(--red)}
+
+/* ---------- brief ---------- */
+.brief{background:var(--white);border:1px solid var(--ink);padding:20px}
+.brief-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.brief-head h3{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:-.02em}
+.brief-head span{font:600 8px/1.4 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;margin-top:14px}
+.brief-field{display:flex;flex-direction:column;gap:4px}
+.brief-field.full{grid-column:1/-1}
+.brief-field label{font:700 8px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.brief-field input,.brief-field textarea{width:100%;border:1px solid var(--rule);background:var(--paper);padding:8px 9px;font:13px/1.45 var(--sans)}
+.brief-field input:focus,.brief-field textarea:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.brief-field textarea{resize:vertical;min-height:44px}
+.brief-purpose{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:2px}
+.brief-purpose label{display:inline-flex;align-items:center;gap:5px;font:700 9px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.03em;color:var(--ink-2)}
+.brief-purpose input{accent-color:var(--red)}
+.move-grid{display:grid;gap:7px}
+.move-field{display:grid;grid-template-columns:86px minmax(0,1fr);gap:8px;align-items:center}
+.move-field span{font:700 8px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.move-field input{width:100%;border:0;border-bottom:1px solid var(--rule);background:transparent;padding:6px 2px;font:12.5px/1.4 var(--sans)}
+.move-field input:focus{outline:2px solid var(--red);outline-offset:2px}
+.brief-check{display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:14px;padding-top:10px;border-top:1px solid var(--rule);font:600 8px/1.4 var(--mono);color:var(--muted)}
+.brief-check span::before{content:"✓";color:var(--green);margin-right:4px;font-weight:700}
+
+/* ---------- workflow ---------- */
+.step{background:var(--white);border:1px solid var(--rule);padding:16px}
+.step .n{font:800 11px/1 var(--mono);letter-spacing:.06em;color:var(--red)}
+.step h3{margin-top:7px}
+.step p{margin-top:5px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.step .check{margin-top:8px;padding-top:7px;border-top:1px solid var(--rule-2);font:600 8.5px/1.45 var(--mono);color:var(--ink-2)}
+.step .check b{color:var(--green);text-transform:uppercase;letter-spacing:.05em}
+
+/* ---------- arc ---------- */
+.arc-big{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:6px 0 18px}
+.arc-big div{background:var(--ink);color:var(--paper);padding:12px 8px;text-align:center;font:800 10px/1.25 var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.arc-big div:nth-child(3){background:var(--red)}
+.arc-map{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.arc-map div{border-top:2px solid var(--red);background:var(--white);padding:10px}
+.arc-map b{display:block;font:800 11px/1.2 var(--mono);color:var(--red)}
+.arc-map span{display:block;margin-top:4px;font-size:12px;line-height:1.45;color:var(--ink-2)}
+.flip{margin-top:14px;background:var(--ink);color:var(--paper);padding:16px 18px;border-left:4px solid var(--amber)}
+.flip .kicker{color:var(--amber)}
+.flip blockquote{margin-top:7px;font:600 16px/1.45 var(--sans);max-width:75ch}
+.flip p{margin-top:7px;font-size:11.5px;line-height:1.5;color:#bdb6a8}
+.closes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.closes div{background:var(--white);border:1px solid var(--rule);padding:12px}
+.closes b{display:block;font:800 10px/1.3 var(--mono);text-transform:uppercase;color:var(--red)}
+.closes span{display:block;margin-top:4px;font-size:12.5px;line-height:1.45;color:var(--ink-2)}
+
+/* ---------- deck ---------- */
+.levers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lever{background:var(--white);border:1px solid var(--rule);padding:14px}
+.lever h3{font-family:var(--display);font-size:18px;text-transform:uppercase;letter-spacing:-.02em}
+.lever p{margin-top:2px;font-size:12px;line-height:1.45;color:var(--muted)}
+.recipe{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin-top:14px}
+.recipe p{position:relative;padding-left:16px;font-size:12.5px;line-height:1.45;color:var(--ink-2)}
+.recipe p::before{content:"→";position:absolute;left:0;color:var(--red);font-weight:700}
+.backrow{margin-top:14px;border:1px dashed var(--ink);padding:12px;background:var(--white)}
+.backrow b{font:800 9px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.backrow p{margin-top:3px;font-size:12.5px;color:var(--muted)}
+
+/* ---------- group ---------- */
+.roles{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--rule)}
+.roles th,.roles td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule-2);font-size:12.5px;line-height:1.45;vertical-align:top}
+.roles th{font:700 8px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--paper-2)}
+.roles tr:last-child td{border-bottom:0}
+.handoffs{display:grid;gap:6px;margin-top:14px}
+.handoff{border-left:3px solid var(--amber);background:var(--white);padding:9px 11px;font-size:12.5px;line-height:1.5}
+.handoff b{font:700 8px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--red);margin-right:5px}
+.runshow{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--rule);margin-top:14px;table-layout:fixed}
+.table-scroll{overflow-x:auto;margin-top:14px}
+.table-scroll .runshow{margin-top:0}
+.runshow th:nth-child(1),.runshow td:nth-child(1){width:20%}
+.runshow th:nth-child(2),.runshow td:nth-child(2){width:13%}
+.runshow th:nth-child(3),.runshow td:nth-child(3){width:39%}
+.runshow th:nth-child(4),.runshow td:nth-child(4){width:28%}
+.runshow th,.runshow td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--rule-2);font-size:12px;line-height:1.4;vertical-align:top}
+.runshow th{font:700 8px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--paper-2)}
+.runshow tr:last-child td{border-bottom:0}
+.runshow td:first-child{font:700 8.5px/1.4 var(--mono);color:var(--red);white-space:nowrap}
+.stage-list{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin-top:12px}
+.stage-list p{position:relative;padding-left:15px;font-size:12.5px;line-height:1.45;color:var(--ink-2)}
+.stage-list p::before{content:"•";position:absolute;left:0;color:var(--red)}
+
+/* ---------- rehearsal ---------- */
+.rehearsal{background:var(--white);border:1px solid var(--rule);padding:15px}
+.rehearsal .no{font:800 9px/1 var(--mono);color:var(--red);letter-spacing:.06em}
+.rehearsal h3{margin-top:6px}
+.rehearsal p{margin-top:4px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.rehearsal .done{margin-top:8px;padding-top:7px;border-top:1px solid var(--rule-2);font:600 8.5px/1.45 var(--mono);color:var(--ink-2)}
+
+/* ---------- assessment ---------- */
+.assess{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--ink)}
+.assess th,.assess td{text-align:left;padding:10px;border-bottom:1px solid var(--rule-2);font-size:12.5px;line-height:1.45;vertical-align:top}
+.assess th{font:700 8px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--paper-2)}
+.assess td b{font-size:14px}
+.assess tr:last-child td{border-bottom:0}
+.assess .total{background:var(--amber-soft)}
+.excellent{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}
+.excellent div{background:var(--white);border:1px solid var(--rule);padding:12px}
+.excellent b{display:block;font:800 10px/1.3 var(--mono);text-transform:uppercase;color:var(--red)}
+.excellent span{display:block;margin-top:4px;font-size:12px;line-height:1.45;color:var(--ink-2)}
+.peer{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}
+.peer .card{background:var(--paper-2)}
+.peer ol{margin-top:8px;display:grid;gap:5px;counter-reset:peer}
+.peer li{position:relative;padding-left:18px;font-size:12.5px;line-height:1.45;color:var(--ink-2);counter-increment:peer}
+.peer li::before{content:counter(peer,decimal-leading-zero);position:absolute;left:0;top:0;font:700 8px/1.5 var(--mono);color:var(--red)}
+.list-title{margin-top:14px;font:700 9px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--red)}
+.success{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin-top:6px}
+.success p{position:relative;padding-left:15px;font-size:12.5px;line-height:1.45;color:var(--ink-2)}
+.success p::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+
+/* ---------- templates ---------- */
+.template{background:var(--white);border:1px solid var(--rule);padding:15px;margin-top:14px}
+.template h3{font-family:var(--display);font-size:16px;text-transform:uppercase;letter-spacing:-.02em}
+.template p{margin-top:4px;font-size:12px;line-height:1.45;color:var(--muted)}
+.template table{width:100%;border-collapse:collapse;margin-top:8px}
+.template th,.template td{border:1px solid var(--rule);padding:7px;height:24px;font-size:11px;line-height:1.35;text-align:left}
+.template th{background:var(--paper-2);font:700 7.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.peer-prompts{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin-top:8px}
+.peer-prompts p{font-size:12px;line-height:1.45;color:var(--ink-2)}
+
+/* ---------- checklist ---------- */
+.check-panel{background:var(--white);border:1px solid var(--ink);padding:16px}
+.check-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.check-head h3{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:-.02em}
+.check-head span{font:700 9px/1.4 var(--mono);color:var(--red)}
+.check-list{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin-top:12px}
+.check-list label{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:13px;line-height:1.4;color:var(--ink-2)}
+.check-list input{appearance:none;width:18px;height:18px;border:1.5px solid var(--ink);background:transparent;display:grid;place-content:center;flex:none;margin:1px 0 0}
+.check-list input::before{content:"";width:9px;height:9px;transform:scale(0);background:var(--green)}
+.check-list input:checked::before{transform:scale(1)}
+.check-list input:checked+span{color:var(--ink)}
+.check-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid var(--rule)}
+.check-actions .progress{font:700 9px/1.4 var(--mono);color:var(--muted);margin-right:auto}
+
+/* ---------- faq ---------- */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.faq article{background:var(--white);border:1px solid var(--rule);padding:14px}
+.faq h3{font-size:14px;line-height:1.3;font-weight:700}
+.faq p{margin-top:5px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+
+/* ---------- footer ---------- */
+.footer{background:var(--ink);color:#b8b1a4;padding:22px 0 26px;font:400 10px/1.6 var(--mono)}
+.footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+.footer b{color:var(--paper)}
+.footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid #5c584f}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;gap:24px}
+  .score-card{max-width:560px}
+  .grid-3,.grid-4,.excellent{grid-template-columns:1fr 1fr}
+  .purpose-topics{grid-template-columns:1fr}
+  .levers{grid-template-columns:1fr 1fr}
+  .arc-map{grid-template-columns:1fr 1fr}
+  .rules ol{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  body{padding-top:96px;font-size:16px}
+  .topbar{height:96px;flex-wrap:wrap;align-content:center;gap:6px;padding:7px 12px}
+  .brand{font-size:9px}
+  .brand span{display:none}
+  .top-tag{font-size:7px;padding:4px 6px}
+  .top-links{margin-left:auto;gap:8px}
+  .top-links a{display:none}
+  .top-links button{font-size:8px;padding:7px 8px}
+  html{scroll-padding-top:106px}
+  .wrap{width:min(calc(100% - 28px),1180px)}
+  .hero{padding-top:28px}
+  .hero h1{font-size:clamp(38px,12vw,56px)}
+  .hero .dek{font-size:19px}
+  .hero-facts{grid-template-columns:1fr;gap:5px;padding:8px 0}
+  .hero-facts div{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px solid var(--rule-2);padding-top:5px}
+  .hero-facts div:first-child{border-top:0;padding-top:0}
+  .hero-facts b{margin-top:0;text-align:right}
+  .grid-2,.grid-3,.grid-4,.brief-grid,.levers,.excellent,.peer,.arc-map,.check-list,.faq,.success,.stage-list,.recipe{grid-template-columns:1fr}
+  .move-field{grid-template-columns:78px minmax(0,1fr)}
+  .arc-big{grid-template-columns:1fr;gap:4px}
+  .arc-big div{padding:8px}
+  .sec-head{grid-template-columns:1fr;gap:4px}
+  .sec-no{font-size:32px}
+  .sec-head h2{font-size:clamp(28px,8.5vw,36px)}
+  .assess th,.assess td{font-size:11.5px;padding:8px 7px}
+  .roles th,.roles td,.runshow th,.runshow td{font-size:11px;padding:7px}
+  .table-scroll .runshow{min-width:560px}
+  .template{overflow-x:auto}
+}
+@media (max-width:430px){
+  .hero h1{font-size:clamp(34px,11.5vw,46px)}
+  .top-links a{display:none}
+  .top-links button{font-size:7.5px}
+  .check-list input{width:20px;height:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{size:A4;margin:12mm}
+  body{background:#fff;padding:0;font-size:9pt;line-height:1.4;color:#111}
+  .topbar,.toc,.hero-actions,.score-card .btn,.footer,.no-print,.btn,.check-actions button,.brief-check,#faq{display:none!important}
+  .wrap{width:auto;max:none;margin:0}
+  .hero{display:block;padding:0 0 4mm;border-bottom:1.5pt solid #111}
+  .hero h1{font-size:30pt;line-height:.9;max-width:none;margin-top:2mm}
+  .hero .dek{font-size:12pt;max-width:44ch;margin-top:2mm}
+  .hero .intro{font-size:8.5pt;max-width:80ch;margin-top:2mm}
+  .hero-meta{font-size:6.5pt;margin-top:2mm;padding-top:1.5mm}
+  .hero-facts{grid-template-columns:repeat(3,1fr);gap:2mm;margin-top:2mm;padding:1.5mm 0;border-top:.5pt solid #999;border-bottom:.5pt solid #999}
+  .hero-facts span{font-size:5.5pt}
+  .hero-facts b{font-size:7pt;margin-top:.5mm}
+  .score-card{background:#fff;color:#111;border:1pt solid #111;padding:3mm;margin-top:4mm;box-shadow:none;max-width:none}
+  .score-card .kicker{color:#111}
+  .score-card h2{font-size:14pt}
+  .score-card p,.score-note{color:#333}
+  .score-row{border-top:.5pt solid #999}
+  .score-row span{color:#333}
+  .score-row b{color:#111;font-size:14pt}
+  .section{padding:4mm 0;break-inside:auto}
+  .sec-head{grid-template-columns:10mm 1fr;gap:2mm;margin-bottom:2mm}
+  .sec-no{font-size:20pt}
+  .sec-head h2{font-size:16pt;max-width:26ch}
+  .sec-head .lead{font-size:8pt;margin-top:1mm}
+  .card,.deliverable,.track,.topic,.step,.lever,.rehearsal,.faq article,.template,.check-panel{background:#fff;border:.6pt solid #999;padding:2mm;break-inside:avoid}
+  .deliverable{min-height:0}
+  .rules{break-inside:avoid}
+  .grid-2,.grid-3,.grid-4,.levers,.excellent,.peer,.arc-map,.check-list,.faq,.recipe{grid-template-columns:1fr 1fr}
+  .purpose-topics{grid-template-columns:1fr 1fr}
+  #deliverables .grid-3{grid-template-columns:repeat(3,1fr)}
+  .card h3,.deliverable h3,.track h3,.topic h3{font-size:9.5pt}
+  .card p,.deliverable p,.track p,.topic p,.step p,.lever p,.rehearsal p,.faq p{font-size:7.2pt;line-height:1.35}
+  .tag{font-size:5.5pt;padding:0 1mm}
+  .callout,.note,.backrow{border:.6pt solid #999;background:#fff;padding:2mm;break-inside:avoid}
+  .callout b,.note b{font-size:7pt}
+  .callout p{font-size:7.5pt}
+  .sequence{font-size:6.5pt;padding:1.5mm 0;margin-top:2mm}
+  .brief{border:1pt solid #111;padding:3mm;break-inside:avoid}
+  .brief-grid{gap:2mm 4mm}
+  .brief-field input,.brief-field textarea{border:0;border-bottom:.4pt solid #777;background:#fff;padding:.5mm 0;font-size:8pt}
+  .brief-field textarea{min-height:8mm}
+  .move-field input{border-bottom:.4pt solid #777;font-size:8pt}
+  .brief-head{border-bottom:1pt solid #111}
+  .brief-head h3{font-size:12pt}
+  .arc-big{grid-template-columns:repeat(5,1fr);gap:1mm}
+  .arc-big div{background:#fff;color:#111;border:.5pt solid #111;padding:1.5mm;font-size:6.5pt}
+  .arc-big div:nth-child(3){background:#fff;border:1pt solid #111}
+  .arc-map{grid-template-columns:repeat(4,1fr);gap:1mm}
+  .arc-map div{border-top:.8pt solid #111;padding:1.5mm}
+  .arc-map b{font-size:7pt}
+  .arc-map span{font-size:6.5pt}
+  .flip{background:#fff;color:#111;border-left:2pt solid #111;padding:2mm}
+  .flip .kicker{color:#111}
+  .flip blockquote{font-size:9pt}
+  .flip p{color:#333;font-size:6.8pt}
+  .closes{grid-template-columns:repeat(3,1fr);gap:1.5mm}
+  .closes div{padding:1.5mm}
+  .assess th,.assess td{font-size:7pt;padding:1.2mm}
+  .excellent{grid-template-columns:1fr 1fr}
+  .success{grid-template-columns:1fr 1fr}
+  .roles th,.roles td,.runshow th,.runshow td,.template th,.template td{font-size:6.5pt;padding:1mm}
+  .table-scroll{overflow:visible}
+  .table-scroll .runshow{min-width:0}
+  .check-list{grid-template-columns:1fr 1fr}
+  .check-list label{font-size:7.5pt}
+  .faq{grid-template-columns:1fr 1fr}
+  .footer{display:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the guide</a>
+
+<header class="topbar">
+  <a class="brand" href="#top"><i aria-hidden="true"></i>Final report<span> / guide</span></a>
+  <span class="top-tag">Group presentation</span>
+  <nav class="top-links" aria-label="Guide links">
+    <a href="index.html">Week 11 checklist ↗</a>
+    <a href="live.html">Live room ↗</a>
+    <button type="button" id="printBtn">Print guide</button>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero wrap" id="top" aria-labelledby="hero-title">
+  <div>
+    <p class="kicker">Final report · Group presentation</p>
+    <h1 id="hero-title">Final Report<br><em>Guidelines.</em></h1>
+    <p class="intro">A practical guide to the final group presentation: choose a purpose, build the brief, write the script, design the deck, rehearse, and deliver.</p>
+    <div class="hero-facts" aria-label="Presentation logistics">
+      <div><span>Dates</span><b>Weeks 15–16</b></div>
+      <div><span>Order</span><b>7 groups drawn at the start of each week</b></div>
+      <div><span>Time</span><b>10 min + 5 min Q&amp;A</b></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn primary" href="#brief">Start with the brief <span aria-hidden="true">→</span></a>
+      <a class="btn" href="#assessment">See how it is graded</a>
+    </div>
+    <p class="hero-meta"><span>Script → deck → rehearsal → live</span><span>Persuade · Inform · Entertain</span><span>Every member speaks</span></p>
+  </div>
+  <aside class="score-card" aria-label="Assessment weights">
+    <p class="kicker">Assessment at a glance</p>
+    <h2>The grade.</h2>
+    <p>Four components, one live performance. The room sees the result; the process still counts.</p>
+    <div class="score-row"><span>Script / story</span><b>20%</b></div>
+    <div class="score-row"><span>Deck design</span><b>15%</b></div>
+    <div class="score-row"><span>Delivery</span><div class="score-val"><b>60%</b><small>teacher 50 + peers 10</small></div></div>
+    <div class="score-row"><span>Teamwork</span><b>5%</b></div>
+    <p class="score-note">Delivery is rated live with the Week 11 checklist. Teamwork is the 5% process behind the script, deck, and delivery.</p>
+    <a class="btn amber" href="#assessment">How grading works</a>
+  </aside>
+</section>
+
+<nav class="toc wrap" aria-label="In this guide">
+  <span>In this guide</span>
+  <a href="#deliverables">Deliverables</a>
+  <a href="#purpose">Purpose</a>
+  <a href="#topics">Topics</a>
+  <a href="#brief">Brief</a>
+  <a href="#workflow">Workflow</a>
+  <a href="#arc">Arc</a>
+  <a href="#deck">Deck</a>
+  <a href="#group">Group</a>
+  <a href="#rehearsal">Rehearsal</a>
+  <a href="#assessment">Assessment</a>
+  <a href="#teamwork">Teamwork</a>
+  <a href="#checklist">Checklist</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<!-- 01 DELIVERABLES -->
+<section class="section wrap" id="deliverables" aria-labelledby="deliverables-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">01</div>
+    <div>
+      <p class="kicker">What you are making</p>
+      <h2 id="deliverables-title">Three deliverables, <em>one argument.</em></h2>
+      <p class="lead">The script is where the argument becomes clear. The deck is where it becomes visible. The live presentation is where it becomes real. Teamwork is the 5% process that makes all three possible.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="deliverable">
+      <span class="weight">20%</span>
+      <h3>Script / story</h3>
+      <p>Write the argument for the ear: a full script or essay with a clear thesis, evidence, and a five-move arc.</p>
+    </div>
+    <div class="deliverable">
+      <span class="weight">15%</span>
+      <h3>Deck design</h3>
+      <p>A clear demonstration of the design principles from Weeks 9–10: hierarchy, grid, space, balance, color, and contrast.</p>
+    </div>
+    <div class="deliverable">
+      <span class="weight">60%</span>
+      <h3>Live delivery</h3>
+      <p>The group in the room: voice, eye contact, timing, slide sync, narrative, handoffs, and Q&amp;A. Rated by the teacher and by peers with the Week 11 checklist.</p>
+    </div>
+  </div>
+
+  <div class="sequence" aria-label="Project sequence">
+    <span>Brief approved</span><i>→</i><span>Script</span><i>→</i><span>Deck</span><i>→</i><span>Rehearsal</span><i>→</i><span>Live</span>
+  </div>
+
+  <div class="note" style="margin-top:14px"><b>Teamwork · 5%</b> The process behind all three: roles, meetings, contribution, rehearsal, and handoffs.</div>
+
+  <div class="callout">
+    <b>The one rule</b>
+    <p>Make a claim or tell a story for a specific room. The room should be able to retell it after you finish; if a listener can name your five moves, the presentation is ready.</p>
+  </div>
+</section>
+
+<!-- 02 PURPOSE -->
+<section class="section wrap" id="purpose" aria-labelledby="purpose-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">02</div>
+    <div>
+      <p class="kicker">Choose a purpose</p>
+      <h2 id="purpose-title">Persuade. Inform. <em>Entertain.</em></h2>
+      <p class="lead">The course allows all three. Declare your purpose on the brief. The purpose shapes the content and the close; the delivery standard stays the same.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="track persuade">
+      <span class="tag red">Persuade</span>
+      <h3>Change a decision.</h3>
+      <p class="job">The audience should approve, fund, adopt, or stop something.</p>
+      <div class="structure">SCQA → executive flip → proposal → counterargument → implementation → CTA</div>
+      <p class="close-line"><b>Close with:</b> the specific decision you want and by when.</p>
+    </div>
+    <div class="track inform">
+      <span class="tag blue">Inform</span>
+      <h3>Change understanding.</h3>
+      <p class="job">The audience should see a process, phenomenon, or idea clearly for the first time.</p>
+      <div class="structure">question → context → explanation → evidence → implications → so-what</div>
+      <p class="close-line"><b>Close with:</b> what the audience should now notice or understand.</p>
+    </div>
+    <div class="track entertain">
+      <span class="tag amber">Entertain</span>
+      <h3>Change attention or feeling.</h3>
+      <p class="job">The audience should be absorbed, amused, moved, or surprised — and remember why.</p>
+      <div class="structure">hook → setup → complication → turn → resolution → resonance</div>
+      <p class="close-line"><b>Close with:</b> the feeling or insight the story leaves behind.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>Purpose shapes structure</b>
+    <p>The same topic can be a policy pitch, an explainer, or a story. “AI policy” can be persuasive (adopt this policy), informative (how policies are being designed), or entertaining (a day in the life of an AI detector). Pick one purpose and commit to its structure.</p>
+  </div>
+</section>
+
+<!-- 03 TOPICS -->
+<section class="section wrap" id="topics" aria-labelledby="topics-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">03</div>
+    <div>
+      <p class="kicker">Choose a topic</p>
+      <h2 id="topics-title">Three purposes, <em>six starting points.</em></h2>
+      <p class="lead">Each purpose has one named topic and one wildcard. Every option stays connected to campus life and follows the same five-move arc.</p>
+    </div>
+  </div>
+
+  <div class="purpose-topics">
+    <div class="purpose-col">
+      <p class="purpose-head"><b>Persuade</b><span>Change a decision</span></p>
+      <article class="topic">
+        <span class="tag red">Named · campus policy</span>
+        <h3 style="margin-top:8px">How can we reduce campus cup waste?</h3>
+        <div class="quote">“To cut campus cup waste by 80% within one semester, the university should replace the voluntary NT$5 mug discount with a mandatory NT$20 student-ID cup deposit.”</div>
+        <p>Use the Week 7 opening as a model, then add current campus evidence, a stakeholder angle, an implementation plan, and a counterargument.</p>
+        <div class="facts"><span>cafeteria + student affairs</span><span>cup audit</span><span>staff interview</span><span>survey</span></div>
+      </article>
+      <article class="topic">
+        <span class="tag red">Wildcard · open</span>
+        <h3 style="margin-top:8px">A proposal to improve campus life.</h3>
+        <p>Choose a campus-life issue and make a specific proposal. Examples: an AI-use policy, a student well-being pilot, or a campus transport change.</p>
+        <div class="facts"><span>your issue</span><span>primary evidence</span><span>counterargument</span><span>implementation plan</span></div>
+        <p class="small" style="margin-top:8px">Pick a decision, a measurable target, and a practical implementation plan.</p>
+      </article>
+    </div>
+
+    <div class="purpose-col">
+      <p class="purpose-head"><b>Inform</b><span>Change understanding</span></p>
+      <article class="topic">
+        <span class="tag blue">Named · process</span>
+        <h3 style="margin-top:8px">What happens to campus recycling after it leaves the bin?</h3>
+        <p>Follow the journey from bin to facility. Interview staff, map the process, and explain how it works and where it can improve.</p>
+        <div class="facts"><span>facility visit</span><span>staff interview</span><span>process map</span><span>photo evidence</span></div>
+      </article>
+      <article class="topic">
+        <span class="tag blue">Wildcard · demonstration</span>
+        <h3 style="margin-top:8px">How to make a proper cup of coffee in a dorm room.</h3>
+        <p>A practical demonstration with tools, steps, and a clear result. Show the process and the variations that work.</p>
+        <div class="facts"><span>demonstration</span><span>step-by-step</span><span>visual recipe</span><span>taste test</span></div>
+      </article>
+    </div>
+
+    <div class="purpose-col">
+      <p class="purpose-head"><b>Entertain</b><span>Change attention or feeling</span></p>
+      <article class="topic">
+        <span class="tag amber">Named · story</span>
+        <h3 style="margin-top:8px">A love letter to the campus convenience store or cafeteria.</h3>
+        <p>A comic, nostalgic story about a campus place. Use sensory detail, a turn, and a point that stays with the audience.</p>
+        <div class="facts"><span>story</span><span>comic timing</span><span>campus detail</span><span>visual props</span></div>
+      </article>
+      <article class="topic">
+        <span class="tag amber">Wildcard · comic set</span>
+        <h3 style="margin-top:8px">The five stages of an all-nighter.</h3>
+        <p>A comic set with clear beats, a turn, and a point. Use stage labels, timing, and one strong closing image.</p>
+        <div class="facts"><span>comic set</span><span>story beats</span><span>timing</span><span>visual labels</span></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="rules">
+    <h3>Wildcard approval</h3>
+    <p class="small" style="margin-top:4px">Named topics are pre-approved; wildcards use this checklist.</p>
+    <ol>
+      <li>Declare the purpose: persuade, inform, or entertain.</li>
+      <li>Connect it to campus life.</li>
+      <li>Write the one-sentence takeaway.</li>
+      <li>Map the five moves.</li>
+      <li>Add an evidence plan or a performance plan.</li>
+      <li>Add a visual plan and a Q&amp;A plan.</li>
+      <li>Assign group roles.</li>
+      <li>Get the one-page brief approved before drafting.</li>
+    </ol>
+  </div>
+
+  <div class="note" style="margin-top:14px"><b>Week 7 gives you a model opening.</b> The cup case is a starting point; a group that chooses it builds the full essay, current evidence, the deck, and Q&amp;A. A wildcard meets the same standard.</div>
+</section>
+
+<!-- 04 BRIEF -->
+<section class="section wrap" id="brief" aria-labelledby="brief-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">04</div>
+    <div>
+      <p class="kicker">Before you write</p>
+      <h2 id="brief-title">The one-page <em>brief.</em></h2>
+      <p class="lead">Fill this in before you open PowerPoint. Print it, bring it to your approval meeting, and revise it as the argument develops. A clear brief keeps the group aligned.</p>
+    </div>
+  </div>
+
+  <div class="brief">
+    <div class="brief-head"><h3>Final report — group brief</h3><span>One page · one argument</span></div>
+    <div class="brief-grid">
+      <div class="brief-field full">
+        <label for="briefTitle">Working title</label>
+        <input id="briefTitle" type="text" placeholder="A claim the audience can remember">
+      </div>
+      <div class="brief-field full">
+        <label>Purpose</label>
+        <div class="brief-purpose">
+          <label><input type="radio" name="briefPurpose" value="persuade"> Persuade</label>
+          <label><input type="radio" name="briefPurpose" value="inform"> Inform</label>
+          <label><input type="radio" name="briefPurpose" value="entertain"> Entertain</label>
+        </div>
+      </div>
+      <div class="brief-field full">
+        <label for="briefTakeaway">One-sentence takeaway</label>
+        <textarea id="briefTakeaway" rows="2" placeholder="After our presentation, the audience should..."></textarea>
+      </div>
+      <div class="brief-field full">
+        <label>Five-move outline</label>
+        <div class="move-grid">
+          <div class="move-field"><span>Hook</span><input type="text" aria-label="Hook" placeholder="The first 20–30 seconds"></div>
+          <div class="move-field"><span>Bridge</span><input type="text" aria-label="Bridge" placeholder="Context, problem, why now"></div>
+          <div class="move-field"><span>Climax</span><input type="text" aria-label="Climax" placeholder="The decisive evidence or turn"></div>
+          <div class="move-field"><span>Resolution</span><input type="text" aria-label="Resolution" placeholder="The answer or change"></div>
+          <div class="move-field"><span>Takeaway</span><input type="text" aria-label="Takeaway" placeholder="CTA, so-what, or resonance"></div>
+        </div>
+      </div>
+      <div class="brief-field">
+        <label for="briefEvidence">Evidence</label>
+        <textarea id="briefEvidence" rows="3" placeholder="3 secondary sources + 1 primary source collected this semester"></textarea>
+      </div>
+      <div class="brief-field">
+        <label for="briefVisual">Visual evidence artifact</label>
+        <textarea id="briefVisual" rows="3" placeholder="Chart, map, photo, prototype, or before/after image"></textarea>
+      </div>
+      <div class="brief-field">
+        <label for="briefCounter">Counterargument / constraint</label>
+        <textarea id="briefCounter" rows="2" placeholder="Cost, hygiene, privacy, equity, enforcement, scheduling..."></textarea>
+      </div>
+      <div class="brief-field">
+        <label for="briefQA">Q&amp;A preparation</label>
+        <textarea id="briefQA" rows="2" placeholder="The hardest question, and who answers it"></textarea>
+      </div>
+      <div class="brief-field full">
+        <label for="briefRoles">Group roles</label>
+        <textarea id="briefRoles" rows="2" placeholder="Through-line, evidence, design, Q&A, timekeeper — and who owns each"></textarea>
+      </div>
+    </div>
+    <div class="brief-check">
+      <span>Purpose named</span><span>Takeaway is one sentence</span><span>Each move is one line</span><span>Evidence has a date</span><span>Counterargument included</span><span>Roles assigned</span>
+    </div>
+  </div>
+</section>
+
+<!-- 05 WORKFLOW -->
+<section class="section wrap" id="workflow" aria-labelledby="workflow-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">05</div>
+    <div>
+      <p class="kicker">The build</p>
+      <h2 id="workflow-title">From essay to <em>deck.</em></h2>
+      <p class="lead">Write the argument first; design the visual sequence second. A strong argument gives every slide its job.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="step"><span class="n">01</span><h3>Write the argument first.</h3><p>Draft the essay or story before opening PowerPoint. A strong argument makes the slides easier to design.</p><div class="check"><b>Check</b> · Can you state the claim in one sentence?</div></div>
+    <div class="step"><span class="n">02</span><h3>Find the one-sentence answer.</h3><p>What should the audience think, feel, or do? This becomes the executive flip, the deck title, and the close.</p><div class="check"><b>Check</b> · Is it specific enough to disagree with?</div></div>
+    <div class="step"><span class="n">03</span><h3>Map the five moves.</h3><p>Hook, Bridge, Climax, Resolution, Takeaway. Put one sentence in each box before designing a single slide.</p><div class="check"><b>Check</b> · Can a listener retell all five?</div></div>
+    <div class="step"><span class="n">04</span><h3>Choose evidence that can be seen.</h3><p>One chart, map, photo, prototype, or demonstration per major claim. Keep only decoration that carries meaning.</p><div class="check"><b>Check</b> · What does the audience look at, and what does it prove?</div></div>
+    <div class="step"><span class="n">05</span><h3>Build the visual argument.</h3><p>One idea per slide, one first read, a clear title that states the claim, and enough whitespace to let it land.</p><div class="check"><b>Check</b> · Can you read the point from the back row?</div></div>
+    <div class="step"><span class="n">06</span><h3>Rehearse aloud and cut.</h3><p>Aim for a script that fits the time with pauses. Cut before you memorise.</p><div class="check"><b>Check</b> · Does it fit the time limit with pauses?</div></div>
+  </div>
+
+  <div class="callout">
+    <b>The deck supports the script</b>
+    <p>The script carries the argument; the deck carries the evidence, the turn, and the visual anchor. Keep the slides visual and the argument spoken.</p>
+  </div>
+</section>
+
+<!-- 06 ARC -->
+<section class="section wrap" id="arc" aria-labelledby="arc-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">06</div>
+    <div>
+      <p class="kicker">The shape</p>
+      <h2 id="arc-title">A visible <em>narrative arc.</em></h2>
+      <p class="lead">Every track uses the same five moves. SCQA is the persuasive micro-order; the arc is the macro shape. The room should be able to retell the moves from memory.</p>
+    </div>
+  </div>
+
+  <div class="arc-big" aria-label="Narrative arc">
+    <div>Hook</div><div>Bridge</div><div>Climax</div><div>Resolution</div><div>Takeaway</div>
+  </div>
+
+  <div class="arc-map">
+    <div><b>S · Situation</b><span>The shared ground and the minimum context. Usually the Bridge.</span></div>
+    <div><b>C · Complication</b><span>The change, problem, or tension. The Hook and/or Bridge.</span></div>
+    <div><b>Q · Question</b><span>The decision the complication forces. The Bridge or Climax.</span></div>
+    <div><b>A · Answer</b><span>The governing thought. The Resolution and Takeaway.</span></div>
+  </div>
+
+  <div class="flip">
+    <p class="kicker">The executive flip · persuasive only</p>
+    <blockquote>“To cut campus cup waste by 80% within one semester, the university should replace the voluntary NT$5 mug discount with a mandatory NT$20 student-ID cup deposit.”</blockquote>
+    <p>A → S → C. Lead with the answer for a time-poor room. For a story that depends on surprise, keep the answer for the ending.</p>
+  </div>
+
+  <div class="closes">
+    <div><b>Persuade</b><span>“Approve the pilot by the end of this month.” A specific decision, owner, and date.</span></div>
+    <div><b>Inform</b><span>“The next time you see the 5 p.m. crowd, you will know why it happens.” A new model the audience can use.</span></div>
+    <div><b>Entertain</b><span>“You will see the convenience store differently after this.” A feeling or insight that stays.</span></div>
+  </div>
+
+  <div class="backrow" style="margin-top:14px">
+    <b>The retell test</b>
+    <p>After a rehearsal, ask a listener to retell your talk in five sentences: Hook, Bridge, Climax, Resolution, Takeaway. When they can name all five, the arc is visible.</p>
+  </div>
+</section>
+
+<!-- 07 DECK -->
+<section class="section wrap" id="deck" aria-labelledby="deck-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">07</div>
+    <div>
+      <p class="kicker">Design the deck</p>
+      <h2 id="deck-title">The six design <em>levers.</em></h2>
+      <p class="lead">Hierarchy, grid, space, balance, color, and contrast — the visual principles from Weeks 9–10. The audience scans a slide before it reads a word; these levers shape what the scan finds.</p>
+    </div>
+  </div>
+
+  <div class="levers">
+    <div class="lever"><h3>Hierarchy</h3><p>One clear first read. The claim dominates; the title states the point.</p></div>
+    <div class="lever"><h3>Grid</h3><p>A consistent set of columns and margins gives every element a home.</p></div>
+    <div class="lever"><h3>Space</h3><p>Deliberate whitespace gives the eye room to rest; one idea per slide.</p></div>
+    <div class="lever"><h3>Balance</h3><p>Visual weight distributed across the slide creates a calm, stable layout.</p></div>
+    <div class="lever"><h3>Color</h3><p>A small, consistent palette uses color to mark meaning and grouping.</p></div>
+    <div class="lever"><h3>Contrast</h3><p>Strong text/background contrast and emphasis through size and weight keep the slide readable from the back.</p></div>
+  </div>
+
+  <div class="recipe">
+    <p><b>1 · Title / claim</b> — the one sentence the room should remember.</p>
+    <p><b>2 · Hook</b> — a photo, moment, number, or question.</p>
+    <p><b>3 · Context / stakes</b> — the minimum the room needs.</p>
+    <p><b>4 · Evidence</b> — one chart, map, or artifact that proves the point.</p>
+    <p><b>5 · Proposal / insight</b> — the answer or the turn.</p>
+    <p><b>6 · Implementation / implications</b> — who does what, or what changes.</p>
+    <p><b>7 · Counterargument / constraint</b> — show you have stress-tested it.</p>
+    <p><b>8 · Close</b> — CTA, so-what, or resonance.</p>
+    <p><b>Appendix</b> — sources, backup charts, extra evidence for Q&amp;A.</p>
+  </div>
+
+  <div class="backrow">
+    <b>The back-row test</b>
+    <p>Project the deck and walk to the back of the room. Can you read the title? The body? The axis labels? Increase contrast or size, or cut content. The room is the real screen.</p>
+  </div>
+</section>
+
+<!-- 08 GROUP -->
+<section class="section wrap" id="group" aria-labelledby="group-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">08</div>
+    <div>
+      <p class="kicker">Group delivery</p>
+      <h2 id="group-title">One group, <em>one coordinated talk.</em></h2>
+      <p class="lead">Every member speaks, and the audience experiences one coordinated talk. Assign roles, script the handoffs, and rehearse the transitions as carefully as the content.</p>
+    </div>
+  </div>
+
+  <table class="roles">
+    <thead><tr><th scope="col">Role</th><th scope="col">Owns</th><th scope="col">Success looks like</th></tr></thead>
+    <tbody>
+      <tr><td><b>Through-line lead</b></td><td>The claim, the five moves, the opening and close.</td><td>The audience can retell the argument.</td></tr>
+      <tr><td><b>Evidence lead</b></td><td>Sources, data, charts, citations, fact-checking.</td><td>Every claim has a visible, credible source.</td></tr>
+      <tr><td><b>Design lead</b></td><td>Deck system, visual evidence, back-row readability.</td><td>Every slide is legible on its own.</td></tr>
+      <tr><td><b>Q&amp;A lead</b></td><td>Question mapping, PREP answers, handoffs to experts.</td><td>Every question gets a clear answer and the right owner.</td></tr>
+      <tr><td><b>Timekeeper</b></td><td>Run-through timing, cuts, transitions, backup files.</td><td>The group lands the close calmly.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="handoffs">
+    <div class="handoff"><b>Handoff 1</b> “That is the problem. [Name] will show what the evidence says.”</div>
+    <div class="handoff"><b>Handoff 2</b> “We have the evidence. The question is what to do about it. [Name].”</div>
+    <div class="handoff"><b>Handoff 3</b> “That is the proposal. [Name] will show how it works in practice.”</div>
+    <div class="handoff"><b>Handoff 4</b> “Before we close, we want to answer the strongest objection. [Name].”</div>
+  </div>
+
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Run of show timing table">
+  <table class="runshow">
+    <thead><tr><th scope="col">Minute</th><th scope="col">Speaker</th><th scope="col">Content</th><th scope="col">Visual</th></tr></thead>
+    <tbody>
+      <tr><td>0:00–1:00</td><td>A</td><td>Hook + claim</td><td>Image or one number</td></tr>
+      <tr><td>1:00–3:00</td><td>B</td><td>Context + stakes</td><td>Map, timeline, or comparison</td></tr>
+      <tr><td>3:00–5:00</td><td>C</td><td>Evidence + turn</td><td>One chart or artifact</td></tr>
+      <tr><td>5:00–7:00</td><td>D</td><td>Proposal / implications</td><td>Diagram or implementation table</td></tr>
+      <tr><td>7:00–9:00</td><td>E</td><td>Counterargument + close</td><td>One decision slide</td></tr>
+      <tr><td>9:00–10:00</td><td>All</td><td>CTA + Q&amp;A handoff</td><td>One-line close</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small" style="margin-top:6px">Scale the table to your announced time limit. The sequence matters more than the exact minutes.</p>
+  <p class="small" style="margin-top:4px">On a phone, scroll the timing table sideways for the visual column.</p>
+
+  <div class="stage-list">
+    <p>Face the room; glance at the slide, then turn back before speaking.</p>
+    <p>Plant your feet during the opening and the close.</p>
+    <p>Face the room and paraphrase the point.</p>
+    <p>Finish the handoff sentence before moving.</p>
+    <p>Keep one person in charge of the clicker and the time.</p>
+    <p>Let silence do work after a key number.</p>
+  </div>
+
+  <div class="callout">
+    <b>Q&amp;A is part of the presentation</b>
+    <p>Pause two seconds. Answer Point first, then Reason and Example, then restate the Point. The Q&amp;A lead decides who answers; the evidence lead supplies the number; the timekeeper keeps it under control.</p>
+  </div>
+</section>
+
+<!-- 09 REHEARSAL -->
+<section class="section wrap" id="rehearsal" aria-labelledby="rehearsal-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">09</div>
+    <div>
+      <p class="kicker">Rehearse</p>
+      <h2 id="rehearsal-title">Three rehearsals. <em>Then the live presentation.</em></h2>
+      <p class="lead">Rehearse aloud, with the deck, the timer, and someone watching. Three focused runs reveal the cuts, the handoffs, and the Q&amp;A gaps.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="rehearsal"><span class="no">Run 01</span><h3>Table read</h3><p>Read the full script aloud. Mark where the argument sags, where the handoffs are clumsy, and what can be cut. Start with the script alone.</p><div class="done"><b>Done when</b> · the five moves are clear and the script is 10–15% shorter.</div></div>
+    <div class="rehearsal"><span class="no">Run 02</span><h3>Timed run</h3><p>Add the deck, the clicker, the handoffs, and the timer. Mark every transition and every pause.</p><div class="done"><b>Done when</b> · the group lands inside the limit with time for the close.</div></div>
+    <div class="rehearsal"><span class="no">Run 03</span><h3>Full dress</h3><p>Project from the back row, test the room, record one run, and stress-test Q&amp;A with the hardest questions you can imagine.</p><div class="done"><b>Done when</b> · every member can adapt to a tech surprise and a tough question.</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px">
+    <div class="card">
+      <h3>Record and review</h3>
+      <ul>
+        <li><b>Sound off:</b> do the slides carry the argument on their own?</li>
+        <li><b>Screen off:</b> does the spoken line work on its own?</li>
+        <li><b>Back row:</b> can you read the title, body, and axis labels?</li>
+        <li><b>Handoffs:</b> can you hear who speaks next before they speak?</li>
+        <li><b>Time:</b> does the close get the last minute, or does it get rushed?</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Use the instruments</h3>
+      <p>Run the rehearsal with the Week 11 checklist. Open the live room for a peer audience and watch the domain averages. The goal is one clear target for the next run.</p>
+      <p style="margin-top:8px"><a href="index.html"><b>Open the checklist →</b></a></p>
+      <p><a href="live.html"><b>Open the live room →</b></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 ASSESSMENT -->
+<section class="section wrap" id="assessment" aria-labelledby="assessment-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">10</div>
+    <div>
+      <p class="kicker">How it is graded</p>
+      <h2 id="assessment-title">What counts, <em>and who counts it.</em></h2>
+      <p class="lead">Four components. The live presentation is 60% of the grade; the script and deck are the preparation that makes it possible; teamwork is the 5% process behind all three.</p>
+    </div>
+  </div>
+
+  <table class="assess">
+    <thead><tr><th scope="col">Component</th><th scope="col">Weight</th><th scope="col">Rated by</th><th scope="col">What is judged</th></tr></thead>
+    <tbody>
+      <tr><td><b>Script / story</b></td><td><b>20%</b></td><td>Teacher</td><td>Argument, five-move arc, evidence, audience fit, language, citations.</td></tr>
+      <tr><td><b>Deck design</b></td><td><b>15%</b></td><td>Teacher</td><td>Hierarchy, grid, space, balance, color, contrast, visual evidence, consistency, back-row readability.</td></tr>
+      <tr><td><b>Delivery</b></td><td><b>60%</b></td><td><b>Teacher 50% + peers 10%</b></td><td>Live checklist: vocal, connection, visual use, narrative, presence, Q&amp;A, group handoffs.</td></tr>
+      <tr><td><b>Teamwork</b></td><td><b>5%</b></td><td>Teacher + confidential peer evaluation</td><td>Roles, meetings, contribution, rehearsal, handoffs, reliability.</td></tr>
+      <tr class="total"><td colspan="2"><b>Total</b></td><td colspan="2"><b>100%</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="excellent">
+    <div><b>Script</b><span>One clear claim, a visible arc, credible evidence, spoken language, and a close that lands.</span></div>
+    <div><b>Deck</b><span>Hierarchy, grid, space, balance, color, and contrast working together, with one visual artifact that proves the point.</span></div>
+    <div><b>Delivery</b><span>Back-row audible, connected, paced, visually controlled, narrative, and calm under Q&amp;A.</span></div>
+    <div><b>Teamwork</b><span>Clear roles, a real log, visible contribution, rehearsed handoffs, and reliability.</span></div>
+  </div>
+
+  <div class="peer">
+    <div class="card">
+      <h3>Peer review · 10%</h3>
+      <p>Peers rate the live delivery with the Week 11 checklist: 1–5 for each criterion, plus one specific note. The teacher uses the Full 18; peers can focus on the Core 13 if the room is large.</p>
+      <ol>
+        <li><b>Norm.</b> Ten minutes before the session, rate a short sample together and agree what 1, 3, and 5 look like.</li>
+        <li><b>Scan.</b> Open the live room QR and start rating.</li>
+        <li><b>Rate.</b> Rate observable behaviour and specific choices.</li>
+        <li><b>Aggregate.</b> The peer score is the median of valid ratings, with at least five raters.</li>
+        <li><b>Review.</b> The teacher reads the distribution and notes; the median protects the grade from a single outlier.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Teamwork · 5%</h3>
+      <p>Teamwork is the 5% process behind the script, deck, and delivery. It is assessed through how the group worked: roles, meetings, contribution, rehearsal, handoffs, and reliability.</p>
+      <p style="margin-top:8px">A confidential peer evaluation is evidence. The teacher reviews it and may apply a contribution factor of <b>0.85–1.05</b> to an individual’s delivery and teamwork marks. The factor reflects documented contribution.</p>
+      <p style="margin-top:8px"><b>Talk early.</b> Raise concerns early and log them with the group.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>Keep the components distinct</b>
+    <p>Script judges the written argument. Deck judges the designed artifact. Delivery judges how both land in the room. Teamwork is the 5% process component, judged from how the group worked. The same feature can appear in several places, and it is judged differently each time.</p>
+  </div>
+
+  <h3 class="list-title">What strong groups do</h3>
+  <div class="success">
+    <p>Write the argument before the slides.</p>
+    <p>Design the deck as visual evidence.</p>
+    <p>Deliver by paraphrasing and facing the room.</p>
+    <p>Coordinate as one group with clear handoffs.</p>
+    <p>Share Q&amp;A across the team.</p>
+    <p>Use roles, logs, and rehearsals to make the process visible.</p>
+  </div>
+</section>
+
+<!-- 11 TEAMWORK -->
+<section class="section wrap" id="teamwork" aria-labelledby="teamwork-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">11</div>
+    <div>
+      <p class="kicker">Teamwork</p>
+      <h2 id="teamwork-title">Make the process <em>visible.</em></h2>
+      <p class="lead">Teamwork is the 5% process component behind the script, the deck, and the delivery. It is the process that produces them, and it leaves evidence so the teacher can see who did what.</p>
+    </div>
+  </div>
+
+  <div class="template">
+    <h3>Team charter</h3>
+    <p>Name the owner, the deliverable, and the deadline. Every role has a backup.</p>
+    <table>
+      <thead><tr><th scope="col">Role</th><th scope="col">Owner</th><th scope="col">Deliverable</th><th scope="col">Deadline</th></tr></thead>
+      <tbody>
+        <tr><td>Through-line / script</td><td></td><td></td><td></td></tr>
+        <tr><td>Evidence / sources</td><td></td><td></td><td></td></tr>
+        <tr><td>Deck / visual design</td><td></td><td></td><td></td></tr>
+        <tr><td>Rehearsal / timing</td><td></td><td></td><td></td></tr>
+        <tr><td>Q&amp;A / logistics</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px">
+    <div class="template">
+      <h3>Meeting log</h3>
+      <p>One line per meeting. Decisions and next steps, kept short.</p>
+      <table>
+        <thead><tr><th scope="col">Date</th><th scope="col">Present</th><th scope="col">Decision</th><th scope="col">Next step</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="template">
+      <h3>Contribution matrix</h3>
+      <p>Who led, who supported, and what is actually done.</p>
+      <table>
+        <thead><tr><th scope="col">Task</th><th scope="col">Lead</th><th scope="col">Support</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="template">
+    <h3>Confidential peer evaluation prompts</h3>
+    <p>Rate each teammate 1–5 and give one specific example. The teacher sees the summary; comments stay private.</p>
+    <div class="peer-prompts">
+      <p><b>Reliability</b> — met deadlines, attended rehearsals, did what they said.</p>
+      <p><b>Quality</b> — work was ready to use.</p>
+      <p><b>Communication</b> — flagged problems early, shared information, listened.</p>
+      <p><b>Ownership</b> — took responsibility for a role and its outcome.</p>
+      <p><b>One example</b> — a specific moment that supports the rating.</p>
+      <p><b>One improvement</b> — what would make the next collaboration easier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 CHECKLIST -->
+<section class="section wrap" id="checklist" aria-labelledby="checklist-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">12</div>
+    <div>
+      <p class="kicker">Before you present</p>
+      <h2 id="checklist-title">The final <em>checklist.</em></h2>
+      <p class="lead">Tick each item as it is completed. Your checks save in this browser and support your preparation.</p>
+    </div>
+  </div>
+
+  <div class="check-panel">
+    <div class="check-head"><h3>Group readiness</h3><span id="guideProgress" aria-live="polite">0 / 12 ready</span></div>
+    <div class="check-list">
+      <label><input type="checkbox" data-guide-check="purpose"><span>Purpose and takeaway named.</span></label>
+      <label><input type="checkbox" data-guide-check="takeaway"><span>One-sentence takeaway written.</span></label>
+      <label><input type="checkbox" data-guide-check="brief"><span>One-page brief approved.</span></label>
+      <label><input type="checkbox" data-guide-check="evidence"><span>Three sources + one primary source collected.</span></label>
+      <label><input type="checkbox" data-guide-check="script"><span>Script read aloud and cut by at least 10%.</span></label>
+      <label><input type="checkbox" data-guide-check="deck"><span>Deck built with one idea per slide.</span></label>
+      <label><input type="checkbox" data-guide-check="backrow"><span>Back-row readability test passed.</span></label>
+      <label><input type="checkbox" data-guide-check="rehearsal"><span>Three rehearsals completed.</span></label>
+      <label><input type="checkbox" data-guide-check="handoffs"><span>Handoffs and Q&amp;A roles assigned.</span></label>
+      <label><input type="checkbox" data-guide-check="time"><span>Timed run lands inside the limit.</span></label>
+      <label><input type="checkbox" data-guide-check="files"><span>Deck, script, and backup files ready.</span></label>
+      <label><input type="checkbox" data-guide-check="live"><span>Live room / QR tested.</span></label>
+    </div>
+    <div class="check-actions">
+      <span class="progress" id="guideProgressText">0 of 12 complete</span>
+      <button class="btn" type="button" id="resetGuide">Reset</button>
+      <button class="btn primary" type="button" id="printCheck">Print page</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section wrap" id="faq" aria-labelledby="faq-title">
+  <div class="sec-head">
+    <div class="sec-no" aria-hidden="true">?</div>
+    <div>
+      <p class="kicker">Questions</p>
+      <h2 id="faq-title">FAQ.</h2>
+    </div>
+  </div>
+
+  <div class="faq">
+    <article><h3>Can we choose the campus cup topic?</h3><p>Yes. It is a valid option. Week 7 gives you the opening; add current evidence, a stakeholder angle, a full script, a deck, and Q&amp;A. Build from the workshop paragraph as a model.</p></article>
+    <article><h3>Can we do an informative or entertaining presentation?</h3><p>Yes. Each purpose has a named topic and a wildcard. Declare the purpose in the brief and get approval for a wildcard before drafting. The campus-life connection and the five-move arc apply to every option.</p></article>
+    <article><h3>Do we need the executive flip?</h3><p>For a persuasive proposal, yes: lead with the answer, then compress the situation and complication. For informative, a BLUF is optional. For a story built on surprise, save the answer for the ending.</p></article>
+    <article><h3>How many slides should we have?</h3><p>Usually 8–12 content slides plus an appendix. One idea per slide, one clear first read. Follow the time limit announced in class; keep each slide to one point.</p></article>
+    <article><h3>How is peer review counted?</h3><p>Peer review is 10% of the total, inside the 60% delivery component. The teacher contributes 50%. Peer scores use the median of valid ratings, with at least five raters. The median protects the grade from a single outlier.</p></article>
+    <article><h3>How do we handle uneven contribution?</h3><p>Raise it early, in writing, and log it. The confidential peer evaluation and contribution matrix provide evidence for the teacher’s assessment. The teacher may apply a 0.85–1.05 factor to the individual’s delivery and teamwork marks.</p></article>
+    <article><h3>Can we use AI?</h3><p>Use AI transparently within course and department policy. Declare tool use, cite sources, verify every source and number, and be ready to defend the argument in Q&amp;A.</p></article>
+    <article><h3>How do we protect the time limit?</h3><p>Protect the close and cut content elsewhere. Rehearse with the timer and a listener; the room’s patience is part of delivery, and a clear ending lands best.</p></article>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span><b>English Presentation Skills</b> · Final report guide</span>
+    <span><a href="index.html">Week 11 checklist</a> · <a href="live.html">Live room</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var KEY = "eps-final-report-guide-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("[data-guide-check]"));
+  var progress = document.getElementById("guideProgress");
+  var progressText = document.getElementById("guideProgressText");
+
+  function read(){
+    try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function save(){
+    var data = {};
+    boxes.forEach(function(box){ data[box.dataset.guideCheck] = box.checked; });
+    try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {}
+  }
+  function update(){
+    var done = boxes.filter(function(box){ return box.checked; }).length;
+    progress.textContent = done + " / " + boxes.length + " ready";
+    progressText.textContent = done + " of " + boxes.length + " complete";
+  }
+  var saved = read();
+  boxes.forEach(function(box){
+    box.checked = !!saved[box.dataset.guideCheck];
+    box.addEventListener("change", function(){ save(); update(); });
+  });
+  update();
+
+  document.getElementById("printBtn").addEventListener("click", function(){ window.print(); });
+  document.getElementById("printCheck").addEventListener("click", function(){ window.print(); });
+  document.getElementById("resetGuide").addEventListener("click", function(){
+    if (!window.confirm("Clear the checklist?")) return;
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    boxes.forEach(function(box){ box.checked = false; });
+    update();
+  });
+})();
+</script>
+</body>
+</html>

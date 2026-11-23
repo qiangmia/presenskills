@@ -5,6 +5,8 @@ Weeks 11–12 **Delivery & Presence** unit.
 
 **Live page:** <https://qiangmia.github.io/presenskills/>
 
+**Final report guide:** <https://qiangmia.github.io/presenskills/final-report-guide.html>
+
 ## What it is
 
 Eighteen observable presentation criteria across five domains:
@@ -76,6 +78,16 @@ Fix values are read as 5 / 3 / 1.
 - Firestore rules: rooms are readable/writable by authenticated users; only the
   room creator can close a room; each rater can write only their own ratings.
 
+## Final report guide
+
+`final-report-guide.html` is the Week 12 guide for the final group presentation:
+topic choice, the one-page brief, script, deck design, rehearsal, delivery,
+teamwork, and assessment. It covers the Weeks 15–16 logistics (10-minute
+presentation plus 5-minute Q&A, seven groups drawn at the start of each week).
+
+The page links back to the checklist and the live room. `final-report-guide.pdf`
+is the 10-page A4 print version.
+
 ## Files
 
 - `index.html` — the interactive checklist
@@ -87,3 +99,5 @@ Fix values are read as 5 / 3 / 1.
 - `rate.js` — rating page logic
 - `qrcode.min.js` — QR rendering ([qrcodejs](https://github.com/davidshimjs/qrcodejs), MIT)
 - `delivery-deck-sync.pdf` — 4-page A4 print version
+- `final-report-guide.html` — Week 12 final report guide
+- `final-report-guide.pdf` — 10-page A4 print version
