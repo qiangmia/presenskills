@@ -152,7 +152,7 @@ button{cursor:pointer}
 .metric .timer-row{display:flex;align-items:center;gap:5px;margin-top:5px}
 .metric .timer-row button{border:1px solid var(--ink);background:transparent;padding:4px 6px;font:700 8px/1 var(--mono);text-transform:uppercase}
 .metric .timer-row button:hover{background:var(--ink);color:var(--paper)}
-.session-fields{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.session-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
 .field label{display:block;font:700 8px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .field input,.field select{width:100%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:8px 9px;font:13.5px/1.4 var(--sans)}
 .field input::placeholder{color:#9a9284}
@@ -382,7 +382,7 @@ body.mode-dual .rehearsal-cell{display:block}
   .metric-value{font-size:12pt}
   .metric-small{font-size:6pt}
   .metric .timer-row{display:none}
-  .session-fields{grid-template-columns:repeat(4,1fr);gap:2mm;margin-top:2mm}
+  .session-fields{grid-template-columns:repeat(3,1fr);gap:2mm;margin-top:2mm}
   .field label{font-size:6pt}
   .field input,.field select{font-size:8pt;border:0;border-bottom:.4pt solid #999;padding:1mm 0;background:#fff}
   #checklist{break-before:auto}
@@ -524,16 +524,6 @@ body.mode-dual .rehearsal-cell{display:block}
       <div class="field"><label for="metaPresenter">Presenter</label><input id="metaPresenter" data-meta="presenter" type="text" placeholder="Speaker's name" autocomplete="off"></div>
       <div class="field"><label for="metaObserver">Observer</label><input id="metaObserver" data-meta="observer" type="text" placeholder="Self or peer reviewer" autocomplete="off"></div>
       <div class="field"><label for="metaTopic">Topic</label><input id="metaTopic" data-meta="topic" type="text" placeholder="e.g. Campus cup deposit proposal" autocomplete="off"></div>
-      <div class="field"><label for="metaFocus">Row focus</label>
-        <select id="metaFocus" data-meta="focus">
-          <option value="all">All five domains</option>
-          <option value="vocal">01 · Vocal &amp; pacing</option>
-          <option value="connection">02 · Connection &amp; interaction</option>
-          <option value="visual">03 · Visual design</option>
-          <option value="narrative">04 · Narrative arc &amp; SCQA</option>
-          <option value="presence">05 · Presence &amp; Q&amp;A</option>
-        </select>
-      </div>
     </div>
 
     <p class="preflight"><b>Before you start</b> · phone silent · clicker tested · back-row legible · clear of the projector.</p>
@@ -669,7 +659,7 @@ body.mode-dual .rehearsal-cell{display:block}
     <div class="synth-head">
       <div>
         <p class="kicker">Synthesis &amp; action plan</p>
-        <h2 id="synthesis-title">Glow. Grow. <em>Answer.</em></h2>
+        <h2 id="synthesis-title">Glow. <em>Grow.</em></h2>
         <p>Complete this immediately after the run. One strength, one fix, one Q&amp;A note.</p>
       </div>
       <div class="synth-actions">
@@ -776,7 +766,7 @@ body.mode-dual .rehearsal-cell{display:block}
   var KEY = "eps-wk11-delivery-v3";
   var state = {
     mode:"dual", level:"full", domain:"all",
-    checks:{}, ratings:{}, notes:{}, meta:{presenter:"",observer:"",topic:"",focus:"all"},
+    checks:{}, ratings:{}, notes:{}, meta:{presenter:"",observer:"",topic:""},
     synth:{glow:"",grow:"",qa:""}
   };
   try {
@@ -816,7 +806,6 @@ body.mode-dual .rehearsal-cell{display:block}
   var VALID_DOMAINS = ["all","vocal","connection","visual","narrative","presence"];
   var domainMigrated = false;
   if (VALID_DOMAINS.indexOf(state.domain) === -1) { state.domain = "all"; domainMigrated = true; }
-  if (state.meta && VALID_DOMAINS.indexOf(state.meta.focus) === -1) { state.meta.focus = "all"; domainMigrated = true; }
   if (domainMigrated) save();
 
   var SCORE_LABELS = {1:"Needs work",2:"Developing",3:"Solid",4:"Strong",5:"Exemplary"};
@@ -985,8 +974,6 @@ body.mode-dual .rehearsal-cell{display:block}
     $$(".domain").forEach(function(sec){
       sec.hidden = domain !== "all" && sec.dataset.domain !== domain;
     });
-    var focus = $("#metaFocus");
-    if (focus) focus.value = domain;
     if (persist !== false) save();
   }
 
@@ -1030,7 +1017,6 @@ body.mode-dual .rehearsal-cell{display:block}
       });
       el.addEventListener("change", function(){
         state.meta[el.dataset.meta] = el.value;
-        if (el.dataset.meta === "focus") filterDomain(el.value);
         save();
       });
     });
