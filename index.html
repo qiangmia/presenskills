@@ -268,11 +268,10 @@ body.mode-dual .rehearsal-cell{display:block}
 .synth-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;border-top:2px solid var(--ink);padding-top:16px}
 .synth-head h2{font-family:var(--display);font-size:clamp(30px,3.6vw,42px);line-height:.96;letter-spacing:-.04em;text-transform:uppercase;max-width:20ch}
 .synth-head p{margin-top:6px;font-size:13.5px;color:var(--muted)}
-.synth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.synth-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
 .synth-card{border:1px solid var(--rule);background:var(--white);padding:16px}
 .synth-card.glow{border-top:3px solid var(--green)}
 .synth-card.grow{border-top:3px solid var(--amber)}
-.synth-card.qa{border-top:3px solid var(--ink)}
 .synth-card label{display:block;font:700 9px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
 .synth-card .q{margin-top:4px;font-size:12px;line-height:1.45;color:var(--muted);min-height:2.9em}
 .synth-card textarea{width:100%;min-height:84px;margin-top:8px;border:1px solid var(--rule);background:var(--paper);padding:8px;font:13px/1.5 var(--sans);resize:vertical}
@@ -430,7 +429,7 @@ body.mode-dual .rehearsal-cell{display:block}
   .synthesis{padding:0;break-before:page;break-inside:avoid}
   .synth-head{padding-top:2mm}
   .synth-head h2{font-size:16pt}
-  .synth-grid{grid-template-columns:repeat(3,1fr);gap:2mm;margin-top:2mm}
+  .synth-grid{grid-template-columns:repeat(2,1fr);gap:2mm;margin-top:2mm}
   .synth-card{padding:2mm;border:.5pt solid #999}
   .synth-card label{font-size:6.5pt}
   .synth-card .q{display:none}
@@ -660,7 +659,7 @@ body.mode-dual .rehearsal-cell{display:block}
       <div>
         <p class="kicker">Synthesis &amp; action plan</p>
         <h2 id="synthesis-title">Glow. <em>Grow.</em></h2>
-        <p>Complete this immediately after the run. One strength, one fix, one Q&amp;A note.</p>
+        <p>Complete this immediately after the run. One strength, one fix.</p>
       </div>
       <div class="synth-actions">
         <button class="btn" type="button" id="copyBtn">Copy summary</button>
@@ -680,12 +679,6 @@ body.mode-dual .rehearsal-cell{display:block}
         <label for="synthGrow">2 · Highest-leverage fix</label>
         <p class="q">What single adjustment will improve the next run-through most?</p>
         <textarea id="synthGrow" data-synth="grow" rows="4" placeholder="e.g. Trim 30 seconds of background so the benefit slide is not rushed."></textarea>
-        <span class="print-synth" aria-hidden="true"></span>
-      </div>
-      <div class="synth-card qa">
-        <label for="synthQA">3 · Interaction / Q&amp;A note</label>
-        <p class="q">How did the speaker engage listeners or handle a difficult question?</p>
-        <textarea id="synthQA" data-synth="qa" rows="4" placeholder="e.g. Used direct eye contact before answering; started the answer with a clear point."></textarea>
         <span class="print-synth" aria-hidden="true"></span>
       </div>
     </div>
@@ -767,7 +760,7 @@ body.mode-dual .rehearsal-cell{display:block}
   var state = {
     mode:"dual", level:"full", domain:"all",
     checks:{}, ratings:{}, notes:{}, meta:{presenter:"",observer:"",topic:""},
-    synth:{glow:"",grow:"",qa:""}
+    synth:{glow:"",grow:""}
   };
   try {
     var saved = localStorage.getItem(KEY);
@@ -1088,7 +1081,6 @@ body.mode-dual .rehearsal-cell{display:block}
     lines.push("");
     lines.push("Glow: " + (state.synth.glow || "—"));
     lines.push("Grow: " + (state.synth.grow || "—"));
-    lines.push("Q&A: " + (state.synth.qa || "—"));
     var text = lines.join("\n");
     var status = $("#copyStatus");
     function done(){ status.textContent = "Copied to clipboard."; setTimeout(function(){ status.textContent = ""; }, 2200); }
